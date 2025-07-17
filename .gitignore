@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.pdb
+*.egg-info/
+
+# Poetry
+poetry.lock
+
+# VSCode
+.vscode/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# pytest
+.pytest_cache/
+
+# SQLite/DB
+*.db
+*.sqlite3
+
+# dotenv
+.env
+.env.*
+
+# Node/React
+node_modules/
+build/
+dist/
+*.log
+
+# Mac/Linux/Windows
+.DS_Store
+Thumbs.db
+
+# Alembic
+alembic.ini
+migrations/versions/
+
+# Others
+*.bak
+*.swp
+*.swo
+
+# Ignore frontend build artifacts
+frontend/build/
+frontend/dist/ 
