@@ -7,6 +7,12 @@ def init_database():
     conn = sqlite3.connect('personality_test.db')
     cursor = conn.cursor()
 
+    # 刪除舊表（如果存在）
+    cursor.execute("DROP TABLE IF EXISTS test_session")
+    cursor.execute("DROP TABLE IF EXISTS test_answer")
+    cursor.execute("DROP TABLE IF EXISTS test_question")
+    cursor.execute("DROP TABLE IF EXISTS test_report")
+
     # 建立 test_question 資料表
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS test_question (
@@ -26,8 +32,24 @@ def init_database():
             user_id VARCHAR(64) NOT NULL,
             question_id INTEGER NOT NULL,
             answer TEXT NOT NULL,
+            session_id INTEGER,
             created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
             FOREIGN KEY (question_id) REFERENCES test_question (id)
+        )
+    ''')
+
+    # 建立 test_session 資料表
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS test_session (
+            id INTEGER PRIMARY KEY,
+            user_id VARCHAR(64) NOT NULL,
+            test_type VARCHAR(16) NOT NULL,
+            question_ids TEXT NOT NULL,
+            started_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+            finished_at DATETIME,
+            paused_at DATETIME,
+            total_time_seconds INTEGER DEFAULT 0,
+            status VARCHAR(16) DEFAULT 'in_progress'
         )
     ''')
 
@@ -44,10 +66,14 @@ def init_database():
 
     # 匯入題庫資料
     questions = get_all_questions()
+    
+    # 先清空現有數據
+    cursor.execute("DELETE FROM test_question")
+    
     for question in questions:
         cursor.execute(
             '''
-            INSERT OR IGNORE INTO test_question (id, text, category, test_type, options, weight)
+            INSERT INTO test_question (id, text, category, test_type, options, weight)
             VALUES (?, ?, ?, ?, ?, ?)
             ''',
             (

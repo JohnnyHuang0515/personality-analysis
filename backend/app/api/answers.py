@@ -4,7 +4,7 @@ import json
 from datetime import datetime
 from typing import List, Dict, Any
 
-from app.schemas.answer import AnswerCreate, AnswerResponse, AnswerListResponse, TestSubmission, TestSubmissionResponse
+from ..schemas.answer import AnswerCreate, AnswerResponse, AnswerListResponse, TestSubmission, TestSubmissionResponse
 
 router = APIRouter()
 
@@ -30,9 +30,9 @@ def submit_test_answers(submission: TestSubmission):
             
             if question_id and answer:
                 cursor.execute("""
-                    INSERT INTO test_answer (user_id, question_id, answer, created_at)
-                    VALUES (?, ?, ?, ?)
-                """, (submission.user_id, question_id, answer, datetime.now()))
+                    INSERT INTO test_answer (user_id, question_id, answer, session_id, created_at)
+                    VALUES (?, ?, ?, ?, ?)
+                """, (submission.user_id, question_id, answer, submission.session_id, datetime.now()))
                 answered_count += 1
         
         conn.commit()
@@ -139,7 +139,7 @@ def get_user_answers_by_type(user_id: str, test_type: str):
                 "question_id": a[2],
                 "answer": a[3],
                 "created_at": a[4],
-                "question_text": a[5],
+                "text": a[5],
                 "category": a[6],
                 "test_type": a[7]
             })

@@ -1329,7 +1329,7 @@ big5_questions = [
         id=101,
         text="我是一個外向的人。",
         category="外向性",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"外向性": [5, 4, 3, 2, 1]}
     ),
@@ -1337,7 +1337,7 @@ big5_questions = [
         id=102,
         text="我容易感到焦慮。",
         category="神經質",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"神經質": [5, 4, 3, 2, 1]}
     ),
@@ -1345,7 +1345,7 @@ big5_questions = [
         id=103,
         text="我喜歡與人交談。",
         category="外向性",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"外向性": [5, 4, 3, 2, 1]}
     ),
@@ -1353,7 +1353,7 @@ big5_questions = [
         id=104,
         text="我是一個友善的人。",
         category="友善性",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"友善性": [5, 4, 3, 2, 1]}
     ),
@@ -1361,7 +1361,7 @@ big5_questions = [
         id=105,
         text="我是一個負責任的人。",
         category="盡責性",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"盡責性": [5, 4, 3, 2, 1]}
     ),
@@ -1369,7 +1369,7 @@ big5_questions = [
         id=106,
         text="我做事有條理。",
         category="盡責性",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"盡責性": [5, 4, 3, 2, 1]}
     ),
@@ -1377,7 +1377,7 @@ big5_questions = [
         id=107,
         text="我情緒穩定。",
         category="神經質",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"神經質": [1, 2, 3, 4, 5]}
     ),
@@ -1385,7 +1385,7 @@ big5_questions = [
         id=108,
         text="我喜歡嘗試新事物。",
         category="開放性",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"開放性": [5, 4, 3, 2, 1]}
     ),
@@ -1393,7 +1393,7 @@ big5_questions = [
         id=109,
         text="我有豐富的想像力。",
         category="開放性",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"開放性": [5, 4, 3, 2, 1]}
     ),
@@ -1401,7 +1401,7 @@ big5_questions = [
         id=110,
         text="我樂於幫助他人。",
         category="友善性",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"友善性": [5, 4, 3, 2, 1]}
     ),
@@ -1409,7 +1409,7 @@ big5_questions = [
         id=111,
         text="我喜歡參加社交活動。",
         category="外向性",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"外向性": [5, 4, 3, 2, 1]}
     ),
@@ -1417,7 +1417,7 @@ big5_questions = [
         id=112,
         text="我容易感到緊張。",
         category="神經質",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"神經質": [5, 4, 3, 2, 1]}
     ),
@@ -1425,7 +1425,7 @@ big5_questions = [
         id=113,
         text="我喜歡藝術和文化活動。",
         category="開放性",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"開放性": [5, 4, 3, 2, 1]}
     ),
@@ -1433,7 +1433,7 @@ big5_questions = [
         id=114,
         text="我信任他人。",
         category="友善性",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"友善性": [5, 4, 3, 2, 1]}
     ),
@@ -1441,7 +1441,7 @@ big5_questions = [
         id=115,
         text="我做事很有效率。",
         category="盡責性",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"盡責性": [5, 4, 3, 2, 1]}
     ),
@@ -1449,7 +1449,7 @@ big5_questions = [
         id=116,
         text="我喜歡獨處。",
         category="外向性",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"外向性": [1, 2, 3, 4, 5]}
     ),
@@ -1457,7 +1457,7 @@ big5_questions = [
         id=117,
         text="我容易感到沮喪。",
         category="神經質",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"神經質": [5, 4, 3, 2, 1]}
     ),
@@ -1465,7 +1465,7 @@ big5_questions = [
         id=118,
         text="我喜歡抽象思考。",
         category="開放性",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"開放性": [5, 4, 3, 2, 1]}
     ),
@@ -1473,7 +1473,7 @@ big5_questions = [
         id=119,
         text="我對他人很寬容。",
         category="友善性",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"友善性": [5, 4, 3, 2, 1]}
     ),
@@ -1481,7 +1481,7 @@ big5_questions = [
         id=120,
         text="我做事很仔細。",
         category="盡責性",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"盡責性": [5, 4, 3, 2, 1]}
     ),
@@ -1489,7 +1489,7 @@ big5_questions = [
         id=121,
         text="我喜歡成為注意的焦點。",
         category="外向性",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"外向性": [5, 4, 3, 2, 1]}
     ),
@@ -1497,7 +1497,7 @@ big5_questions = [
         id=122,
         text="我容易感到擔心。",
         category="神經質",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"神經質": [5, 4, 3, 2, 1]}
     ),
@@ -1505,7 +1505,7 @@ big5_questions = [
         id=123,
         text="我喜歡探索新想法。",
         category="開放性",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"開放性": [5, 4, 3, 2, 1]}
     ),
@@ -1513,7 +1513,7 @@ big5_questions = [
         id=124,
         text="我很少與他人爭吵。",
         category="友善性",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"友善性": [5, 4, 3, 2, 1]}
     ),
@@ -1521,7 +1521,7 @@ big5_questions = [
         id=125,
         text="我做事很有計劃。",
         category="盡責性",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"盡責性": [5, 4, 3, 2, 1]}
     ),
@@ -1529,7 +1529,7 @@ big5_questions = [
         id=126,
         text="我喜歡安靜的環境。",
         category="外向性",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"外向性": [1, 2, 3, 4, 5]}
     ),
@@ -1537,7 +1537,7 @@ big5_questions = [
         id=127,
         text="我容易感到情緒波動。",
         category="神經質",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"神經質": [5, 4, 3, 2, 1]}
     ),
@@ -1545,7 +1545,7 @@ big5_questions = [
         id=128,
         text="我喜歡複雜的問題。",
         category="開放性",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"開放性": [5, 4, 3, 2, 1]}
     ),
@@ -1553,7 +1553,7 @@ big5_questions = [
         id=129,
         text="我對他人很友善。",
         category="友善性",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"友善性": [5, 4, 3, 2, 1]}
     ),
@@ -1561,7 +1561,7 @@ big5_questions = [
         id=130,
         text="我做事很可靠。",
         category="盡責性",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"盡責性": [5, 4, 3, 2, 1]}
     ),
@@ -1569,7 +1569,7 @@ big5_questions = [
         id=131,
         text="我喜歡與他人合作。",
         category="外向性",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"外向性": [5, 4, 3, 2, 1]}
     ),
@@ -1577,7 +1577,7 @@ big5_questions = [
         id=132,
         text="我容易感到壓力。",
         category="神經質",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"神經質": [5, 4, 3, 2, 1]}
     ),
@@ -1585,7 +1585,7 @@ big5_questions = [
         id=133,
         text="我喜歡創新的想法。",
         category="開放性",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"開放性": [5, 4, 3, 2, 1]}
     ),
@@ -1593,7 +1593,7 @@ big5_questions = [
         id=134,
         text="我對他人很體貼。",
         category="友善性",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"友善性": [5, 4, 3, 2, 1]}
     ),
@@ -1601,7 +1601,7 @@ big5_questions = [
         id=135,
         text="我做事很有條理。",
         category="盡責性",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"盡責性": [5, 4, 3, 2, 1]}
     ),
@@ -1609,7 +1609,7 @@ big5_questions = [
         id=136,
         text="我喜歡熱鬧的場合。",
         category="外向性",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"外向性": [5, 4, 3, 2, 1]}
     ),
@@ -1617,7 +1617,7 @@ big5_questions = [
         id=137,
         text="我容易感到不安。",
         category="神經質",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"神經質": [5, 4, 3, 2, 1]}
     ),
@@ -1625,7 +1625,7 @@ big5_questions = [
         id=138,
         text="我喜歡哲學討論。",
         category="開放性",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"開放性": [5, 4, 3, 2, 1]}
     ),
@@ -1633,7 +1633,7 @@ big5_questions = [
         id=139,
         text="我對他人很慷慨。",
         category="友善性",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"友善性": [5, 4, 3, 2, 1]}
     ),
@@ -1641,7 +1641,7 @@ big5_questions = [
         id=140,
         text="我做事很認真。",
         category="盡責性",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"盡責性": [5, 4, 3, 2, 1]}
     ),
@@ -1649,7 +1649,7 @@ big5_questions = [
         id=141,
         text="我喜歡認識新朋友。",
         category="外向性",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"外向性": [5, 4, 3, 2, 1]}
     ),
@@ -1657,7 +1657,7 @@ big5_questions = [
         id=142,
         text="我容易感到緊張。",
         category="神經質",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"神經質": [5, 4, 3, 2, 1]}
     ),
@@ -1665,7 +1665,7 @@ big5_questions = [
         id=143,
         text="我喜歡嘗試新體驗。",
         category="開放性",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"開放性": [5, 4, 3, 2, 1]}
     ),
@@ -1673,7 +1673,7 @@ big5_questions = [
         id=144,
         text="我對他人很尊重。",
         category="友善性",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"友善性": [5, 4, 3, 2, 1]}
     ),
@@ -1681,7 +1681,7 @@ big5_questions = [
         id=145,
         text="我做事很有目標。",
         category="盡責性",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"盡責性": [5, 4, 3, 2, 1]}
     ),
@@ -1689,7 +1689,7 @@ big5_questions = [
         id=146,
         text="我喜歡成為領導者。",
         category="外向性",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"外向性": [5, 4, 3, 2, 1]}
     ),
@@ -1697,7 +1697,7 @@ big5_questions = [
         id=147,
         text="我容易感到情緒化。",
         category="神經質",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"神經質": [5, 4, 3, 2, 1]}
     ),
@@ -1705,7 +1705,7 @@ big5_questions = [
         id=148,
         text="我喜歡藝術作品。",
         category="開放性",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"開放性": [5, 4, 3, 2, 1]}
     ),
@@ -1713,7 +1713,7 @@ big5_questions = [
         id=149,
         text="我對他人很關心。",
         category="友善性",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"友善性": [5, 4, 3, 2, 1]}
     ),
@@ -1721,7 +1721,7 @@ big5_questions = [
         id=150,
         text="我做事很有紀律。",
         category="盡責性",
-        test_type="Big5",
+        test_type="BIG5",
         options=["非常同意", "同意", "中立", "不同意", "非常不同意"],
         weight={"盡責性": [5, 4, 3, 2, 1]}
     ),
@@ -1732,7 +1732,7 @@ enneagram_questions = [
         id=151,
         text="我重視正確與完美。",
         category="類型1",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型1": 1}
     ),
@@ -1740,7 +1740,7 @@ enneagram_questions = [
         id=152,
         text="我喜歡被他人需要。",
         category="類型2",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型2": 1}
     ),
@@ -1748,7 +1748,7 @@ enneagram_questions = [
         id=153,
         text="我追求成功與成就。",
         category="類型3",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型3": 1}
     ),
@@ -1756,7 +1756,7 @@ enneagram_questions = [
         id=154,
         text="我是一個獨特的人。",
         category="類型4",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型4": 1}
     ),
@@ -1764,7 +1764,7 @@ enneagram_questions = [
         id=155,
         text="我偏好深入思考。",
         category="類型5",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型5": 1}
     ),
@@ -1772,7 +1772,7 @@ enneagram_questions = [
         id=156,
         text="我傾向於擔心未來。",
         category="類型6",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型6": 1}
     ),
@@ -1780,7 +1780,7 @@ enneagram_questions = [
         id=157,
         text="我喜歡新體驗。",
         category="類型7",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型7": 1}
     ),
@@ -1788,7 +1788,7 @@ enneagram_questions = [
         id=158,
         text="我是一個強勢的人。",
         category="類型8",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型8": 1}
     ),
@@ -1796,7 +1796,7 @@ enneagram_questions = [
         id=159,
         text="我重視內在平靜。",
         category="類型9",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型9": 1}
     ),
@@ -1804,7 +1804,7 @@ enneagram_questions = [
         id=160,
         text="我容易批評自己與他人。",
         category="類型1",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型1": 1}
     ),
@@ -1812,7 +1812,7 @@ enneagram_questions = [
         id=161,
         text="我傾向於照顧他人需求。",
         category="類型2",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型2": 1}
     ),
@@ -1820,7 +1820,7 @@ enneagram_questions = [
         id=162,
         text="我重視效率與結果。",
         category="類型3",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型3": 1}
     ),
@@ -1828,7 +1828,7 @@ enneagram_questions = [
         id=163,
         text="我容易被強烈情緒影響。",
         category="類型4",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型4": 1}
     ),
@@ -1836,7 +1836,7 @@ enneagram_questions = [
         id=164,
         text="我喜歡獨處學習。",
         category="類型5",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型5": 1}
     ),
@@ -1844,7 +1844,7 @@ enneagram_questions = [
         id=165,
         text="我重視安全與穩定。",
         category="類型6",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型6": 1}
     ),
@@ -1852,7 +1852,7 @@ enneagram_questions = [
         id=166,
         text="我傾向於樂觀積極。",
         category="類型7",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型7": 1}
     ),
@@ -1860,7 +1860,7 @@ enneagram_questions = [
         id=167,
         text="我喜歡掌控局面。",
         category="類型8",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型8": 1}
     ),
@@ -1868,7 +1868,7 @@ enneagram_questions = [
         id=168,
         text="我傾向於避免衝突。",
         category="類型9",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型9": 1}
     ),
@@ -1876,7 +1876,7 @@ enneagram_questions = [
         id=169,
         text="我認為規則很重要。",
         category="類型1",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型1": 1}
     ),
@@ -1884,7 +1884,7 @@ enneagram_questions = [
         id=170,
         text="我喜歡被他人讚美。",
         category="類型2",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型2": 1}
     ),
@@ -1892,7 +1892,7 @@ enneagram_questions = [
         id=171,
         text="我喜歡成為焦點。",
         category="類型3",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型3": 1}
     ),
@@ -1900,7 +1900,7 @@ enneagram_questions = [
         id=172,
         text="我喜歡藝術創作。",
         category="類型4",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型4": 1}
     ),
@@ -1908,7 +1908,7 @@ enneagram_questions = [
         id=173,
         text="我喜歡分析問題。",
         category="類型5",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型5": 1}
     ),
@@ -1916,7 +1916,7 @@ enneagram_questions = [
         id=174,
         text="我容易懷疑他人。",
         category="類型6",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型6": 1}
     ),
@@ -1924,7 +1924,7 @@ enneagram_questions = [
         id=175,
         text="我喜歡冒險。",
         category="類型7",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型7": 1}
     ),
@@ -1932,7 +1932,7 @@ enneagram_questions = [
         id=176,
         text="我喜歡保護弱者。",
         category="類型8",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型8": 1}
     ),
@@ -1940,7 +1940,7 @@ enneagram_questions = [
         id=177,
         text="我喜歡和諧的環境。",
         category="類型9",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型9": 1}
     ),
@@ -1948,7 +1948,7 @@ enneagram_questions = [
         id=178,
         text="我對錯誤很敏感。",
         category="類型1",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型1": 1}
     ),
@@ -1956,7 +1956,7 @@ enneagram_questions = [
         id=179,
         text="我容易感到被利用。",
         category="類型2",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型2": 1}
     ),
@@ -1964,7 +1964,7 @@ enneagram_questions = [
         id=180,
         text="我喜歡競爭。",
         category="類型3",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型3": 1}
     ),
@@ -1972,7 +1972,7 @@ enneagram_questions = [
         id=181,
         text="我喜歡深度對話。",
         category="類型4",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型4": 1}
     ),
@@ -1980,7 +1980,7 @@ enneagram_questions = [
         id=182,
         text="我喜歡收集資訊。",
         category="類型5",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型5": 1}
     ),
@@ -1988,7 +1988,7 @@ enneagram_questions = [
         id=183,
         text="我喜歡忠誠的朋友。",
         category="類型6",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型6": 1}
     ),
@@ -1996,7 +1996,7 @@ enneagram_questions = [
         id=184,
         text="我喜歡多樣化。",
         category="類型7",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型7": 1}
     ),
@@ -2004,7 +2004,7 @@ enneagram_questions = [
         id=185,
         text="我喜歡直接表達。",
         category="類型8",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型8": 1}
     ),
@@ -2012,7 +2012,7 @@ enneagram_questions = [
         id=186,
         text="我喜歡隨遇而安。",
         category="類型9",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型9": 1}
     ),
@@ -2020,7 +2020,7 @@ enneagram_questions = [
         id=187,
         text="我喜歡改善事物。",
         category="類型1",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型1": 1}
     ),
@@ -2028,7 +2028,7 @@ enneagram_questions = [
         id=188,
         text="我喜歡照顧他人。",
         category="類型2",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型2": 1}
     ),
@@ -2036,7 +2036,7 @@ enneagram_questions = [
         id=189,
         text="我喜歡設定目標。",
         category="類型3",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型3": 1}
     ),
@@ -2044,7 +2044,7 @@ enneagram_questions = [
         id=190,
         text="我喜歡獨特的事物。",
         category="類型4",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型4": 1}
     ),
@@ -2052,7 +2052,7 @@ enneagram_questions = [
         id=191,
         text="我喜歡深入研究。",
         category="類型5",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型5": 1}
     ),
@@ -2060,7 +2060,7 @@ enneagram_questions = [
         id=192,
         text="我喜歡準備充分。",
         category="類型6",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型6": 1}
     ),
@@ -2068,7 +2068,7 @@ enneagram_questions = [
         id=193,
         text="我喜歡有趣的事物。",
         category="類型7",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型7": 1}
     ),
@@ -2076,7 +2076,7 @@ enneagram_questions = [
         id=194,
         text="我喜歡挑戰權威。",
         category="類型8",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型8": 1}
     ),
@@ -2084,7 +2084,7 @@ enneagram_questions = [
         id=195,
         text="我喜歡平靜的生活。",
         category="類型9",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型9": 1}
     ),
@@ -2092,7 +2092,7 @@ enneagram_questions = [
         id=196,
         text="我喜歡公平正義。",
         category="類型1",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型1": 1}
     ),
@@ -2100,7 +2100,7 @@ enneagram_questions = [
         id=197,
         text="我喜歡被需要。",
         category="類型2",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型2": 1}
     ),
@@ -2108,7 +2108,7 @@ enneagram_questions = [
         id=198,
         text="我喜歡高效率。",
         category="類型3",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型3": 1}
     ),
@@ -2116,7 +2116,7 @@ enneagram_questions = [
         id=199,
         text="我喜歡表達情感。",
         category="類型4",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型4": 1}
     ),
@@ -2124,7 +2124,7 @@ enneagram_questions = [
         id=200,
         text="我喜歡獨立思考。",
         category="類型5",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型5": 1}
     ),
@@ -2132,7 +2132,7 @@ enneagram_questions = [
         id=201,
         text="我喜歡可靠的夥伴。",
         category="類型6",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型6": 1}
     ),
@@ -2140,7 +2140,7 @@ enneagram_questions = [
         id=202,
         text="我喜歡自由選擇。",
         category="類型7",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型7": 1}
     ),
@@ -2148,7 +2148,7 @@ enneagram_questions = [
         id=203,
         text="我喜歡保護他人。",
         category="類型8",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型8": 1}
     ),
@@ -2156,7 +2156,7 @@ enneagram_questions = [
         id=204,
         text="我喜歡包容他人。",
         category="類型9",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型9": 1}
     ),
@@ -2164,7 +2164,7 @@ enneagram_questions = [
         id=205,
         text="我喜歡改善自己。",
         category="類型1",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型1": 1}
     ),
@@ -2172,7 +2172,7 @@ enneagram_questions = [
         id=206,
         text="我喜歡幫助他人。",
         category="類型2",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型2": 1}
     ),
@@ -2180,7 +2180,7 @@ enneagram_questions = [
         id=207,
         text="我喜歡成功。",
         category="類型3",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型3": 1}
     ),
@@ -2188,7 +2188,7 @@ enneagram_questions = [
         id=208,
         text="我喜歡深度體驗。",
         category="類型4",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型4": 1}
     ),
@@ -2196,7 +2196,7 @@ enneagram_questions = [
         id=209,
         text="我喜歡知識。",
         category="類型5",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型5": 1}
     ),
@@ -2204,7 +2204,7 @@ enneagram_questions = [
         id=210,
         text="我喜歡安全感。",
         category="類型6",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型6": 1}
     ),
@@ -2212,7 +2212,7 @@ enneagram_questions = [
         id=211,
         text="我喜歡快樂。",
         category="類型7",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型7": 1}
     ),
@@ -2220,7 +2220,7 @@ enneagram_questions = [
         id=212,
         text="我喜歡力量。",
         category="類型8",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型8": 1}
     ),
@@ -2228,7 +2228,7 @@ enneagram_questions = [
         id=213,
         text="我喜歡和平。",
         category="類型9",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型9": 1}
     ),
@@ -2236,7 +2236,7 @@ enneagram_questions = [
         id=214,
         text="我喜歡正確。",
         category="類型1",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型1": 1}
     ),
@@ -2244,7 +2244,7 @@ enneagram_questions = [
         id=215,
         text="我喜歡愛。",
         category="類型2",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型2": 1}
     ),
@@ -2252,7 +2252,7 @@ enneagram_questions = [
         id=216,
         text="我喜歡成就。",
         category="類型3",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型3": 1}
     ),
@@ -2260,7 +2260,7 @@ enneagram_questions = [
         id=217,
         text="我喜歡美。",
         category="類型4",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型4": 1}
     ),
@@ -2268,7 +2268,7 @@ enneagram_questions = [
         id=218,
         text="我喜歡智慧。",
         category="類型5",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型5": 1}
     ),
@@ -2276,7 +2276,7 @@ enneagram_questions = [
         id=219,
         text="我喜歡忠誠。",
         category="類型6",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型6": 1}
     ),
@@ -2284,7 +2284,7 @@ enneagram_questions = [
         id=220,
         text="我喜歡自由。",
         category="類型7",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型7": 1}
     ),
@@ -2292,7 +2292,7 @@ enneagram_questions = [
         id=221,
         text="我喜歡正義。",
         category="類型8",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型8": 1}
     ),
@@ -2300,7 +2300,7 @@ enneagram_questions = [
         id=222,
         text="我喜歡和諧。",
         category="類型9",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型9": 1}
     ),
@@ -2308,7 +2308,7 @@ enneagram_questions = [
         id=223,
         text="我喜歡完美。",
         category="類型1",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型1": 1}
     ),
@@ -2316,7 +2316,7 @@ enneagram_questions = [
         id=224,
         text="我喜歡關懷。",
         category="類型2",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型2": 1}
     ),
@@ -2324,7 +2324,7 @@ enneagram_questions = [
         id=225,
         text="我喜歡效率。",
         category="類型3",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型3": 1}
     ),
@@ -2332,7 +2332,7 @@ enneagram_questions = [
         id=226,
         text="我喜歡獨特。",
         category="類型4",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型4": 1}
     ),
@@ -2340,7 +2340,7 @@ enneagram_questions = [
         id=227,
         text="我喜歡理解。",
         category="類型5",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型5": 1}
     ),
@@ -2348,7 +2348,7 @@ enneagram_questions = [
         id=228,
         text="我喜歡穩定。",
         category="類型6",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型6": 1}
     ),
@@ -2356,7 +2356,7 @@ enneagram_questions = [
         id=229,
         text="我喜歡冒險。",
         category="類型7",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型7": 1}
     ),
@@ -2364,7 +2364,7 @@ enneagram_questions = [
         id=230,
         text="我喜歡控制。",
         category="類型8",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型8": 1}
     ),
@@ -2372,7 +2372,7 @@ enneagram_questions = [
         id=231,
         text="我喜歡接納。",
         category="類型9",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型9": 1}
     ),
@@ -2380,7 +2380,7 @@ enneagram_questions = [
         id=232,
         text="我喜歡改進。",
         category="類型1",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型1": 1}
     ),
@@ -2388,7 +2388,7 @@ enneagram_questions = [
         id=233,
         text="我喜歡支持。",
         category="類型2",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型2": 1}
     ),
@@ -2396,7 +2396,7 @@ enneagram_questions = [
         id=234,
         text="我喜歡表現。",
         category="類型3",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型3": 1}
     ),
@@ -2404,7 +2404,7 @@ enneagram_questions = [
         id=235,
         text="我喜歡感受。",
         category="類型4",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型4": 1}
     ),
@@ -2412,7 +2412,7 @@ enneagram_questions = [
         id=236,
         text="我喜歡觀察。",
         category="類型5",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型5": 1}
     ),
@@ -2420,7 +2420,7 @@ enneagram_questions = [
         id=237,
         text="我喜歡準備。",
         category="類型6",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型6": 1}
     ),
@@ -2428,7 +2428,7 @@ enneagram_questions = [
         id=238,
         text="我喜歡探索。",
         category="類型7",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型7": 1}
     ),
@@ -2436,7 +2436,7 @@ enneagram_questions = [
         id=239,
         text="我喜歡保護。",
         category="類型8",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型8": 1}
     ),
@@ -2444,7 +2444,7 @@ enneagram_questions = [
         id=240,
         text="我喜歡調和。",
         category="類型9",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型9": 1}
     ),
@@ -2452,7 +2452,7 @@ enneagram_questions = [
         id=241,
         text="我喜歡標準。",
         category="類型1",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型1": 1}
     ),
@@ -2460,7 +2460,7 @@ enneagram_questions = [
         id=242,
         text="我喜歡給予。",
         category="類型2",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型2": 1}
     ),
@@ -2468,7 +2468,7 @@ enneagram_questions = [
         id=243,
         text="我喜歡目標。",
         category="類型3",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型3": 1}
     ),
@@ -2476,7 +2476,7 @@ enneagram_questions = [
         id=244,
         text="我喜歡深度。",
         category="類型4",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型4": 1}
     ),
@@ -2484,7 +2484,7 @@ enneagram_questions = [
         id=245,
         text="我喜歡知識。",
         category="類型5",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型5": 1}
     ),
@@ -2492,7 +2492,7 @@ enneagram_questions = [
         id=246,
         text="我喜歡安全。",
         category="類型6",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型6": 1}
     ),
@@ -2500,7 +2500,7 @@ enneagram_questions = [
         id=247,
         text="我喜歡變化。",
         category="類型7",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型7": 1}
     ),
@@ -2508,7 +2508,7 @@ enneagram_questions = [
         id=248,
         text="我喜歡力量。",
         category="類型8",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型8": 1}
     ),
@@ -2516,7 +2516,7 @@ enneagram_questions = [
         id=249,
         text="我喜歡平靜。",
         category="類型9",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型9": 1}
     ),
@@ -2524,7 +2524,7 @@ enneagram_questions = [
         id=250,
         text="我喜歡正確。",
         category="類型1",
-        test_type="Enneagram",
+        test_type="ENNEAGRAM",
         options=["是", "否"],
         weight={"類型1": 1}
     ),
@@ -2546,16 +2546,16 @@ def get_disc_questions() -> List[Question]:
     return get_questions_by_type("DISC")
 
 def get_big5_questions() -> List[Question]:
-    return get_questions_by_type("Big5")
+    return get_questions_by_type("BIG5")
 
 def get_enneagram_questions() -> List[Question]:
-    return get_questions_by_type("Enneagram")
+    return get_questions_by_type("ENNEAGRAM")
 
 def get_question_count_by_type() -> dict:
     return {
         "MBTI": len(get_mbti_questions()),
         "DISC": len(get_disc_questions()),
-        "Big5": len(get_big5_questions()),
-        "Enneagram": len(get_enneagram_questions()),
+        "BIG5": len(get_big5_questions()),
+        "ENNEAGRAM": len(get_enneagram_questions()),
         "Total": len(all_questions)
     }

@@ -1,0 +1,38 @@
+# FastAPI 和相關依賴
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+pydantic==2.5.0
+pydantic-settings==2.1.0
+
+# 資料庫相關
+sqlalchemy==2.0.23
+alembic==1.13.1
+sqlite3
+
+# HTTP 客戶端
+requests==2.31.0
+httpx==0.25.2
+
+# 資料處理
+python-multipart==0.0.6
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+
+# 開發工具
+pytest==7.4.3
+pytest-asyncio==0.21.1
+black==23.11.0
+isort==5.12.0
+flake8==6.1.0
+
+# 日誌和監控
+loguru==0.7.2
+
+# 環境變數
+python-dotenv==1.0.0
+
+# 時間處理
+python-dateutil==2.8.2
+
+# JSON 處理
+orjson==3.9.10 

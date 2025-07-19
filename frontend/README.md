@@ -1,164 +1,256 @@
-# 綜合人格特質分析前端
+# 前端應用 - 綜合人格特質分析系統
 
-這是一個現代化的 React 前端應用程式，提供四種專業人格測驗的互動式介面。
-
-## 🎨 設計特色
-
-- **活潑但專業的設計風格**
-- **卡片式測驗展示**
-- **響應式設計**
-- **流暢的動畫效果**
-- **直觀的用戶體驗**
+基於 React + TypeScript 的現代化前端應用，提供直觀易用的人格測驗介面。
 
 ## 🚀 功能特色
 
-### 首頁
-- 四種測驗的卡片式展示
-- 每種測驗的特色介紹
-- 漸進式動畫效果
-- 響應式網格佈局
+### 核心功能
+- **多種測驗類型**：MBTI、DISC、Enneagram 人格測驗
+- **智能時間記憶**：暫停/恢復功能，自動保存進度
+- **即時進度追蹤**：視覺化進度條和計時器
+- **響應式設計**：支援桌面和移動設備
+- **現代化UI**：基於 Tailwind CSS 的美觀介面
 
-### 測驗頁面
-- 進度條顯示
-- 計時器功能
-- 題目導航
-- 答案選擇介面
-- 完成度檢查
+### 技術特色
+- **React 18**：最新的 React 版本
+- **TypeScript**：類型安全的 JavaScript
+- **Tailwind CSS**：實用優先的 CSS 框架
+- **React Router**：客戶端路由
+- **Axios**：HTTP 客戶端
 
-### 報告頁面
-- 詳細的分析結果
-- 視覺化統計
-- 建議和推薦
-- 相關測驗推薦
+## 📁 專案結構
 
-## 🛠️ 技術棧
+```
+frontend/
+├── public/                  # 靜態資源
+│   ├── index.html          # HTML 模板
+│   └── favicon.ico         # 網站圖標
+├── src/                    # 主要程式碼
+│   ├── components/         # React 組件
+│   │   ├── Header.tsx      # 頁面標題組件
+│   │   └── TestCard.tsx    # 測驗卡片組件
+│   ├── pages/              # 頁面組件
+│   │   ├── HomePage.tsx    # 首頁
+│   │   ├── TestPage.tsx    # 測驗頁面
+│   │   └── ReportPage.tsx  # 報告頁面
+│   ├── services/           # API 服務
+│   │   └── api.ts          # API 調用函數
+│   ├── contexts/           # React Context
+│   │   └── TestContext.tsx # 測驗狀態管理
+│   ├── App.tsx             # 主應用組件
+│   └── index.tsx           # 應用入口
+├── package.json            # 依賴配置
+├── tsconfig.json           # TypeScript 配置
+├── tailwind.config.js      # Tailwind CSS 配置
+└── postcss.config.js       # PostCSS 配置
+```
 
-- **React 18** - 前端框架
-- **TypeScript** - 類型安全
-- **Tailwind CSS** - 樣式框架
-- **React Router** - 路由管理
-- **Axios** - HTTP 客戶端
-- **Lucide React** - 圖標庫
+## 🛠️ 快速開始
 
-## 📦 安裝與運行
-
-### 前置需求
+### 環境要求
 - Node.js 16+
 - npm 或 yarn
 
-### 安裝依賴
+### 1. 安裝依賴
 ```bash
 npm install
+# 或
+yarn install
 ```
 
-### 開發模式
+### 2. 啟動開發服務器
 ```bash
 npm start
+# 或
+yarn start
 ```
 
-### 建置生產版本
+### 3. 訪問應用
+- 開發環境：http://localhost:3000
+- 確保後端服務運行在 http://localhost:8000
+
+## 🧪 測試
+
+### 運行測試
+```bash
+npm test
+# 或
+yarn test
+```
+
+### 構建生產版本
 ```bash
 npm run build
+# 或
+yarn build
 ```
-
-## 🎯 測驗類型
-
-### MBTI 人格類型
-- 16種人格類型分析
-- 認知偏好評估
-- 職業發展建議
-
-### DISC 行為風格
-- 4種行為風格
-- 溝通方式分析
-- 團隊合作建議
-
-### 五大人格特質
-- 科學化評估
-- 5個核心特質
-- 個人成長建議
-
-### 九型人格
-- 9種人格類型
-- 核心動機分析
-- 成長方向指引
-
-## 🎨 設計系統
-
-### 色彩方案
-- **Primary**: 藍色系 (#3b82f6)
-- **Secondary**: 紫色系 (#d946ef)
-- **Success**: 綠色系 (#22c55e)
-- **Warning**: 黃色系 (#f59e0b)
-
-### 動畫效果
-- 淡入動畫 (fade-in)
-- 滑入動畫 (slide-up)
-- 彈跳動畫 (bounce-in)
-- 懸停效果
-
-### 響應式設計
-- 手機端優先設計
-- 平板適配
-- 桌面端優化
 
 ## 🔧 開發指南
 
-### 專案結構
-```
-src/
-├── components/     # 可重用組件
-├── pages/         # 頁面組件
-├── services/      # API 服務
-├── contexts/      # React Context
-├── styles/        # 樣式檔案
-└── types/         # TypeScript 類型定義
+### 時間記憶功能
+
+前端實現了簡化的時間記憶機制：
+
+```typescript
+// 頁面離開時保存時間
+const handleBeforeUnload = (event: BeforeUnloadEvent) => {
+  if (sessionId) {
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', `/api/v1/sessions/${sessionId}/pause`, false);
+    xhr.send(JSON.stringify({ elapsed_seconds: timeSpent }));
+  }
+};
+
+// 頁面顯示時恢復時間
+const handleVisibilityChange = async () => {
+  if (!document.hidden && sessionId) {
+    const sessionData = await apiService.getLatestSession(userId, testType);
+    setTimeSpent(sessionData.elapsed_seconds);
+  }
+};
 ```
 
-### 組件開發
-- 使用 TypeScript 進行類型檢查
-- 遵循 React Hooks 最佳實踐
-- 使用 Tailwind CSS 進行樣式設計
-- 保持組件的可重用性
+### 狀態管理
 
-### API 整合
-- 使用 Axios 進行 HTTP 請求
-- 統一的錯誤處理
-- 類型安全的 API 調用
+使用 React Context 管理測驗狀態：
+
+```typescript
+const TestContext = createContext<TestContextType | undefined>(undefined);
+
+export const TestProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [currentTest, setCurrentTest] = useState<TestType | null>(null);
+  const [testProgress, setTestProgress] = useState<TestProgress | null>(null);
+  
+  return (
+    <TestContext.Provider value={{ currentTest, setCurrentTest, testProgress, setTestProgress }}>
+      {children}
+    </TestContext.Provider>
+  );
+};
+```
+
+### API 服務
+
+封裝的 API 調用函數：
+
+```typescript
+export const apiService = {
+  getQuestions: (testType: string) => api.get(`/api/v1/questions/${testType}`),
+  createSession: (userId: string, testType: string, questionIds: number[]) => 
+    api.post('/api/v1/sessions/create', { user_id: userId, test_type: testType, question_ids: questionIds }),
+  pauseSession: (sessionId: number, data?: { elapsed_seconds: number }) => 
+    api.post(`/api/v1/sessions/${sessionId}/pause`, data),
+  // ... 其他 API 函數
+};
+```
+
+## 🎨 UI 組件
+
+### 測驗卡片組件
+```typescript
+interface TestCardProps {
+  testType: TestType;
+  title: string;
+  description: string;
+  questionCount: number;
+  estimatedTime: string;
+  onStart: () => void;
+}
+```
+
+### 進度條組件
+```typescript
+const ProgressBar: React.FC<{ progress: number }> = ({ progress }) => (
+  <div className="w-full bg-gray-200 rounded-full h-2">
+    <div 
+      className="bg-gradient-to-r from-primary-500 to-secondary-500 h-2 rounded-full transition-all duration-300"
+      style={{ width: `${progress}%` }}
+    />
+  </div>
+);
+```
 
 ## 🚀 部署
 
-### 建置
+### 生產構建
 ```bash
 npm run build
 ```
 
-### 部署到靜態主機
-將 `build` 目錄的內容部署到任何靜態檔案主機。
+### 靜態文件部署
+構建後的 `build/` 目錄包含所有靜態文件，可以部署到：
+- Netlify
+- Vercel
+- GitHub Pages
+- 任何靜態文件服務器
 
-### 環境變數
-```env
-REACT_APP_API_URL=http://localhost:8000
+### Docker 部署
+```dockerfile
+FROM node:16-alpine
+
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci --only=production
+
+COPY . .
+RUN npm run build
+
+EXPOSE 3000
+CMD ["npm", "start"]
 ```
 
-## 📝 開發筆記
+## 🔧 配置
 
-### 設計原則
-1. **用戶優先**: 以用戶體驗為核心
-2. **一致性**: 保持設計和交互的一致性
-3. **可訪問性**: 確保所有用戶都能使用
-4. **效能**: 優化載入速度和響應性
+### 環境變數
+創建 `.env` 檔案：
+```env
+REACT_APP_API_URL=http://localhost:8000
+REACT_APP_ENVIRONMENT=development
+```
 
-### 最佳實踐
-- 使用 React.memo 優化渲染效能
-- 實作錯誤邊界處理異常
-- 使用 React.lazy 進行程式碼分割
-- 保持組件的單一職責
+### Tailwind CSS 配置
+```javascript
+module.exports = {
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  theme: {
+    extend: {
+      colors: {
+        primary: { 500: '#3B82F6' },
+        secondary: { 500: '#8B5CF6' },
+      }
+    }
+  },
+  plugins: [],
+}
+```
+
+## 📱 響應式設計
+
+應用支援多種設備尺寸：
+- **桌面**：完整功能，最佳體驗
+- **平板**：適配觸控操作
+- **手機**：垂直佈局，觸控優化
+
+## 🔒 安全性
+
+- API 請求驗證
+- 輸入資料清理
+- XSS 防護
+- CSRF 保護
 
 ## 🤝 貢獻
 
-歡迎提交 Issue 和 Pull Request！
+1. Fork 專案
+2. 創建功能分支
+3. 提交更改
+4. 推送到分支
+5. 開啟 Pull Request
 
 ## 📄 授權
 
-MIT License 
+本專案採用 MIT 授權條款
+
+---
+
+**最後更新**：2025-07-19  
+**版本**：v1.0.0 

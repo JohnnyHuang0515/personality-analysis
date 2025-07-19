@@ -23,6 +23,7 @@ class TestSubmission(BaseModel):
     user_id: str
     test_type: str
     answers: List[Dict[str, Any]]  # [{"question_id": 1, "answer": "A"}, ...]
+    session_id: Optional[int] = None
 
 class TestSubmissionResponse(BaseModel):
     user_id: str

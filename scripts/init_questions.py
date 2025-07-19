@@ -38,8 +38,10 @@ def generate_question(test_type, idx):
     question_text = f"{template}（題號{idx+1}）"
     return TestQuestion(
         test_type=test_type,
-        question_text=question_text,
-        options=json.dumps(option_pair)
+        text=question_text,
+        category=test_type,
+        options=json.dumps(option_pair),
+        weight=json.dumps({"A": {"score": 1}, "B": {"score": 1}})
     )
 
 def main():

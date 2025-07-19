@@ -9,10 +9,16 @@ from app.services.analysis import PersonalityAnalyzer
 router = APIRouter()
 analyzer = PersonalityAnalyzer()
 
-@router.get("/reports/{user_id}/{test_type}")
-def generate_report(user_id: str, test_type: str):
-    """生成特定測驗類型的報告"""
+@router.post("/reports/generate")
+def generate_report_post(data: Dict[str, Any]):
+    """生成特定測驗類型的報告 (POST 方法)"""
     try:
+        user_id = data.get("user_id")
+        test_type = data.get("test_type")
+        
+        if not user_id or not test_type:
+            raise HTTPException(status_code=400, detail="缺少必要參數")
+        
         # 檢查用戶是否有該測驗的答案
         conn = sqlite3.connect('personality_test.db')
         cursor = conn.cursor()
@@ -62,6 +68,39 @@ def generate_report(user_id: str, test_type: str):
         
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"生成報告失敗：{str(e)}")
+
+@router.get("/reports/{user_id}/{test_type}")
+def get_user_report(user_id: str, test_type: str):
+    """取得用戶特定測驗類型的報告"""
+    try:
+        conn = sqlite3.connect('personality_test.db')
+        cursor = conn.cursor()
+        
+        cursor.execute("""
+            SELECT result, created_at
+            FROM test_report
+            WHERE user_id = ? AND test_type = ?
+            ORDER BY created_at DESC
+            LIMIT 1
+        """, (user_id, test_type))
+        
+        report_row = cursor.fetchone()
+        conn.close()
+        
+        if not report_row:
+            raise HTTPException(status_code=404, detail=f"找不到用戶 {user_id} 的 {test_type} 報告")
+        
+        result, created_at = report_row
+        
+        return {
+            "user_id": user_id,
+            "test_type": test_type,
+            "report": json.loads(result),
+            "created_at": created_at
+        }
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"查詢報告失敗：{str(e)}")
 
 @router.get("/reports/{user_id}")
 def get_user_reports(user_id: str):
