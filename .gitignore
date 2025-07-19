@@ -1,4 +1,10 @@
-# Python
+# ===========================================
+# 綜合人格特質分析系統 - .gitignore
+# ===========================================
+
+# ===========================================
+# Python 相關
+# ===========================================
 __pycache__/
 *.py[cod]
 *.pyo
@@ -6,46 +12,370 @@ __pycache__/
 *.pyc
 *.pdb
 *.egg-info/
+*.egg
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.manifest
+*.spec
+pip-log.txt
+pip-delete-this-directory.txt
 
+# ===========================================
+# 虛擬環境
+# ===========================================
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+.env/
+
+# ===========================================
+# 套件管理
+# ===========================================
 # Poetry
 poetry.lock
+# Pip
+pip-log.txt
+pip-delete-this-directory.txt
+# Pipenv
+Pipfile.lock
 
-# VSCode
-.vscode/
-
-# Jupyter
-.ipynb_checkpoints/
-
-# pytest
-.pytest_cache/
-
-# SQLite/DB
+# ===========================================
+# 資料庫檔案
+# ===========================================
 *.db
 *.sqlite3
+*.sqlite
+*.db-journal
+*.db-wal
+*.db-shm
 
-# dotenv
+# ===========================================
+# 環境變數
+# ===========================================
 .env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 .env.*
 
-# Node/React
+# ===========================================
+# Node.js / React 相關
+# ===========================================
+# Dependencies
 node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Production builds
 build/
 dist/
-*.log
+.next/
+out/
 
-# Mac/Linux/Windows
-.DS_Store
-Thumbs.db
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
 
-# Alembic
-alembic.ini
-migrations/versions/
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
 
-# Others
-*.bak
+# nyc test coverage
+.nyc_output
+
+# Dependency directories
+jspm_packages/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# parcel-bundler cache (https://parceljs.org/)
+.cache
+.parcel-cache
+
+# ===========================================
+# IDE 和編輯器
+# ===========================================
+# VSCode
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
 *.swp
 *.swo
+*~
 
-# Ignore frontend build artifacts
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# ===========================================
+# 作業系統檔案
+# ===========================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.tmp
+*.temp
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ===========================================
+# 測試和快取
+# ===========================================
+# Python testing
+.pytest_cache/
+.tox/
+.coverage
+htmlcov/
+.coverage.*
+coverage.xml
+*.cover
+.hypothesis/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# ===========================================
+# 日誌檔案
+# ===========================================
+*.log
+logs/
+*.log.*
+
+# ===========================================
+# 備份檔案
+# ===========================================
+*.bak
+*.backup
+*.old
+*.orig
+*.save
+*.swp
+*.swo
+*~
+
+# ===========================================
+# 專案特定檔案
+# ===========================================
+# 資料庫遷移（保留結構，忽略版本檔案）
+migrations/versions/
+alembic.ini
+
+# 前端建置檔案
 frontend/build/
-frontend/dist/ 
+frontend/dist/
+frontend/.next/
+frontend/out/
+
+# 後端建置檔案
+backend/build/
+backend/dist/
+
+# 測試報告
+test-results/
+coverage-reports/
+
+# 臨時檔案
+temp/
+tmp/
+.tmp/
+
+# ===========================================
+# 敏感資訊
+# ===========================================
+# API Keys
+api_keys.txt
+secrets.json
+config.json
+
+# 個人設定
+personal_config.py
+local_settings.py
+
+# ===========================================
+# 其他
+# ===========================================
+# 壓縮檔案
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# 二進制檔案
+*.exe
+*.dll
+*.so
+*.dylib
+
+# 大型檔案
+*.mp4
+*.avi
+*.mov
+*.wmv
+*.flv
+*.webm
+*.mkv
+*.m4v
+*.3gp
+*.mp3
+*.wav
+*.flac
+*.aac
+*.ogg
+*.wma
+*.pdf
+*.doc
+*.docx
+*.xls
+*.xlsx
+*.ppt
+*.pptx
+
+# ===========================================
+# 開發工具
+# ===========================================
+# ESLint
+.eslintcache
+
+# Prettier
+.prettierignore
+
+# TypeScript
+*.tsbuildinfo
+
+# ===========================================
+# 部署相關
+# ===========================================
+# Docker
+.dockerignore
+Dockerfile.prod
+
+# Kubernetes
+*.yaml.bak
+*.yml.bak
+
+# ===========================================
+# 專案備註
+# ===========================================
+# 注意：以下檔案應該被提交到 Git：
+# - 所有 .py 檔案（除了 __pycache__）
+# - 所有 .tsx, .ts, .jsx, .js 檔案
+# - 所有 .json 檔案（除了 node_modules 和 package-lock.json）
+# - 所有 .md 檔案
+# - 所有 .yml, .yaml 檔案
+# - 所有 .txt 檔案
+# - 所有 .css, .scss 檔案
+# - 所有圖片檔案（.png, .jpg, .jpeg, .gif, .svg, .ico）
+# - 所有字體檔案（.woff, .woff2, .ttf, .eot）
+# - 所有音訊檔案（.wav, .mp3, .ogg）
+# - 所有影片檔案（.mp4, .webm）
+# - 所有文件檔案（.pdf, .doc, .docx）
+# - 所有表格檔案（.xls, .xlsx）
+# - 所有簡報檔案（.ppt, .pptx）
+# - 所有壓縮檔案（.zip, .tar.gz, .rar, .7z）
+# - 所有二進制檔案（.exe, .dll, .so, .dylib）
+# - 所有大型檔案（> 100MB）
+# - 所有敏感資訊檔案（包含密碼、API 金鑰等）
+# - 所有個人設定檔案
+# - 所有臨時檔案
+# - 所有快取檔案
+# - 所有日誌檔案
+# - 所有備份檔案
+# - 所有建置檔案
+# - 所有測試報告檔案
+# - 所有部署相關檔案
+# - 所有開發工具設定檔案
+# - 所有作業系統檔案
+# - 所有 IDE 設定檔案
+# - 所有虛擬環境檔案
+# - 所有套件管理檔案
+# - 所有資料庫檔案
+# - 所有環境變數檔案 

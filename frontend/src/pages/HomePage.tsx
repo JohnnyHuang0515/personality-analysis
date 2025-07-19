@@ -33,7 +33,6 @@ const HomePage: React.FC = () => {
       description: '邁爾斯-布里格斯類型指標,了解你的認知偏好和行為模式。',
       icon: <Brain className="w-6 h-6" />,
       colorTheme: 'blue' as const,
-      questionCount: 80,
       features: ['16種人格類型', '認知偏好分析', '職業發展建議'],
       estimatedTime: '20-25 分鐘'
     },
@@ -43,7 +42,6 @@ const HomePage: React.FC = () => {
       description: 'DISC 行為評估,分析你的溝通風格和工作偏好。',
       icon: <Target className="w-6 h-6" />,
       colorTheme: 'green' as const,
-      questionCount: 80,
       features: ['4種行為風格', '溝通方式分析', '團隊合作建議'],
       estimatedTime: '15-20 分鐘'
     },
@@ -53,7 +51,6 @@ const HomePage: React.FC = () => {
       description: '大五人格模型,科學化的人格特質評估。',
       icon: <Zap className="w-6 h-6" />,
       colorTheme: 'purple' as const,
-      questionCount: 80,
       features: ['5個核心特質', '科學化評估', '個人成長建議'],
       estimatedTime: '18-25 分鐘'
     },
@@ -63,7 +60,6 @@ const HomePage: React.FC = () => {
       description: '九型人格學,深入探索你的核心動機和恐懼。',
       icon: <Heart className="w-6 h-6" />,
       colorTheme: 'pink' as const,
-      questionCount: 60,
       features: ['9種人格類型', '核心動機分析', '成長方向指引'],
       estimatedTime: '15-20 分鐘'
     }
@@ -83,7 +79,9 @@ const HomePage: React.FC = () => {
 
   const getTestProgress = (testId: string) => {
     if (state.currentTest === testId && !state.isCompleted) {
-      return (Object.keys(state.answers).length / state.totalQuestions) * 100;
+      // 固定使用30題計算進度
+      const FIXED_TOTAL_QUESTIONS = 30;
+      return (Object.keys(state.answers).length / FIXED_TOTAL_QUESTIONS) * 100;
     }
     return undefined;
   };
@@ -138,7 +136,6 @@ const HomePage: React.FC = () => {
               status={getTestStatus(test.id)}
               progress={getTestProgress(test.id)}
               onClick={() => handleTestClick(test.id)}
-              questionCount={test.questionCount}
               features={test.features}
               estimatedTime={test.estimatedTime}
               colorTheme={test.colorTheme}

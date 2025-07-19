@@ -15,8 +15,19 @@ def submit_test_answers(submission: TestSubmission):
         conn = sqlite3.connect('personality_test.db')
         cursor = conn.cursor()
         
+        # 前端測驗類型到後端測驗類型的映射（現在直接使用實際的測驗類型）
+        test_type_mapping = {
+            "mbti": "MBTI",
+            "disc": "DISC", 
+            "big5": "BIG5",
+            "enneagram": "enneagram"
+        }
+        
+        # 獲取實際的後端測驗類型
+        backend_test_type = test_type_mapping.get(submission.test_type, submission.test_type)
+        
         # 檢查該測驗類型的總題目數
-        cursor.execute("SELECT COUNT(*) FROM test_question WHERE test_type = ?", (submission.test_type,))
+        cursor.execute("SELECT COUNT(*) FROM test_question WHERE test_type = ?", (backend_test_type,))
         total_questions = cursor.fetchone()[0]
         
         if total_questions == 0:

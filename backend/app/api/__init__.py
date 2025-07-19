@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from app.api import questions, answers, sessions
+from app.api import questions, answers, sessions, reports
 
 router = APIRouter()
 
@@ -7,3 +7,4 @@ router = APIRouter()
 router.include_router(questions.router, prefix="/api/v1", tags=["questions"])
 router.include_router(answers.router, prefix="/api/v1", tags=["answers"])
 router.include_router(sessions.router, prefix="/api/v1", tags=["sessions"])
+router.include_router(reports.router, prefix="/api/v1", tags=["reports"])

@@ -33,21 +33,23 @@ def get_test_types():
         raise HTTPException(status_code=500, detail=f"查詢失敗：{str(e)}")
 
 @router.get("/questions/{test_type}")
-def get_questions_by_type(test_type: str):
-    """根據測驗類型取得題庫（隨機選取30題）"""
+def get_questions_by_type(test_type: str, random: bool = False):
+    """根據測驗類型取得題庫（預設固定選取前30題，random=True時隨機選取）"""
     try:
-        # 轉換為大寫以匹配資料庫中的格式
-        test_type_upper = test_type.upper()
-        
-        # 直接使用 SQLite 查詢，隨機選取30題
         conn = sqlite3.connect('personality_test.db')
         cursor = conn.cursor()
         
-        cursor.execute("SELECT id, text, category, test_type, options, weight FROM test_question WHERE test_type = ? ORDER BY RANDOM() LIMIT 30", (test_type_upper,))
+        if random:
+            # 隨機選取30題
+            cursor.execute("SELECT id, text, category, test_type, options, weight FROM test_question WHERE test_type = ? ORDER BY RANDOM() LIMIT 30", (test_type,))
+        else:
+            # 固定選取前30題（按ID排序）
+            cursor.execute("SELECT id, text, category, test_type, options, weight FROM test_question WHERE test_type = ? ORDER BY id LIMIT 30", (test_type,))
+        
         questions = cursor.fetchall()
         
         if not questions:
-            raise HTTPException(status_code=404, detail=f"找不到 {test_type_upper} 類型的題目")
+            raise HTTPException(status_code=404, detail=f"找不到 {test_type} 類型的題目")
         
         # 轉換為 response 格式
         question_list = []
@@ -66,7 +68,7 @@ def get_questions_by_type(test_type: str):
         return {
             "questions": question_list,
             "total": len(question_list),
-            "test_type": test_type_upper
+            "test_type": test_type
         }
         
     except Exception as e:
@@ -78,17 +80,14 @@ def get_questions_by_type(test_type: str):
 def get_random_question(test_type: str):
     """取得指定類型的隨機題目"""
     try:
-        # 轉換為大寫以匹配資料庫中的格式
-        test_type_upper = test_type.upper()
-        
         conn = sqlite3.connect('personality_test.db')
         cursor = conn.cursor()
         
-        cursor.execute("SELECT id, text, category, test_type, options, weight FROM test_question WHERE test_type = ? ORDER BY RANDOM() LIMIT 1", (test_type_upper,))
+        cursor.execute("SELECT id, text, category, test_type, options, weight FROM test_question WHERE test_type = ? ORDER BY RANDOM() LIMIT 1", (test_type,))
         question = cursor.fetchone()
         
         if not question:
-            raise HTTPException(status_code=404, detail=f"找不到 {test_type_upper} 類型的題目")
+            raise HTTPException(status_code=404, detail=f"找不到 {test_type} 類型的題目")
         
         conn.close()
         

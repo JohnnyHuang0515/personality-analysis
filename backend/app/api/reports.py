@@ -4,10 +4,10 @@ import json
 from datetime import datetime
 from typing import Dict, Any, Optional, List
 
-from app.services.analysis import PersonalityAnalyzer
+from app.services.corrected_analysis import CorrectedPersonalityAnalyzer
 
 router = APIRouter()
-analyzer = PersonalityAnalyzer()
+analyzer = CorrectedPersonalityAnalyzer()
 
 @router.post("/reports/generate")
 def generate_report_post(data: Dict[str, Any]):
@@ -19,6 +19,17 @@ def generate_report_post(data: Dict[str, Any]):
         if not user_id or not test_type:
             raise HTTPException(status_code=400, detail="缺少必要參數")
         
+        # 前端測驗類型到後端測驗類型的映射（現在直接使用實際的測驗類型）
+        test_type_mapping = {
+            "mbti": "MBTI",
+            "disc": "DISC", 
+            "big5": "BIG5",
+            "enneagram": "enneagram"
+        }
+        
+        # 獲取實際的後端測驗類型
+        backend_test_type = test_type_mapping.get(test_type, test_type)
+        
         # 檢查用戶是否有該測驗的答案
         conn = sqlite3.connect('personality_test.db')
         cursor = conn.cursor()
@@ -27,7 +38,7 @@ def generate_report_post(data: Dict[str, Any]):
             SELECT COUNT(*) FROM test_answer ta
             JOIN test_question tq ON ta.question_id = tq.id
             WHERE ta.user_id = ? AND tq.test_type = ?
-        """, (user_id, test_type))
+        """, (user_id, backend_test_type))
         
         answer_count = cursor.fetchone()[0]
         conn.close()
@@ -35,33 +46,74 @@ def generate_report_post(data: Dict[str, Any]):
         if answer_count == 0:
             raise HTTPException(status_code=404, detail=f"找不到用戶 {user_id} 的 {test_type} 測驗答案")
         
-        # 根據測驗類型生成報告
-        if test_type == "MBTI":
+        # 根據用戶答案的類別判斷具體測驗類型
+        conn = sqlite3.connect('personality_test.db')
+        cursor = conn.cursor()
+        
+        cursor.execute("""
+            SELECT tq.category, COUNT(*) as count
+            FROM test_answer ta
+            JOIN test_question tq ON ta.question_id = tq.id
+            WHERE ta.user_id = ? AND tq.test_type = ?
+            GROUP BY tq.category
+            ORDER BY count DESC
+        """, (user_id, backend_test_type))
+        
+        category_counts = cursor.fetchall()
+        conn.close()
+        
+        # 根據用戶實際回答的類別判斷測驗類型
+        categories = [cat for cat, count in category_counts]
+        print(f"Debug: User {user_id} answered categories: {categories}")  # 調試信息
+        
+        # 定義各測驗類型的類別映射
+        mbti_categories = {'E', 'I', 'S', 'N', 'T', 'F', 'J', 'P'}
+        disc_categories = {'D', 'I', 'S', 'C'}
+        big5_categories = {'O', 'C', 'E', 'A', 'N'}
+        enneagram_categories = {str(i) for i in range(1, 10)}
+        
+        # 判斷測驗類型（基於主要類別）
+        # 計算每個測驗類型的匹配度
+        mbti_match = len([cat for cat in categories if cat in mbti_categories])
+        disc_match = len([cat for cat in categories if cat in disc_categories])
+        big5_match = len([cat for cat in categories if cat in big5_categories])
+        enneagram_match = len([cat for cat in categories if cat in enneagram_categories])
+        
+        print(f"Debug: 匹配度 - MBTI: {mbti_match}, DISC: {disc_match}, BIG5: {big5_match}, ENNEAGRAM: {enneagram_match}")
+        
+        # 選擇匹配度最高的測驗類型
+        if mbti_match > 0 and mbti_match >= max(disc_match, big5_match, enneagram_match):
+            actual_test_type = "MBTI"
             report = analyzer.analyze_mbti(user_id)
-        elif test_type == "DISC":
+        elif disc_match > 0 and disc_match >= max(big5_match, enneagram_match):
+            actual_test_type = "DISC"
             report = analyzer.analyze_disc(user_id)
-        elif test_type == "Big5":
+        elif big5_match > 0 and big5_match >= enneagram_match:
+            actual_test_type = "BIG5"
             report = analyzer.analyze_big5(user_id)
-        elif test_type == "Enneagram":
+        elif enneagram_match > 0:
+            actual_test_type = "ENNEAGRAM"
             report = analyzer.analyze_enneagram(user_id)
         else:
-            raise HTTPException(status_code=400, detail=f"不支援的測驗類型：{test_type}")
+            # 如果無法判斷，使用預設
+            actual_test_type = "MBTI"
+            report = analyzer.analyze_mbti(user_id)
         
-        # 儲存報告到資料庫
+        # 儲存報告到資料庫（使用實際測驗類型）
         conn = sqlite3.connect('personality_test.db')
         cursor = conn.cursor()
         
         cursor.execute("""
             INSERT OR REPLACE INTO test_report (user_id, test_type, result, created_at)
             VALUES (?, ?, ?, ?)
-        """, (user_id, test_type, json.dumps(report), datetime.now()))
+        """, (user_id, actual_test_type, json.dumps(report), datetime.now()))
         
         conn.commit()
         conn.close()
         
         return {
             "user_id": user_id,
-            "test_type": test_type,
+            "test_type": actual_test_type,
             "report": report,
             "generated_at": datetime.now().isoformat()
         }
@@ -76,6 +128,7 @@ def get_user_report(user_id: str, test_type: str):
         conn = sqlite3.connect('personality_test.db')
         cursor = conn.cursor()
         
+        # 首先嘗試直接查詢
         cursor.execute("""
             SELECT result, created_at
             FROM test_report
@@ -85,6 +138,37 @@ def get_user_report(user_id: str, test_type: str):
         """, (user_id, test_type))
         
         report_row = cursor.fetchone()
+        
+        # 如果找不到，嘗試根據前端測驗類型映射到實際測驗類型
+        if not report_row:
+            # 前端測驗類型到實際測驗類型的映射
+            test_type_mapping = {
+                "behavior": ["MBTI", "DISC", "BIG5"],  # behavior 可能對應多種測驗
+                "motivation": ["ENNEAGRAM"],  # motivation 主要對應九型人格
+                "mbti": ["MBTI"],  # 直接映射
+                "disc": ["DISC", "MBTI"],  # disc 可能被識別為 MBTI
+                "big5": ["BIG5", "MBTI"],  # big5 可能被識別為 MBTI
+                "enneagram": ["ENNEAGRAM"]  # 直接映射
+            }
+            
+            possible_types = test_type_mapping.get(test_type, [test_type])
+            
+            # 嘗試查找可能的測驗類型
+            for actual_type in possible_types:
+                cursor.execute("""
+                    SELECT result, created_at
+                    FROM test_report
+                    WHERE user_id = ? AND test_type = ?
+                    ORDER BY created_at DESC
+                    LIMIT 1
+                """, (user_id, actual_type))
+                
+                report_row = cursor.fetchone()
+                if report_row:
+                    # 找到報告，使用實際的測驗類型
+                    test_type = actual_type
+                    break
+        
         conn.close()
         
         if not report_row:

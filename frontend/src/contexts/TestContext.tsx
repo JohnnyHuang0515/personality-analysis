@@ -7,7 +7,6 @@ export interface TestState {
   isCompleted: boolean;
   userId: string;
   totalQuestions: number;
-  startTime: number | null;
 }
 
 type TestAction =
@@ -26,7 +25,6 @@ const initialState: TestState = {
   isCompleted: false,
   userId: '',
   totalQuestions: 0,
-  startTime: null,
 };
 
 // localStorage 鍵名
@@ -68,7 +66,6 @@ function testReducer(state: TestState, action: TestAction): TestState {
         isCompleted: false,
         userId: action.payload.userId,
         totalQuestions: action.payload.totalQuestions,
-        startTime: Date.now(),
       };
       break;
     
@@ -128,6 +125,8 @@ interface TestContextType {
   hasUnfinishedTest: () => boolean;
   getProgressPercentage: () => number;
   getAnsweredCount: () => number;
+  getCurrentQuestionAnswer: (questionId: number) => string | undefined;
+  isQuestionAnswered: (questionId: number) => boolean;
 }
 
 const TestContext = createContext<TestContextType | undefined>(undefined);
@@ -150,13 +149,25 @@ export function TestProvider({ children }: { children: ReactNode }) {
 
   // 計算進度百分比
   const getProgressPercentage = (): number => {
-    if (state.totalQuestions === 0) return 0;
-    return Math.round((Object.keys(state.answers).length / state.totalQuestions) * 100);
+    // 固定使用30題計算進度
+    const FIXED_TOTAL_QUESTIONS = 30;
+    const answeredCount = Object.keys(state.answers).length;
+    return Math.round((answeredCount / FIXED_TOTAL_QUESTIONS) * 100);
   };
 
   // 獲取已回答題目數量
   const getAnsweredCount = (): number => {
     return Object.keys(state.answers).length;
+  };
+
+  // 獲取當前題目的答案
+  const getCurrentQuestionAnswer = (questionId: number): string | undefined => {
+    return state.answers[questionId];
+  };
+
+  // 檢查題目是否已回答
+  const isQuestionAnswered = (questionId: number): boolean => {
+    return questionId in state.answers;
   };
 
   const contextValue: TestContextType = {
@@ -165,6 +176,8 @@ export function TestProvider({ children }: { children: ReactNode }) {
     hasUnfinishedTest,
     getProgressPercentage,
     getAnsweredCount,
+    getCurrentQuestionAnswer,
+    isQuestionAnswered,
   };
 
   return (

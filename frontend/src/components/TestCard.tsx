@@ -8,7 +8,6 @@ export interface TestCardProps {
   status?: 'available' | 'ongoing' | 'completed';
   progress?: number;
   onClick: () => void;
-  questionCount: number;
   features: string[];
   estimatedTime: string;
   colorTheme?: 'blue' | 'green' | 'purple' | 'pink';
@@ -21,7 +20,6 @@ const TestCard: React.FC<TestCardProps> = ({
   status = 'available',
   progress,
   onClick,
-  questionCount,
   features,
   estimatedTime,
   colorTheme = 'blue'
@@ -80,15 +78,12 @@ const TestCard: React.FC<TestCardProps> = ({
 
   return (
     <div className={`${colors.background} rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-200 min-h-[280px] flex flex-col`}>
-      {/* 題目數量標籤 */}
-      <div className="flex justify-between items-start mb-4">
+      {/* 圖標 */}
+      <div className="flex justify-center items-center mb-4">
         <div className={`${colors.iconBg} p-3 rounded-lg`}>
           <div className={colors.iconColor}>
             {icon}
           </div>
-        </div>
-        <div className="bg-gray-100 text-gray-600 text-sm px-3 py-1 rounded-full font-medium">
-          {questionCount}題
         </div>
       </div>
 
@@ -102,7 +97,7 @@ const TestCard: React.FC<TestCardProps> = ({
       )}
 
       {/* 標題 */}
-      <h3 className="text-xl font-bold text-gray-900 mb-3">{title}</h3>
+      <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">{title}</h3>
 
       {/* 描述 */}
       <p className="text-gray-600 text-sm mb-4 leading-relaxed">{description}</p>

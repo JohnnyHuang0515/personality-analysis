@@ -10,8 +10,10 @@ const api = axios.create({
 });
 
 // 題目相關 API
-export const getQuestions = async (testType: string) => {
-  const response = await api.get(`/api/v1/questions/${testType}`);
+export const getQuestions = async (testType: string, random: boolean = false) => {
+  const response = await api.get(`/api/v1/questions/${testType}`, {
+    params: { random }
+  });
   return response.data;
 };
 
