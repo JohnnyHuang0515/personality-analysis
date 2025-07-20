@@ -1,8 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Brain, Home, BarChart3 } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
+import { Brain, Home, BarChart3, Target } from 'lucide-react';
 
 const Header: React.FC = () => {
+  const location = useLocation();
+  
+  // 獲取用戶 ID
+  const getUserId = () => {
+    return localStorage.getItem('personality_test_user_id') || 'user_default';
+  };
+  
+  const userId = getUserId();
+  
   return (
     <header className="bg-white shadow-sm border-b border-gray-200">
       <div className="container mx-auto px-4 py-4">
@@ -20,17 +29,36 @@ const Header: React.FC = () => {
           <nav className="flex items-center space-x-6">
             <Link 
               to="/" 
-              className="flex items-center space-x-2 text-gray-600 hover:text-primary-600 transition-colors duration-200"
+              className={`flex items-center space-x-2 transition-colors duration-200 ${
+                location.pathname === '/' 
+                  ? 'text-primary-600 font-semibold' 
+                  : 'text-gray-600 hover:text-primary-600'
+              }`}
             >
               <Home className="w-4 h-4" />
               <span>首頁</span>
             </Link>
             <Link 
-              to="/reports" 
-              className="flex items-center space-x-2 text-gray-600 hover:text-primary-600 transition-colors duration-200"
+              to={`/comprehensive-report/${userId}`}
+              className={`flex items-center space-x-2 transition-colors duration-200 ${
+                location.pathname.includes('/comprehensive-report') 
+                  ? 'text-primary-600 font-semibold' 
+                  : 'text-gray-600 hover:text-primary-600'
+              }`}
+            >
+              <Target className="w-4 h-4" />
+              <span>綜合報告</span>
+            </Link>
+            <Link 
+              to={`/report/${userId}/mbti`}
+              className={`flex items-center space-x-2 transition-colors duration-200 ${
+                location.pathname.includes('/report') && !location.pathname.includes('/comprehensive-report')
+                  ? 'text-primary-600 font-semibold' 
+                  : 'text-gray-600 hover:text-primary-600'
+              }`}
             >
               <BarChart3 className="w-4 h-4" />
-              <span>報告</span>
+              <span>個別報告</span>
             </Link>
           </nav>
         </div>

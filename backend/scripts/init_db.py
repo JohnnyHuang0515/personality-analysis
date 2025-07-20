@@ -1,5 +1,11 @@
 import sqlite3
 import json
+import sys
+import os
+
+# 添加專案根目錄到 Python 路徑
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from data.personality_questions import get_all_questions
 
 def init_database():
@@ -21,7 +27,8 @@ def init_database():
             category VARCHAR(32) NOT NULL,
             test_type VARCHAR(16) NOT NULL,
             options TEXT NOT NULL,
-            weight TEXT NOT NULL
+            weight TEXT NOT NULL,
+            is_reverse BOOLEAN DEFAULT FALSE
         )
     ''')
 
@@ -73,8 +80,8 @@ def init_database():
     for question in questions:
         cursor.execute(
             '''
-            INSERT INTO test_question (id, text, category, test_type, options, weight)
-            VALUES (?, ?, ?, ?, ?, ?)
+            INSERT INTO test_question (id, text, category, test_type, options, weight, is_reverse)
+            VALUES (?, ?, ?, ?, ?, ?, ?)
             ''',
             (
                 getattr(question, 'id', None),
@@ -82,7 +89,8 @@ def init_database():
                 question.category,
                 question.test_type,
                 json.dumps(question.options),
-                json.dumps(question.weight)
+                json.dumps(question.weight),
+                question.is_reverse
             )
         )
 

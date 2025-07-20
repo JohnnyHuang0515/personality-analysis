@@ -143,6 +143,50 @@ const HomePage: React.FC = () => {
           ))}
         </div>
 
+        {/* Comprehensive Report Section */}
+        <div className="mt-16">
+          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-8 shadow-lg text-white">
+            <div className="text-center mb-6">
+              <h3 className="text-2xl font-bold mb-2">🎯 綜合人格分析報告</h3>
+              <p className="text-blue-100 max-w-2xl mx-auto">
+                完成所有測驗後，獲取整合四種人格理論的深度分析報告，包含領導風格、溝通偏好、工作環境適應性和個人發展建議。
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+              <div className="text-center p-4 bg-white/10 rounded-lg">
+                <div className="text-2xl mb-2">🧠</div>
+                <div className="font-semibold">MBTI 認知偏好</div>
+                <div className="text-sm text-blue-100">16種人格類型分析</div>
+              </div>
+              <div className="text-center p-4 bg-white/10 rounded-lg">
+                <div className="text-2xl mb-2">🎯</div>
+                <div className="font-semibold">DISC 行為風格</div>
+                <div className="text-sm text-blue-100">4種溝通風格評估</div>
+              </div>
+              <div className="text-center p-4 bg-white/10 rounded-lg">
+                <div className="text-2xl mb-2">📊</div>
+                <div className="font-semibold">Big5 特質分析</div>
+                <div className="text-sm text-blue-100">五大人格特質測量</div>
+              </div>
+              <div className="text-center p-4 bg-white/10 rounded-lg">
+                <div className="text-2xl mb-2">💝</div>
+                <div className="font-semibold">Enneagram 動機</div>
+                <div className="text-sm text-blue-100">9種核心動機探索</div>
+              </div>
+            </div>
+            
+            <div className="text-center">
+              <button
+                onClick={() => navigate(`/comprehensive-report/${userId}`)}
+                className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors shadow-lg"
+              >
+                查看綜合報告
+              </button>
+            </div>
+          </div>
+        </div>
+
         {/* Additional Information */}
         <div className="mt-16 text-center">
           <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-100">

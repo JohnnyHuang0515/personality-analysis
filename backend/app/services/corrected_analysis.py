@@ -56,20 +56,26 @@ class CorrectedPersonalityAnalyzer:
             except ValueError:
                 continue
             
-            # 獲取該類別的權重陣列
-            if category in weight_data:
+            # 權重數據可能是簡單數組或嵌套字典
+            if isinstance(weight_data, list):
+                # 簡單數組格式 [1, 2, 3, 4, 5]
+                weights = weight_data
+            elif isinstance(weight_data, dict) and category in weight_data:
+                # 嵌套字典格式 {"E": [1, 2, 3, 4, 5]}
                 weights = weight_data[category]
+            else:
+                continue
+            
+            # 根據答案索引獲得分數
+            if 0 <= answer_index < len(weights):
+                score = weights[answer_index]
                 
-                # 根據答案索引獲得分數
-                if 0 <= answer_index < len(weights):
-                    score = weights[answer_index]
-                    
-                    # 累積分數
-                    if category not in scores:
-                        scores[category] = {'total': 0, 'count': 0}
-                    
-                    scores[category]['total'] += score
-                    scores[category]['count'] += 1
+                # 累積分數
+                if category not in scores:
+                    scores[category] = {'total': 0, 'count': 0}
+                
+                scores[category]['total'] += score
+                scores[category]['count'] += 1
         
         # 計算平均分
         for category in scores:
@@ -80,34 +86,91 @@ class CorrectedPersonalityAnalyzer:
         
         return scores
     
-    def analyze_mbti(self, user_id: str) -> Dict[str, Any]:
-        """分析 MBTI 測驗結果"""
-        # 獲取所有答案，然後過濾出 MBTI 相關的類別
+    def calculate_mbti_score(self, user_id: str) -> Dict[str, float]:
+        """計算 MBTI 分數（處理反向計分）"""
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
         
+        # 獲取所有 MBTI 答案
         cursor.execute("""
-            SELECT ta.question_id, ta.answer, tq.category, tq.weight, tq.options
+            SELECT ta.answer, tq.category, tq.weight, tq.options, tq.is_reverse
             FROM test_answer ta
             JOIN test_question tq ON ta.question_id = tq.id
-            WHERE ta.user_id = ? AND tq.category IN ('E', 'I', 'S', 'N', 'T', 'F', 'J', 'P')
+            WHERE ta.user_id = ? AND tq.test_type = 'MBTI'
         """, (user_id,))
         
         answers_data = cursor.fetchall()
         conn.close()
         
-        answers = [
-            {
-                "question_id": a[0],
-                "answer": a[1],
-                "category": a[2],
-                "weight": json.loads(a[3]),
-                "options": json.loads(a[4])
-            }
-            for a in answers_data
-        ]
+        # 初始化分數
+        scores = {
+            'E': {'total': 0, 'count': 0},
+            'I': {'total': 0, 'count': 0},
+            'S': {'total': 0, 'count': 0},
+            'N': {'total': 0, 'count': 0},
+            'T': {'total': 0, 'count': 0},
+            'F': {'total': 0, 'count': 0},
+            'J': {'total': 0, 'count': 0},
+            'P': {'total': 0, 'count': 0}
+        }
         
-        scores = self.calculate_score(answers)
+        for answer_data in answers_data:
+            answer_text, category, weight_json, options_json, is_reverse = answer_data
+            
+            try:
+                weight_data = json.loads(weight_json)
+                options = json.loads(options_json)
+                answer_index = options.index(answer_text)
+                
+                if isinstance(weight_data, list) and 0 <= answer_index < len(weight_data):
+                    score = weight_data[answer_index]
+                    
+                    # 根據 is_reverse 決定分數歸屬
+                    if is_reverse:
+                        # 反向題目：分數給對立特質
+                        if category == 'E':
+                            scores['I']['total'] += score
+                            scores['I']['count'] += 1
+                        elif category == 'S':
+                            scores['N']['total'] += score
+                            scores['N']['count'] += 1
+                        elif category == 'T':
+                            scores['F']['total'] += score
+                            scores['F']['count'] += 1
+                        elif category == 'J':
+                            scores['P']['total'] += score
+                            scores['P']['count'] += 1
+                    else:
+                        # 正向題目：分數給原特質
+                        if category == 'E':
+                            scores['E']['total'] += score
+                            scores['E']['count'] += 1
+                        elif category == 'S':
+                            scores['S']['total'] += score
+                            scores['S']['count'] += 1
+                        elif category == 'T':
+                            scores['T']['total'] += score
+                            scores['T']['count'] += 1
+                        elif category == 'J':
+                            scores['J']['total'] += score
+                            scores['J']['count'] += 1
+                            
+            except (ValueError, json.JSONDecodeError):
+                continue
+        
+        # 計算平均分
+        final_scores = {}
+        for trait, data in scores.items():
+            if data['count'] > 0:
+                final_scores[trait] = data['total'] / data['count']
+            else:
+                final_scores[trait] = 0
+        
+        return final_scores
+
+    def analyze_mbti(self, user_id: str) -> Dict[str, Any]:
+        """分析 MBTI 測驗結果"""
+        scores = self.calculate_mbti_score(user_id)
         
         # 計算偏好強度
         e_score = scores.get("E", 0)
@@ -174,34 +237,67 @@ class CorrectedPersonalityAnalyzer:
             "development_suggestions": self._get_mbti_development(personality_type)
         }
     
-    def analyze_disc(self, user_id: str) -> Dict[str, Any]:
-        """分析 DISC 測驗結果"""
-        # 獲取所有答案，然後過濾出 DISC 相關的類別
+    def calculate_disc_score(self, user_id: str) -> Dict[str, float]:
+        """計算 DISC 分數（處理反向計分）"""
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
         
+        # 獲取所有 DISC 答案
         cursor.execute("""
-            SELECT ta.question_id, ta.answer, tq.category, tq.weight, tq.options
+            SELECT ta.answer, tq.category, tq.weight, tq.options, tq.is_reverse
             FROM test_answer ta
             JOIN test_question tq ON ta.question_id = tq.id
-            WHERE ta.user_id = ? AND tq.category IN ('D', 'I', 'S', 'C')
+            WHERE ta.user_id = ? AND tq.test_type = 'DISC'
         """, (user_id,))
         
         answers_data = cursor.fetchall()
         conn.close()
         
-        answers = [
-            {
-                "question_id": a[0],
-                "answer": a[1],
-                "category": a[2],
-                "weight": json.loads(a[3]),
-                "options": json.loads(a[4])
-            }
-            for a in answers_data
-        ]
+        # 初始化分數
+        scores = {
+            'D': {'total': 0, 'count': 0},
+            'I': {'total': 0, 'count': 0},
+            'S': {'total': 0, 'count': 0},
+            'C': {'total': 0, 'count': 0}
+        }
         
-        scores = self.calculate_score(answers)
+        for answer_data in answers_data:
+            answer_text, category, weight_json, options_json, is_reverse = answer_data
+            
+            try:
+                weight_data = json.loads(weight_json)
+                options = json.loads(options_json)
+                answer_index = options.index(answer_text)
+                
+                if isinstance(weight_data, list) and 0 <= answer_index < len(weight_data):
+                    score = weight_data[answer_index]
+                    
+                    # 根據 is_reverse 決定分數歸屬
+                    if is_reverse:
+                        # 反向題目：分數給對立特質（DISC 沒有明確對立，所以給原特質）
+                        scores[category]['total'] += score
+                        scores[category]['count'] += 1
+                    else:
+                        # 正向題目：分數給原特質
+                        scores[category]['total'] += score
+                        scores[category]['count'] += 1
+                            
+            except (ValueError, json.JSONDecodeError):
+                continue
+        
+        # 計算平均分
+        final_scores = {}
+        for trait, data in scores.items():
+            if data['count'] > 0:
+                final_scores[trait] = data['total'] / data['count']
+            else:
+                final_scores[trait] = 0
+        
+        return final_scores
+
+    def analyze_disc(self, user_id: str) -> Dict[str, Any]:
+        """分析 DISC 測驗結果"""
+        scores = self.calculate_disc_score(user_id)
         
         # 找出主要和次要風格
         disc_scores = {k: v for k, v in scores.items() if k in ['D', 'I', 'S', 'C']}
@@ -227,34 +323,68 @@ class CorrectedPersonalityAnalyzer:
             "work_style": self._get_disc_work_style(primary_style or "")
         }
     
-    def analyze_big5(self, user_id: str) -> Dict[str, Any]:
-        """分析 Big5 測驗結果"""
-        # 獲取所有答案，然後過濾出 BIG5 相關的類別
+    def calculate_big5_score(self, user_id: str) -> Dict[str, float]:
+        """計算 Big5 分數（處理反向計分）"""
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
         
+        # 獲取所有 Big5 答案
         cursor.execute("""
-            SELECT ta.question_id, ta.answer, tq.category, tq.weight, tq.options
+            SELECT ta.answer, tq.category, tq.weight, tq.options, tq.is_reverse
             FROM test_answer ta
             JOIN test_question tq ON ta.question_id = tq.id
-            WHERE ta.user_id = ? AND tq.category IN ('O', 'C', 'E', 'A', 'N')
+            WHERE ta.user_id = ? AND tq.test_type = 'BIG5'
         """, (user_id,))
         
         answers_data = cursor.fetchall()
         conn.close()
         
-        answers = [
-            {
-                "question_id": a[0],
-                "answer": a[1],
-                "category": a[2],
-                "weight": json.loads(a[3]),
-                "options": json.loads(a[4])
-            }
-            for a in answers_data
-        ]
+        # 初始化分數
+        scores = {
+            'O': {'total': 0, 'count': 0},
+            'C': {'total': 0, 'count': 0},
+            'E': {'total': 0, 'count': 0},
+            'A': {'total': 0, 'count': 0},
+            'N': {'total': 0, 'count': 0}
+        }
         
-        scores = self.calculate_score(answers)
+        for answer_data in answers_data:
+            answer_text, category, weight_json, options_json, is_reverse = answer_data
+            
+            try:
+                weight_data = json.loads(weight_json)
+                options = json.loads(options_json)
+                answer_index = options.index(answer_text)
+                
+                if isinstance(weight_data, list) and 0 <= answer_index < len(weight_data):
+                    score = weight_data[answer_index]
+                    
+                    # 根據 is_reverse 決定分數歸屬
+                    if is_reverse:
+                        # 反向題目：分數給對立特質（Big5 沒有明確對立，所以給原特質）
+                        scores[category]['total'] += score
+                        scores[category]['count'] += 1
+                    else:
+                        # 正向題目：分數給原特質
+                        scores[category]['total'] += score
+                        scores[category]['count'] += 1
+                            
+            except (ValueError, json.JSONDecodeError):
+                continue
+        
+        # 計算平均分
+        final_scores = {}
+        for trait, data in scores.items():
+            if data['count'] > 0:
+                final_scores[trait] = data['total'] / data['count']
+            else:
+                final_scores[trait] = 0
+        
+        return final_scores
+
+    def analyze_big5(self, user_id: str) -> Dict[str, Any]:
+        """分析 Big5 測驗結果"""
+        scores = self.calculate_big5_score(user_id)
         
         # 只保留 BIG5 相關分數
         big5_scores = {k: v for k, v in scores.items() if k in ['O', 'C', 'E', 'A', 'N']}
@@ -267,37 +397,80 @@ class CorrectedPersonalityAnalyzer:
             "personality_profile": self._get_big5_profile(big5_scores)
         }
     
-    def analyze_enneagram(self, user_id: str) -> Dict[str, Any]:
-        """分析 Enneagram 測驗結果"""
-        # 獲取所有答案，然後過濾出九型人格相關的類別
+    def calculate_enneagram_score(self, user_id: str) -> Dict[str, float]:
+        """計算 Enneagram 分數（處理反向計分）"""
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
         
+        # 獲取所有 Enneagram 答案
         cursor.execute("""
-            SELECT ta.question_id, ta.answer, tq.category, tq.weight, tq.options
+            SELECT ta.answer, tq.category, tq.weight, tq.options, tq.is_reverse
             FROM test_answer ta
             JOIN test_question tq ON ta.question_id = tq.id
-            WHERE ta.user_id = ? AND tq.category IN ('1', '2', '3', '4', '5', '6', '7', '8', '9')
+            WHERE ta.user_id = ? AND tq.test_type = 'enneagram'
         """, (user_id,))
         
         answers_data = cursor.fetchall()
         conn.close()
         
-        answers = [
-            {
-                "question_id": a[0],
-                "answer": a[1],
-                "category": a[2],
-                "weight": json.loads(a[3]),
-                "options": json.loads(a[4])
-            }
-            for a in answers_data
-        ]
+        # 初始化分數
+        scores = {
+            '1': {'total': 0, 'count': 0},
+            '2': {'total': 0, 'count': 0},
+            '3': {'total': 0, 'count': 0},
+            '4': {'total': 0, 'count': 0},
+            '5': {'total': 0, 'count': 0},
+            '6': {'total': 0, 'count': 0},
+            '7': {'total': 0, 'count': 0},
+            '8': {'total': 0, 'count': 0},
+            '9': {'total': 0, 'count': 0}
+        }
         
-        scores = self.calculate_score(answers)
+        for answer_data in answers_data:
+            answer_text, category, weight_json, options_json, is_reverse = answer_data
+            
+            try:
+                weight_data = json.loads(weight_json)
+                options = json.loads(options_json)
+                answer_index = options.index(answer_text)
+                
+                if isinstance(weight_data, list) and 0 <= answer_index < len(weight_data):
+                    score = weight_data[answer_index]
+                    
+                    # 根據 is_reverse 決定分數歸屬
+                    if is_reverse:
+                        # 反向題目：分數給對立特質（Enneagram 沒有明確對立，所以給原特質）
+                        scores[category]['total'] += score
+                        scores[category]['count'] += 1
+                    else:
+                        # 正向題目：分數給原特質
+                        scores[category]['total'] += score
+                        scores[category]['count'] += 1
+                            
+            except (ValueError, json.JSONDecodeError):
+                continue
         
-        # 只保留九型人格相關分數
+        # 計算平均分
+        final_scores = {}
+        for trait, data in scores.items():
+            if data['count'] > 0:
+                final_scores[trait] = data['total'] / data['count']
+            else:
+                final_scores[trait] = 0
+        
+        return final_scores
+
+    def analyze_enneagram(self, user_id: str) -> Dict[str, Any]:
+        """分析 Enneagram 測驗結果"""
+        scores = self.calculate_enneagram_score(user_id)
+        
+        # 只保留九型人格相關分數（數字類別 1-9）
         enneagram_scores = {k: v for k, v in scores.items() if k in [str(i) for i in range(1, 10)]}
+        
+        # 確保所有 9 個類型都有分數（如果沒有答案，設為 0）
+        for i in range(1, 10):
+            if str(i) not in enneagram_scores:
+                enneagram_scores[str(i)] = 0
         
         # 找出主要類型
         primary_type = max(enneagram_scores.items(), key=lambda x: x[1])[0] if enneagram_scores else None

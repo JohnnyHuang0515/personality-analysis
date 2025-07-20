@@ -1,10 +1,10 @@
 @echo off
 chcp 65001 >nul
-title 綜合人格特質分析系統 - 啟動器
+title 人格特質分析系統 - 啟動器
 
 echo.
 echo ========================================
-echo   綜合人格特質分析系統 - 啟動器
+echo   人格特質分析系統 - 啟動器
 echo ========================================
 echo.
 
@@ -28,7 +28,7 @@ echo.
 
 :: 啟動後端服務器
 cd backend
-start "後端服務器" cmd /k "poetry run uvicorn app.main:app --reload --host 127.0.0.1 --port 8000"
+start "後端服務器" cmd /k "python -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000"
 
 :: 等待後端啟動
 timeout /t 5 /nobreak >nul

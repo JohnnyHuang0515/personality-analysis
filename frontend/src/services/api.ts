@@ -82,15 +82,72 @@ export const getUserAnswersByType = async (userId: string, testType: string) => 
 
 // 報告生成 API
 export const generateReport = async (userId: string, testType: string) => {
-  const response = await api.post('/api/v1/reports/generate', {
-    user_id: userId,
-    test_type: testType,
-  });
+  // 由於後端只有綜合報告端點，我們直接獲取綜合報告
+  // 綜合報告會自動包含所有測驗類型的分析
+  const response = await api.get(`/api/v1/reports/${userId}`);
   return response.data;
 };
 
 export const getUserReport = async (userId: string, testType: string) => {
-  const response = await api.get(`/api/v1/reports/${userId}/${testType}`);
+  try {
+    // 由於後端只有綜合報告端點，我們獲取綜合報告並提取對應的測驗結果
+    const response = await api.get(`/api/v1/reports/${userId}`);
+    const comprehensiveReport = response.data;
+    
+    // 從綜合報告中提取對應測驗類型的詳細分析
+    const testTypeLower = testType.toLowerCase();
+    const detailedAnalysis = comprehensiveReport.detailed_analysis;
+    
+    let testReport;
+    if (testTypeLower === 'mbti') {
+      testReport = detailedAnalysis.mbti;
+    } else if (testTypeLower === 'disc') {
+      testReport = detailedAnalysis.disc;
+    } else if (testTypeLower === 'big5') {
+      testReport = detailedAnalysis.big5;
+    } else if (testTypeLower === 'enneagram') {
+      testReport = detailedAnalysis.enneagram;
+    } else {
+      throw new Error(`不支援的測驗類型: ${testType}`);
+    }
+    
+    // 檢查是否有有效的報告數據
+    if (!testReport || !testReport.scores) {
+      throw new Error(`用戶 ${userId} 尚未完成 ${testType} 測驗`);
+    }
+    
+    // 構建符合前端期望的報告格式
+    return {
+      user_id: userId,
+      test_type: testType,
+      report: {
+        user_id: userId,
+        test_type: testType,
+        scores: testReport.scores,
+        personality_type: testReport.personality_type || testReport.primary_style || testReport.primary_type,
+        description: testReport.description,
+        preference_strengths: testReport.preference_strengths,
+        strengths: testReport.strengths,
+        weaknesses: testReport.weaknesses,
+        career_suggestions: testReport.career_suggestions || testReport.career_matches,
+        communication_style: testReport.communication_style || testReport.interpersonal_style,
+        work_style: testReport.work_style,
+        development_suggestions: testReport.development_suggestions
+      },
+      generated_at: comprehensiveReport.report_generated_at,
+      created_at: comprehensiveReport.report_generated_at
+    };
+  } catch (error: any) {
+    // 如果是 404 錯誤或其他錯誤，提供更友好的錯誤信息
+    if (error.response?.status === 404) {
+      throw new Error(`用戶 ${userId} 尚未完成任何測驗，無法生成報告`);
+    }
+    throw error;
+  }
+};
+
+export const getComprehensiveReport = async (userId: string) => {
+  const response = await api.get(`/api/v1/reports/${userId}`);
   return response.data;
 };
 
@@ -149,9 +206,20 @@ export interface Answer {
 export interface Report {
   user_id: string;
   test_type: string;
-  total_questions: number;
-  analysis: string;
-  recommendations: string[];
+  report: {
+    user_id: string;
+    test_type: string;
+    scores: Record<string, number>;
+    personality_type?: string;
+    description?: string;
+    preference_strengths?: Record<string, number>;
+    strengths?: string[];
+    weaknesses?: string[];
+    career_suggestions?: string[];
+    communication_style?: string;
+    work_style?: string;
+    development_suggestions?: string[];
+  };
   generated_at: string;
   created_at?: string;
 }
@@ -171,5 +239,6 @@ export const apiService = {
   getUserAnswersByType,
   generateReport,
   getUserReport,
+  getComprehensiveReport,
   healthCheck,
 }; 

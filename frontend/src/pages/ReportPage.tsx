@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Download, Share2, Users, Target, TrendingUp, Star } from 'lucide-react';
+import { ArrowLeft, Download, Share2, Users, Target, TrendingUp, Star, RefreshCw, BarChart3, PieChart } from 'lucide-react';
 import { apiService, Report } from '../services/api';
 import jsPDF from 'jspdf';
+import PersonalityRadarChart from '../components/PersonalityRadarChart';
+import TraitBarChart from '../components/TraitBarChart';
+import TraitScoreCards from '../components/TraitScoreCards';
 
 const ReportPage: React.FC = () => {
   const { userId, testType } = useParams<{ userId: string; testType: string }>();
@@ -12,6 +15,7 @@ const ReportPage: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [downloading, setDownloading] = useState(false);
+  const [generating, setGenerating] = useState(false);
 
   useEffect(() => {
     const fetchReport = async () => {
@@ -19,11 +23,27 @@ const ReportPage: React.FC = () => {
       
       try {
         setLoading(true);
+        setError(null);
         const reportData = await apiService.getUserReport(userId, testType);
         setReport(reportData);
       } catch (error: any) {
         console.error('Failed to fetch report:', error);
-        setError(error.response?.data?.detail || '無法載入報告');
+        let errorMessage = '無法載入報告';
+        
+        // 處理不同的錯誤情況
+        if (error.message) {
+          if (error.message.includes('尚未完成')) {
+            errorMessage = error.message;
+          } else if (error.message.includes('不支援的測驗類型')) {
+            errorMessage = error.message;
+          } else {
+            errorMessage = error.message;
+          }
+        } else if (error.response?.data?.detail) {
+          errorMessage = error.response.data.detail;
+        }
+        
+        setError(errorMessage);
       } finally {
         setLoading(false);
       }
@@ -31,6 +51,27 @@ const ReportPage: React.FC = () => {
 
     fetchReport();
   }, [userId, testType]);
+
+  // 生成報告
+  const handleGenerateReport = async () => {
+    if (!userId || !testType || generating) return;
+    
+    setGenerating(true);
+    setError(null);
+    
+    try {
+      await apiService.generateReport(userId, testType);
+      
+      // 重新獲取報告
+      const reportData = await apiService.getUserReport(userId, testType);
+      setReport(reportData);
+    } catch (error: any) {
+      console.error('Failed to generate report:', error);
+      setError(error.response?.data?.detail || '生成報告失敗，請重試');
+    } finally {
+      setGenerating(false);
+    }
+  };
 
   // 下載 PDF 報告
   const handleDownloadReport = async () => {
@@ -61,40 +102,63 @@ const ReportPage: React.FC = () => {
       pdf.setTextColor(75, 85, 99);
       pdf.text(`測驗類型: ${getTestInfo(testType).title}`, margin, 65);
       pdf.text(`用戶 ID: ${userId}`, margin, 75);
-      pdf.text(`完成時間: ${report.generated_at}`, margin, 85);
+      pdf.text(`完成時間: ${report.generated_at || report.created_at}`, margin, 85);
       
       let yPosition = 105;
       
       // 分析結果
-      pdf.setFontSize(16);
-      pdf.setFont('helvetica', 'bold');
-      pdf.setTextColor(31, 41, 55);
-      pdf.text('分析結果', margin, yPosition);
-      yPosition += 10;
-      
-      // 分析內容背景
-      pdf.setFillColor(255, 255, 255);
-      pdf.rect(margin - 5, yPosition - 5, contentWidth + 10, 30, 'F');
-      pdf.setDrawColor(229, 231, 235);
-      pdf.rect(margin - 5, yPosition - 5, contentWidth + 10, 30, 'S');
-      
-      pdf.setFontSize(11);
-      pdf.setFont('helvetica', 'normal');
-      const analysis = report.analysis || '這是您的測驗分析結果。';
-      
-      // 處理長文本換行
-      const splitAnalysis = pdf.splitTextToSize(analysis, contentWidth - 10);
-      pdf.text(splitAnalysis, margin, yPosition);
-      yPosition += (splitAnalysis.length * 5) + 15;
-      
-      // 建議
-      if (report.recommendations && report.recommendations.length > 0) {
+      if (report.report && report.report.personality_type) {
         pdf.setFontSize(16);
         pdf.setFont('helvetica', 'bold');
-        pdf.text('個人發展建議', margin, yPosition);
+        pdf.setTextColor(31, 41, 55);
+        pdf.text('分析結果', margin, yPosition);
+        yPosition += 10;
+        
+        // 人格類型
+        pdf.setFontSize(14);
+        pdf.setFont('helvetica', 'bold');
+        pdf.setTextColor(59, 130, 246);
+        pdf.text(`人格類型: ${report.report.personality_type}`, margin, yPosition);
         yPosition += 8;
         
-        report.recommendations.forEach((rec: string, index: number) => {
+        // 描述
+        if (report.report.description) {
+          pdf.setFontSize(11);
+          pdf.setFont('helvetica', 'normal');
+          pdf.setTextColor(75, 85, 99);
+          const description = report.report.description;
+          const splitDesc = pdf.splitTextToSize(description, contentWidth - 10);
+          pdf.text(splitDesc, margin, yPosition);
+          yPosition += (splitDesc.length * 5) + 10;
+        }
+        
+        // 特質得分
+        if (report.report.scores) {
+          yPosition += 5;
+          pdf.setFontSize(14);
+          pdf.setFont('helvetica', 'bold');
+          pdf.setTextColor(31, 41, 55);
+          pdf.text('特質得分詳情', margin, yPosition);
+          yPosition += 8;
+          
+          Object.entries(report.report.scores).forEach(([trait, score]) => {
+            pdf.setFontSize(11);
+            pdf.setFont('helvetica', 'normal');
+            pdf.setTextColor(75, 85, 99);
+            pdf.text(`${trait}: ${score.toFixed(1)}/10`, margin, yPosition);
+            yPosition += 5;
+          });
+        }
+      }
+      
+      // 建議
+      if (report.report && report.report.strengths && report.report.strengths.length > 0) {
+        pdf.setFontSize(16);
+        pdf.setFont('helvetica', 'bold');
+        pdf.text('個人優勢', margin, yPosition);
+        yPosition += 8;
+        
+        report.report.strengths.forEach((strength: string, index: number) => {
           // 檢查是否需要新頁面
           if (yPosition + 25 > pageHeight - margin) {
             pdf.addPage();
@@ -113,11 +177,11 @@ const ReportPage: React.FC = () => {
           
           pdf.setFontSize(10);
           pdf.setFont('helvetica', 'normal');
-          const recommendationText = rec;
-          const splitRec = pdf.splitTextToSize(recommendationText, contentWidth - 20);
-          pdf.text(splitRec, margin + 10, yPosition + 3);
+          const strengthText = strength;
+          const splitStrength = pdf.splitTextToSize(strengthText, contentWidth - 20);
+          pdf.text(splitStrength, margin + 10, yPosition + 3);
           
-          yPosition += Math.max(20, splitRec.length * 4) + 5;
+          yPosition += Math.max(20, splitStrength.length * 4) + 5;
         });
       }
       
@@ -230,17 +294,62 @@ const ReportPage: React.FC = () => {
   }
 
   if (error) {
+    // 判斷錯誤類型，提供不同的按鈕
+    const isNotCompleted = error.includes('尚未完成');
+    const isNotSupported = error.includes('不支援的測驗類型');
+    
     return (
       <div className="max-w-4xl mx-auto">
         <div className="bg-red-50 border border-red-200 rounded-lg p-6 text-center">
           <h2 className="text-xl font-semibold text-red-800 mb-2">載入失敗</h2>
           <p className="text-red-600 mb-4">{error}</p>
-          <button
-            onClick={() => navigate('/')}
-            className="btn-primary"
-          >
-            返回首頁
-          </button>
+          <div className="flex justify-center space-x-4">
+            {isNotCompleted ? (
+              // 如果測驗未完成，提供開始測驗的按鈕
+              <button
+                onClick={() => navigate('/')}
+                className="btn-primary flex items-center space-x-2"
+              >
+                <Target className="w-4 h-4" />
+                <span>開始測驗</span>
+              </button>
+            ) : isNotSupported ? (
+              // 如果不支援的測驗類型，只提供返回按鈕
+              <button
+                onClick={() => navigate('/')}
+                className="btn-secondary"
+              >
+                返回首頁
+              </button>
+            ) : (
+              // 其他錯誤，提供生成報告和返回按鈕
+              <>
+                <button
+                  onClick={handleGenerateReport}
+                  disabled={generating}
+                  className="btn-primary flex items-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {generating ? (
+                    <>
+                      <RefreshCw className="w-4 h-4 animate-spin" />
+                      <span>生成中...</span>
+                    </>
+                  ) : (
+                    <>
+                      <RefreshCw className="w-4 h-4" />
+                      <span>生成報告</span>
+                    </>
+                  )}
+                </button>
+                <button
+                  onClick={() => navigate('/')}
+                  className="btn-secondary"
+                >
+                  返回首頁
+                </button>
+              </>
+            )}
+          </div>
         </div>
       </div>
     );
@@ -319,7 +428,7 @@ const ReportPage: React.FC = () => {
               </div>
               <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
                 <span className="text-gray-600">完成時間</span>
-                <span className="font-medium">{report.generated_at}</span>
+                <span className="font-medium">{report.generated_at || report.created_at}</span>
               </div>
               <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
                 <span className="text-gray-600">用戶 ID</span>
@@ -329,29 +438,115 @@ const ReportPage: React.FC = () => {
           </div>
 
           {/* Analysis */}
-          <div className="card">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">分析結果</h2>
-            <div className="prose max-w-none">
-              <p className="text-gray-700 leading-relaxed">
-                {report.analysis || '這是您的測驗分析結果。'}
-              </p>
-            </div>
-          </div>
-
-          {/* Recommendations */}
-          {report.recommendations && (
-            <div className="card">
-              <h2 className="text-xl font-semibold text-gray-900 mb-4">建議</h2>
-              <div className="space-y-3">
-                {report.recommendations.map((rec: string, index: number) => (
-                  <div key={index} className="flex items-start space-x-3 p-3 bg-primary-50 rounded-lg">
-                    <div className="w-2 h-2 bg-primary-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-gray-700">{rec}</p>
+          <div className="space-y-6">
+            {/* 人格類型摘要 */}
+            {report.report && report.report.personality_type && (
+              <div className="card">
+                <h2 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+                  <BarChart3 className="w-5 h-5 mr-2" />
+                  人格類型分析
+                </h2>
+                <div className="p-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg border border-blue-200">
+                  <div className="text-center">
+                    <h3 className="text-3xl font-bold text-blue-700 mb-2">{report.report.personality_type}</h3>
+                    {report.report.description && (
+                      <p className="text-blue-800 text-lg">{report.report.description}</p>
+                    )}
                   </div>
-                ))}
+                </div>
               </div>
-            </div>
-          )}
+            )}
+
+            {/* 雷達圖 */}
+            {report.report && report.report.scores && (
+              <div className="card">
+                <h2 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+                  <PieChart className="w-5 h-5 mr-2" />
+                  特質分布雷達圖
+                </h2>
+                <PersonalityRadarChart 
+                  scores={report.report.scores} 
+                  testType={testType || ''} 
+                />
+              </div>
+            )}
+
+            {/* 條形圖 */}
+            {report.report && report.report.scores && (
+              <div className="card">
+                <h2 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+                  <BarChart3 className="w-5 h-5 mr-2" />
+                  特質得分詳情
+                </h2>
+                <TraitBarChart 
+                  scores={report.report.scores} 
+                  testType={testType || ''} 
+                />
+              </div>
+            )}
+
+            {/* 特質得分卡片 */}
+            {report.report && report.report.scores && (
+              <TraitScoreCards 
+                scores={report.report.scores} 
+                testType={testType || ''} 
+              />
+            )}
+
+            {/* 個人優勢 */}
+            {report.report && report.report.strengths && report.report.strengths.length > 0 && (
+              <div className="card">
+                <h2 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+                  <TrendingUp className="w-5 h-5 mr-2" />
+                  個人優勢
+                </h2>
+                <div className="space-y-3">
+                  {report.report.strengths.map((strength: string, index: number) => (
+                    <div key={index} className="flex items-start space-x-3 p-4 bg-green-50 rounded-lg border border-green-200">
+                      <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                      <p className="text-gray-700">{strength}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* 發展機會 */}
+            {report.report && report.report.weaknesses && report.report.weaknesses.length > 0 && (
+              <div className="card">
+                <h2 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+                  <Target className="w-5 h-5 mr-2" />
+                  發展機會
+                </h2>
+                <div className="space-y-3">
+                  {report.report.weaknesses.map((weakness: string, index: number) => (
+                    <div key={index} className="flex items-start space-x-3 p-4 bg-yellow-50 rounded-lg border border-yellow-200">
+                      <div className="w-2 h-2 bg-yellow-500 rounded-full mt-2 flex-shrink-0"></div>
+                      <p className="text-gray-700">{weakness}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* 職業建議 */}
+            {report.report && report.report.career_suggestions && report.report.career_suggestions.length > 0 && (
+              <div className="card">
+                <h2 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+                  <Users className="w-5 h-5 mr-2" />
+                  職業建議
+                </h2>
+                <div className="space-y-3">
+                  {report.report.career_suggestions.map((career: string, index: number) => (
+                    <div key={index} className="flex items-start space-x-3 p-4 bg-purple-50 rounded-lg border border-purple-200">
+                      <div className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
+                      <p className="text-gray-700">{career}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Sidebar */}

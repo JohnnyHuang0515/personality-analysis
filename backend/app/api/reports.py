@@ -1,390 +1,305 @@
-from fastapi import APIRouter, HTTPException
-import sqlite3
+from fastapi import APIRouter, HTTPException, Depends
+from sqlalchemy.orm import Session
+from typing import Dict, Any, List
 import json
-from datetime import datetime
-from typing import Dict, Any, Optional, List
+import logging
 
-from app.services.corrected_analysis import CorrectedPersonalityAnalyzer
+from ..core.database import get_db
+from ..services.comprehensive_analysis import ComprehensivePersonalityAnalyzer
 
 router = APIRouter()
-analyzer = CorrectedPersonalityAnalyzer()
-
-@router.post("/reports/generate")
-def generate_report_post(data: Dict[str, Any]):
-    """生成特定測驗類型的報告 (POST 方法)"""
-    try:
-        user_id = data.get("user_id")
-        test_type = data.get("test_type")
-        
-        if not user_id or not test_type:
-            raise HTTPException(status_code=400, detail="缺少必要參數")
-        
-        # 前端測驗類型到後端測驗類型的映射（現在直接使用實際的測驗類型）
-        test_type_mapping = {
-            "mbti": "MBTI",
-            "disc": "DISC", 
-            "big5": "BIG5",
-            "enneagram": "enneagram"
-        }
-        
-        # 獲取實際的後端測驗類型
-        backend_test_type = test_type_mapping.get(test_type, test_type)
-        
-        # 檢查用戶是否有該測驗的答案
-        conn = sqlite3.connect('personality_test.db')
-        cursor = conn.cursor()
-        
-        cursor.execute("""
-            SELECT COUNT(*) FROM test_answer ta
-            JOIN test_question tq ON ta.question_id = tq.id
-            WHERE ta.user_id = ? AND tq.test_type = ?
-        """, (user_id, backend_test_type))
-        
-        answer_count = cursor.fetchone()[0]
-        conn.close()
-        
-        if answer_count == 0:
-            raise HTTPException(status_code=404, detail=f"找不到用戶 {user_id} 的 {test_type} 測驗答案")
-        
-        # 根據用戶答案的類別判斷具體測驗類型
-        conn = sqlite3.connect('personality_test.db')
-        cursor = conn.cursor()
-        
-        cursor.execute("""
-            SELECT tq.category, COUNT(*) as count
-            FROM test_answer ta
-            JOIN test_question tq ON ta.question_id = tq.id
-            WHERE ta.user_id = ? AND tq.test_type = ?
-            GROUP BY tq.category
-            ORDER BY count DESC
-        """, (user_id, backend_test_type))
-        
-        category_counts = cursor.fetchall()
-        conn.close()
-        
-        # 根據用戶實際回答的類別判斷測驗類型
-        categories = [cat for cat, count in category_counts]
-        print(f"Debug: User {user_id} answered categories: {categories}")  # 調試信息
-        
-        # 定義各測驗類型的類別映射
-        mbti_categories = {'E', 'I', 'S', 'N', 'T', 'F', 'J', 'P'}
-        disc_categories = {'D', 'I', 'S', 'C'}
-        big5_categories = {'O', 'C', 'E', 'A', 'N'}
-        enneagram_categories = {str(i) for i in range(1, 10)}
-        
-        # 判斷測驗類型（基於主要類別）
-        # 計算每個測驗類型的匹配度
-        mbti_match = len([cat for cat in categories if cat in mbti_categories])
-        disc_match = len([cat for cat in categories if cat in disc_categories])
-        big5_match = len([cat for cat in categories if cat in big5_categories])
-        enneagram_match = len([cat for cat in categories if cat in enneagram_categories])
-        
-        print(f"Debug: 匹配度 - MBTI: {mbti_match}, DISC: {disc_match}, BIG5: {big5_match}, ENNEAGRAM: {enneagram_match}")
-        
-        # 選擇匹配度最高的測驗類型
-        if mbti_match > 0 and mbti_match >= max(disc_match, big5_match, enneagram_match):
-            actual_test_type = "MBTI"
-            report = analyzer.analyze_mbti(user_id)
-        elif disc_match > 0 and disc_match >= max(big5_match, enneagram_match):
-            actual_test_type = "DISC"
-            report = analyzer.analyze_disc(user_id)
-        elif big5_match > 0 and big5_match >= enneagram_match:
-            actual_test_type = "BIG5"
-            report = analyzer.analyze_big5(user_id)
-        elif enneagram_match > 0:
-            actual_test_type = "ENNEAGRAM"
-            report = analyzer.analyze_enneagram(user_id)
-        else:
-            # 如果無法判斷，使用預設
-            actual_test_type = "MBTI"
-            report = analyzer.analyze_mbti(user_id)
-        
-        # 儲存報告到資料庫（使用實際測驗類型）
-        conn = sqlite3.connect('personality_test.db')
-        cursor = conn.cursor()
-        
-        cursor.execute("""
-            INSERT OR REPLACE INTO test_report (user_id, test_type, result, created_at)
-            VALUES (?, ?, ?, ?)
-        """, (user_id, actual_test_type, json.dumps(report), datetime.now()))
-        
-        conn.commit()
-        conn.close()
-        
-        return {
-            "user_id": user_id,
-            "test_type": actual_test_type,
-            "report": report,
-            "generated_at": datetime.now().isoformat()
-        }
-        
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"生成報告失敗：{str(e)}")
-
-@router.get("/reports/{user_id}/{test_type}")
-def get_user_report(user_id: str, test_type: str):
-    """取得用戶特定測驗類型的報告"""
-    try:
-        conn = sqlite3.connect('personality_test.db')
-        cursor = conn.cursor()
-        
-        # 首先嘗試直接查詢
-        cursor.execute("""
-            SELECT result, created_at
-            FROM test_report
-            WHERE user_id = ? AND test_type = ?
-            ORDER BY created_at DESC
-            LIMIT 1
-        """, (user_id, test_type))
-        
-        report_row = cursor.fetchone()
-        
-        # 如果找不到，嘗試根據前端測驗類型映射到實際測驗類型
-        if not report_row:
-            # 前端測驗類型到實際測驗類型的映射
-            test_type_mapping = {
-                "behavior": ["MBTI", "DISC", "BIG5"],  # behavior 可能對應多種測驗
-                "motivation": ["ENNEAGRAM"],  # motivation 主要對應九型人格
-                "mbti": ["MBTI"],  # 直接映射
-                "disc": ["DISC", "MBTI"],  # disc 可能被識別為 MBTI
-                "big5": ["BIG5", "MBTI"],  # big5 可能被識別為 MBTI
-                "enneagram": ["ENNEAGRAM"]  # 直接映射
-            }
-            
-            possible_types = test_type_mapping.get(test_type, [test_type])
-            
-            # 嘗試查找可能的測驗類型
-            for actual_type in possible_types:
-                cursor.execute("""
-                    SELECT result, created_at
-                    FROM test_report
-                    WHERE user_id = ? AND test_type = ?
-                    ORDER BY created_at DESC
-                    LIMIT 1
-                """, (user_id, actual_type))
-                
-                report_row = cursor.fetchone()
-                if report_row:
-                    # 找到報告，使用實際的測驗類型
-                    test_type = actual_type
-                    break
-        
-        conn.close()
-        
-        if not report_row:
-            raise HTTPException(status_code=404, detail=f"找不到用戶 {user_id} 的 {test_type} 報告")
-        
-        result, created_at = report_row
-        
-        return {
-            "user_id": user_id,
-            "test_type": test_type,
-            "report": json.loads(result),
-            "created_at": created_at
-        }
-        
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"查詢報告失敗：{str(e)}")
+logger = logging.getLogger(__name__)
 
 @router.get("/reports/{user_id}")
-def get_user_reports(user_id: str):
-    """取得用戶的所有報告"""
+async def get_personality_report(user_id: str, db: Session = Depends(get_db)) -> Dict[str, Any]:
+    """獲取綜合人格分析報告"""
     try:
-        conn = sqlite3.connect('personality_test.db')
-        cursor = conn.cursor()
+        logger.info(f"開始為用戶 {user_id} 生成綜合人格分析報告")
         
-        cursor.execute("""
-            SELECT test_type, result, created_at
-            FROM test_report
-            WHERE user_id = ?
-            ORDER BY created_at DESC
-        """, (user_id,))
+        # 創建綜合分析器
+        analyzer = ComprehensivePersonalityAnalyzer()
         
-        reports = cursor.fetchall()
-        conn.close()
+        # 執行所有測驗的綜合分析
+        mbti_result = analyzer.analyze_mbti_comprehensive(user_id)
+        disc_result = analyzer.analyze_disc_comprehensive(user_id)
+        big5_result = analyzer.analyze_big5_comprehensive(user_id)
+        enneagram_result = analyzer.analyze_enneagram_comprehensive(user_id)
         
-        report_list = []
-        for r in reports:
-            report_list.append({
-                "test_type": r[0],
-                "result": json.loads(r[1]),
-                "created_at": r[2]
-            })
-        
-        return {
+        # 整合所有結果
+        comprehensive_report = {
             "user_id": user_id,
-            "reports": report_list,
-            "total": len(report_list)
+            "report_generated_at": "2024-01-01T00:00:00Z",  # 可以改為實際時間
+            "summary": {
+                "mbti_type": mbti_result["personality_type"],
+                "disc_primary": disc_result["primary_style"],
+                "big5_type": big5_result["combination_analysis"]["personality_type"],
+                "enneagram_type": enneagram_result["primary_type"]
+            },
+            "detailed_analysis": {
+                "mbti": {
+                    "test_type": "MBTI",
+                    "personality_type": mbti_result["personality_type"],
+                    "description": mbti_result["description"],
+                    "scores": mbti_result["scores"],
+                    "preference_strengths": mbti_result["preference_strengths"],
+                    "combination_analysis": mbti_result["combination_analysis"],
+                    "strengths": mbti_result["strengths"],
+                    "weaknesses": mbti_result["weaknesses"],
+                    "career_suggestions": mbti_result["career_suggestions"],
+                    "communication_style": mbti_result["communication_style"],
+                    "work_style": mbti_result["work_style"],
+                    "development_suggestions": mbti_result["development_suggestions"]
+                },
+                "disc": {
+                    "test_type": "DISC",
+                    "primary_style": disc_result["primary_style"],
+                    "secondary_style": disc_result["secondary_style"],
+                    "description": disc_result["description"],
+                    "scores": disc_result["scores"],
+                    "style_intensities": disc_result["style_intensities"],
+                    "combination_analysis": disc_result["combination_analysis"],
+                    "strengths": disc_result["strengths"],
+                    "weaknesses": disc_result["weaknesses"],
+                    "communication_style": disc_result["communication_style"],
+                    "work_style": disc_result["work_style"],
+                    "development_suggestions": disc_result["development_suggestions"]
+                },
+                "big5": {
+                    "test_type": "BIG5",
+                    "personality_profile": big5_result["personality_profile"],
+                    "scores": big5_result["scores"],
+                    "combination_analysis": big5_result["combination_analysis"],
+                    "strengths": big5_result["strengths"],
+                    "weaknesses": big5_result["weaknesses"],
+                    "career_matches": big5_result["career_matches"],
+                    "interpersonal_style": big5_result["interpersonal_style"],
+                    "development_suggestions": big5_result["development_suggestions"]
+                },
+                "enneagram": {
+                    "test_type": "ENNEAGRAM",
+                    "primary_type": enneagram_result["primary_type"],
+                    "description": enneagram_result["description"],
+                    "scores": enneagram_result["scores"],
+                    "wing_analysis": enneagram_result["wing_analysis"],
+                    "tritype": enneagram_result["tritype"],
+                    "health_level": enneagram_result["health_level"],
+                    "fear": enneagram_result["fear"],
+                    "desire": enneagram_result["desire"],
+                    "growth": enneagram_result["growth"],
+                    "stress": enneagram_result["stress"],
+                    "strengths": enneagram_result["strengths"],
+                    "weaknesses": enneagram_result["weaknesses"],
+                    "development_suggestions": enneagram_result["development_suggestions"]
+                }
+            },
+            "integrated_insights": {
+                "leadership_style": _get_integrated_leadership_style(mbti_result, disc_result, big5_result, enneagram_result),
+                "communication_preferences": _get_integrated_communication_style(mbti_result, disc_result, big5_result, enneagram_result),
+                "work_environment_fit": _get_integrated_work_environment(mbti_result, disc_result, big5_result, enneagram_result),
+                "personal_development_priorities": _get_integrated_development_priorities(mbti_result, disc_result, big5_result, enneagram_result)
+            }
         }
+        
+        logger.info(f"成功為用戶 {user_id} 生成綜合人格分析報告")
+        return comprehensive_report
         
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"查詢報告失敗：{str(e)}")
+        logger.error(f"生成綜合人格分析報告時發生錯誤: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"生成報告失敗: {str(e)}")
 
-@router.get("/reports/{user_id}/composite")
-def generate_composite_report(user_id: str):
-    """生成綜合分析報告"""
-    try:
-        # 檢查用戶完成哪些測驗
-        conn = sqlite3.connect('personality_test.db')
-        cursor = conn.cursor()
-        
-        cursor.execute("""
-            SELECT DISTINCT tq.test_type, COUNT(ta.id) as answer_count
-            FROM test_question tq
-            LEFT JOIN test_answer ta ON tq.id = ta.question_id AND ta.user_id = ?
-            GROUP BY tq.test_type
-        """, (user_id,))
-        
-        test_status = cursor.fetchall()
-        conn.close()
-        
-        completed_tests = []
-        individual_reports = {}
-        
-        for test_type, answer_count in test_status:
-            if answer_count > 0:
-                completed_tests.append(test_type)
-                # 生成個別報告
-                if test_type == "MBTI":
-                    individual_reports["mbti_result"] = analyzer.analyze_mbti(user_id)
-                elif test_type == "DISC":
-                    individual_reports["disc_result"] = analyzer.analyze_disc(user_id)
-                elif test_type == "Big5":
-                    individual_reports["big5_result"] = analyzer.analyze_big5(user_id)
-                elif test_type == "Enneagram":
-                    individual_reports["enneagram_result"] = analyzer.analyze_enneagram(user_id)
-        
-        if not completed_tests:
-            raise HTTPException(status_code=404, detail=f"用戶 {user_id} 尚未完成任何測驗")
-        
-        # 生成綜合分析
-        overall_analysis = _generate_overall_analysis(individual_reports)
-        career_recommendations = _generate_career_recommendations(individual_reports)
-        personal_development = _generate_personal_development(individual_reports)
-        compatibility_insights = _generate_compatibility_insights(individual_reports)
-        
-        composite_report = {
-            "user_id": user_id,
-            "test_type": "Composite",
-            "completed_tests": completed_tests,
-            "overall_analysis": overall_analysis,
-            "career_recommendations": career_recommendations,
-            "personal_development_suggestions": personal_development,
-            "compatibility_insights": compatibility_insights,
-            **individual_reports
-        }
-        
-        # 儲存綜合報告
-        conn = sqlite3.connect('personality_test.db')
-        cursor = conn.cursor()
-        
-        cursor.execute("""
-            INSERT OR REPLACE INTO test_report (user_id, test_type, result, created_at)
-            VALUES (?, ?, ?, ?)
-        """, (user_id, "Composite", json.dumps(composite_report), datetime.now()))
-        
-        conn.commit()
-        conn.close()
-        
-        return composite_report
-        
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"生成綜合報告失敗：{str(e)}")
+def _get_integrated_leadership_style(mbti_result: Dict, disc_result: Dict, big5_result: Dict, enneagram_result: Dict) -> Dict[str, Any]:
+    """整合領導風格分析"""
+    mbti_type = mbti_result.get("personality_type", "")
+    disc_primary = disc_result.get("primary_style", "")
+    big5_type = big5_result.get("combination_analysis", {}).get("personality_type", "")
+    enneagram_type = enneagram_result.get("primary_type", "")
+    
+    # 分析領導傾向
+    leadership_traits = []
+    
+    # MBTI 領導分析
+    if mbti_type.startswith("E"):
+        leadership_traits.append("外向領導：善於激勵和影響他人")
+    if mbti_type.endswith("J"):
+        leadership_traits.append("結構化領導：重視組織和規劃")
+    if "T" in mbti_type:
+        leadership_traits.append("邏輯領導：基於分析和理性決策")
+    
+    # DISC 領導分析
+    if disc_primary == "D":
+        leadership_traits.append("直接領導：快速決策和行動導向")
+    elif disc_primary == "I":
+        leadership_traits.append("激勵領導：善於鼓舞和團隊建設")
+    elif disc_primary == "S":
+        leadership_traits.append("支持領導：重視和諧和團隊合作")
+    elif disc_primary == "C":
+        leadership_traits.append("專業領導：重視品質和系統化")
+    
+    # Enneagram 領導分析
+    if enneagram_type in ["3", "8"]:
+        leadership_traits.append("成就導向：目標明確和結果驅動")
+    elif enneagram_type in ["2", "9"]:
+        leadership_traits.append("服務導向：重視他人需求和團隊和諧")
+    
+    return {
+        "primary_style": _determine_primary_leadership_style(leadership_traits),
+        "strengths": leadership_traits,
+        "development_areas": _get_leadership_development_areas(leadership_traits)
+    }
 
-def _generate_overall_analysis(reports: Dict[str, Any]) -> str:
-    """生成整體分析"""
-    analysis_parts = []
+def _get_integrated_communication_style(mbti_result: Dict, disc_result: Dict, big5_result: Dict, enneagram_result: Dict) -> Dict[str, Any]:
+    """整合溝通風格分析"""
+    communication_traits = []
     
-    if "mbti_result" in reports:
-        mbti = reports["mbti_result"]
-        analysis_parts.append(f"根據 MBTI 測驗，您是 {mbti['personality_type']} 類型：{mbti['description']}")
+    # 整合各測驗的溝通特徵
+    communication_traits.append(mbti_result.get("communication_style", ""))
+    communication_traits.append(disc_result.get("communication_style", ""))
+    communication_traits.append(big5_result.get("interpersonal_style", ""))
     
-    if "disc_result" in reports:
-        disc = reports["disc_result"]
-        analysis_parts.append(f"DISC 測驗顯示您的主要風格是 {disc['primary_style']}：{disc['description']}")
-    
-    if "big5_result" in reports:
-        big5 = reports["big5_result"]
-        analysis_parts.append(f"五大人格特質測驗顯示：{big5['description']}")
-    
-    if "enneagram_result" in reports:
-        enneagram = reports["enneagram_result"]
-        analysis_parts.append(f"九型人格測驗顯示您是第 {enneagram['primary_type']} 型：{enneagram['description']}")
-    
-    return "。".join(analysis_parts) + "。"
+    return {
+        "primary_approach": _determine_primary_communication_approach(communication_traits),
+        "strengths": [trait for trait in communication_traits if trait],
+        "adaptation_suggestions": _get_communication_adaptation_suggestions(communication_traits)
+    }
 
-def _generate_career_recommendations(reports: Dict[str, Any]) -> List[str]:
-    """生成職業建議"""
-    recommendations = []
+def _get_integrated_work_environment(mbti_result: Dict, disc_result: Dict, big5_result: Dict, enneagram_result: Dict) -> Dict[str, Any]:
+    """整合工作環境適應性分析"""
+    work_preferences = []
     
-    if "mbti_result" in reports:
-        mbti = reports["mbti_result"]
-        recommendations.extend(mbti.get("career_suggestions", []))
+    # 整合工作風格偏好
+    work_preferences.append(mbti_result.get("work_style", ""))
+    work_preferences.append(disc_result.get("work_style", ""))
+    work_preferences.append(big5_result.get("combination_analysis", {}).get("work_style", ""))
     
-    # 根據 DISC 風格添加建議
-    if "disc_result" in reports:
-        disc = reports["disc_result"]
-        disc_careers = {
-            "D": ["企業主管", "銷售經理", "創業家"],
-            "I": ["公關", "行銷", "培訓師"],
-            "S": ["人力資源", "客服", "行政"],
-            "C": ["會計師", "分析師", "研究員"]
-        }
-        recommendations.extend(disc_careers.get(disc["primary_style"], []))
-    
-    # 去重並限制數量
-    unique_recommendations = list(set(recommendations))
-    return unique_recommendations[:8]  # 最多8個建議
+    return {
+        "ideal_environment": _determine_ideal_work_environment(work_preferences),
+        "team_dynamics": _get_team_dynamics_preferences(work_preferences),
+        "stress_factors": _get_work_stress_factors(mbti_result, disc_result, big5_result, enneagram_result)
+    }
 
-def _generate_personal_development(reports: Dict[str, Any]) -> List[str]:
-    """生成個人發展建議"""
+def _get_integrated_development_priorities(mbti_result: Dict, disc_result: Dict, big5_result: Dict, enneagram_result: Dict) -> Dict[str, Any]:
+    """整合個人發展優先級"""
+    all_suggestions = []
+    
+    # 收集所有發展建議
+    all_suggestions.extend(mbti_result.get("development_suggestions", []))
+    all_suggestions.extend(disc_result.get("development_suggestions", []))
+    all_suggestions.extend(big5_result.get("development_suggestions", []))
+    all_suggestions.extend(enneagram_result.get("development_suggestions", []))
+    
+    return {
+        "high_priority": _get_high_priority_development_areas(all_suggestions),
+        "medium_priority": _get_medium_priority_development_areas(all_suggestions),
+        "long_term_goals": _get_long_term_development_goals(all_suggestions)
+    }
+
+# 輔助函數
+def _determine_primary_leadership_style(traits: List[str]) -> str:
+    """確定主要領導風格"""
+    if any("直接" in trait for trait in traits):
+        return "直接領導型"
+    elif any("激勵" in trait for trait in traits):
+        return "激勵領導型"
+    elif any("支持" in trait for trait in traits):
+        return "支持領導型"
+    elif any("專業" in trait for trait in traits):
+        return "專業領導型"
+    else:
+        return "平衡領導型"
+
+def _get_leadership_development_areas(traits: List[str]) -> List[str]:
+    """獲取領導發展領域"""
+    development_areas = []
+    if not any("外向" in trait for trait in traits):
+        development_areas.append("提升外向溝通和激勵能力")
+    if not any("結構" in trait for trait in traits):
+        development_areas.append("發展組織和規劃能力")
+    if not any("邏輯" in trait for trait in traits):
+        development_areas.append("增強分析和決策能力")
+    return development_areas
+
+def _determine_primary_communication_approach(traits: List[str]) -> str:
+    """確定主要溝通方式"""
+    if any("直接" in trait for trait in traits):
+        return "直接簡潔型"
+    elif any("熱情" in trait for trait in traits):
+        return "熱情生動型"
+    elif any("溫和" in trait for trait in traits):
+        return "溫和支持型"
+    elif any("精確" in trait for trait in traits):
+        return "精確邏輯型"
+    else:
+        return "平衡適應型"
+
+def _get_communication_adaptation_suggestions(traits: List[str]) -> List[str]:
+    """獲取溝通適應建議"""
     suggestions = []
-    
-    if "mbti_result" in reports:
-        mbti = reports["mbti_result"]
-        suggestions.append(f"發展您的優勢：{', '.join(mbti.get('strengths', [])[:3])}")
-        suggestions.append(f"改善您的弱點：{', '.join(mbti.get('weaknesses', [])[:2])}")
-    
-    if "enneagram_result" in reports:
-        enneagram = reports["enneagram_result"]
-        suggestions.append(f"成長方向：{enneagram.get('growth_direction', '')}")
-    
+    if any("直接" in trait for trait in traits):
+        suggestions.append("在需要和諧的場合，增加同理心和耐心")
+    if any("熱情" in trait for trait in traits):
+        suggestions.append("在正式場合，增加結構化和準確性")
+    if any("溫和" in trait for trait in traits):
+        suggestions.append("在需要決策的場合，增加直接性和果斷性")
+    if any("精確" in trait for trait in traits):
+        suggestions.append("在社交場合，增加熱情和靈活性")
     return suggestions
 
-def _generate_compatibility_insights(reports: Dict[str, Any]) -> Dict[str, Any]:
-    """生成相容性洞察"""
-    insights = {}
-    
-    if "mbti_result" in reports:
-        mbti = reports["mbti_result"]
-        insights["mbti_type"] = mbti["personality_type"]
-        insights["mbti_compatibility"] = _get_mbti_compatibility(mbti["personality_type"])
-    
-    if "disc_result" in reports:
-        disc = reports["disc_result"]
-        insights["disc_style"] = disc["primary_style"]
-        insights["communication_preference"] = disc["communication_style"]
-    
-    return insights
+def _determine_ideal_work_environment(traits: List[str]) -> str:
+    """確定理想工作環境"""
+    if any("創新" in trait for trait in traits):
+        return "創意導向環境"
+    elif any("系統" in trait for trait in traits):
+        return "結構化環境"
+    elif any("合作" in trait for trait in traits):
+        return "團隊合作環境"
+    elif any("獨立" in trait for trait in traits):
+        return "自主工作環境"
+    else:
+        return "平衡多元環境"
 
-def _get_mbti_compatibility(personality_type: str) -> List[str]:
-    """取得 MBTI 相容性建議"""
-    compatibility_map = {
-        "INTJ": ["ENFP", "ENTP"],
-        "INTP": ["ENFJ", "ENTJ"],
-        "ENTJ": ["INFP", "INTP"],
-        "ENTP": ["INFJ", "INTJ"],
-        "INFJ": ["ENTP", "ENFP"],
-        "INFP": ["ENTJ", "ENFJ"],
-        "ENFJ": ["INTP", "INFP"],
-        "ENFP": ["INTJ", "INFJ"],
-        "ISTJ": ["ESFP", "ENFP"],
-        "ISFJ": ["ESFP", "ENFP"],
-        "ESTJ": ["ISFP", "INFP"],
-        "ESFJ": ["ISFP", "INFP"],
-        "ISTP": ["ESFJ", "ENFJ"],
-        "ISFP": ["ESTJ", "ESFJ"],
-        "ESTP": ["ISFJ", "INFJ"],
-        "ESFP": ["ISTJ", "ISFJ"]
-    }
-    return compatibility_map.get(personality_type, ["未知相容性"]) 
+def _get_team_dynamics_preferences(traits: List[str]) -> List[str]:
+    """獲取團隊動態偏好"""
+    preferences = []
+    if any("合作" in trait for trait in traits):
+        preferences.append("重視團隊合作和和諧")
+    if any("領導" in trait for trait in traits):
+        preferences.append("傾向擔任領導角色")
+    if any("支持" in trait for trait in traits):
+        preferences.append("善於支持他人和調解")
+    if any("專業" in trait for trait in traits):
+        preferences.append("重視專業能力和品質")
+    return preferences
+
+def _get_work_stress_factors(mbti_result: Dict, disc_result: Dict, big5_result: Dict, enneagram_result: Dict) -> List[str]:
+    """獲取工作壓力因素"""
+    stress_factors = []
+    
+    # 基於各測驗結果分析壓力因素
+    if mbti_result.get("personality_type", "").endswith("J"):
+        stress_factors.append("缺乏結構和計劃")
+    if disc_result.get("primary_style") == "D":
+        stress_factors.append("缺乏控制權和決策權")
+    if big5_result.get("scores", {}).get("N", 0) > 3.5:
+        stress_factors.append("高壓力和不確定性環境")
+    if enneagram_result.get("primary_type") == "6":
+        stress_factors.append("缺乏安全感和支持")
+    
+    return stress_factors
+
+def _get_high_priority_development_areas(suggestions: List[str]) -> List[str]:
+    """獲取高優先級發展領域"""
+    # 這裡可以根據建議的內容和頻率來確定優先級
+    return suggestions[:3] if suggestions else ["持續自我反思和學習"]
+
+def _get_medium_priority_development_areas(suggestions: List[str]) -> List[str]:
+    """獲取中等優先級發展領域"""
+    return suggestions[3:6] if len(suggestions) > 3 else []
+
+def _get_long_term_development_goals(suggestions: List[str]) -> List[str]:
+    """獲取長期發展目標"""
+    return [
+        "建立持續學習和成長的習慣",
+        "發展跨文化溝通能力",
+        "提升領導力和影響力",
+        "建立專業網絡和關係"
+    ] 

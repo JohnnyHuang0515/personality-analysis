@@ -4,6 +4,7 @@ import Header from './components/Header';
 import HomePage from './pages/HomePage';
 import TestPage from './pages/TestPage';
 import ReportPage from './pages/ReportPage';
+import ComprehensiveReportPage from './pages/ComprehensiveReportPage';
 import { TestProvider } from './contexts/TestContext';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
               <Route path="/" element={<HomePage />} />
               <Route path="/test/:testType" element={<TestPage />} />
               <Route path="/report/:userId/:testType" element={<ReportPage />} />
+              <Route path="/comprehensive-report/:userId" element={<ComprehensiveReportPage />} />
             </Routes>
           </main>
         </div>

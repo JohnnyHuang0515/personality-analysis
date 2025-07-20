@@ -151,6 +151,15 @@ const TestPage: React.FC = () => {
       // 完成測驗
       dispatch({ type: 'COMPLETE_TEST' });
 
+      // 自動生成報告
+      try {
+        await apiService.generateReport(userId, testType || '');
+        console.log('報告生成成功');
+      } catch (reportError) {
+        console.error('報告生成失敗:', reportError);
+        // 即使報告生成失敗，也繼續導航到報告頁面
+      }
+
       // 導航到報告頁面 - 使用實際的測驗類型
       navigate(`/report/${userId}/${testType || ''}`);
     } catch (error) {
