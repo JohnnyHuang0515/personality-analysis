@@ -24,15 +24,16 @@ class ComprehensivePersonalityAnalyzer:
         answers_data = cursor.fetchall()
         conn.close()
         
+        # 初始化分數（使用累加總分）
         scores = {
-            'E': {'total': 0, 'count': 0},
-            'I': {'total': 0, 'count': 0},
-            'S': {'total': 0, 'count': 0},
-            'N': {'total': 0, 'count': 0},
-            'T': {'total': 0, 'count': 0},
-            'F': {'total': 0, 'count': 0},
-            'J': {'total': 0, 'count': 0},
-            'P': {'total': 0, 'count': 0}
+            'E': 0.0,
+            'I': 0.0,
+            'S': 0.0,
+            'N': 0.0,
+            'T': 0.0,
+            'F': 0.0,
+            'J': 0.0,
+            'P': 0.0
         }
         
         for answer_data in answers_data:
@@ -48,42 +49,27 @@ class ComprehensivePersonalityAnalyzer:
                     
                     if is_reverse:
                         if category == 'E':
-                            scores['I']['total'] += score
-                            scores['I']['count'] += 1
+                            scores['I'] += score
                         elif category == 'S':
-                            scores['N']['total'] += score
-                            scores['N']['count'] += 1
+                            scores['N'] += score
                         elif category == 'T':
-                            scores['F']['total'] += score
-                            scores['F']['count'] += 1
+                            scores['F'] += score
                         elif category == 'J':
-                            scores['P']['total'] += score
-                            scores['P']['count'] += 1
+                            scores['P'] += score
                     else:
                         if category == 'E':
-                            scores['E']['total'] += score
-                            scores['E']['count'] += 1
+                            scores['E'] += score
                         elif category == 'S':
-                            scores['S']['total'] += score
-                            scores['S']['count'] += 1
+                            scores['S'] += score
                         elif category == 'T':
-                            scores['T']['total'] += score
-                            scores['T']['count'] += 1
+                            scores['T'] += score
                         elif category == 'J':
-                            scores['J']['total'] += score
-                            scores['J']['count'] += 1
+                            scores['J'] += score
                             
             except (ValueError, json.JSONDecodeError):
                 continue
         
-        final_scores = {}
-        for trait, data in scores.items():
-            if data['count'] > 0:
-                final_scores[trait] = data['total'] / data['count']
-            else:
-                final_scores[trait] = 0
-        
-        return final_scores
+        return scores
 
     def calculate_disc_score(self, user_id: str) -> Dict[str, float]:
         """計算 DISC 分數（處理反向計分）"""
@@ -100,11 +86,12 @@ class ComprehensivePersonalityAnalyzer:
         answers_data = cursor.fetchall()
         conn.close()
         
+        # 初始化分數（使用累加總分）
         scores = {
-            'D': {'total': 0, 'count': 0},
-            'I': {'total': 0, 'count': 0},
-            'S': {'total': 0, 'count': 0},
-            'C': {'total': 0, 'count': 0}
+            'D': 0.0,
+            'I': 0.0,
+            'S': 0.0,
+            'C': 0.0
         }
         
         for answer_data in answers_data:
@@ -117,20 +104,12 @@ class ComprehensivePersonalityAnalyzer:
                 
                 if isinstance(weight_data, list) and 0 <= answer_index < len(weight_data):
                     score = weight_data[answer_index]
-                    scores[category]['total'] += score
-                    scores[category]['count'] += 1
+                    scores[category] += score
                             
             except (ValueError, json.JSONDecodeError):
                 continue
         
-        final_scores = {}
-        for trait, data in scores.items():
-            if data['count'] > 0:
-                final_scores[trait] = data['total'] / data['count']
-            else:
-                final_scores[trait] = 0
-        
-        return final_scores
+        return scores
 
     def calculate_big5_score(self, user_id: str) -> Dict[str, float]:
         """計算 Big5 分數（處理反向計分）"""
@@ -147,12 +126,13 @@ class ComprehensivePersonalityAnalyzer:
         answers_data = cursor.fetchall()
         conn.close()
         
+        # 初始化分數（使用累加總分）
         scores = {
-            'O': {'total': 0, 'count': 0},
-            'C': {'total': 0, 'count': 0},
-            'E': {'total': 0, 'count': 0},
-            'A': {'total': 0, 'count': 0},
-            'N': {'total': 0, 'count': 0}
+            'O': 0.0,
+            'C': 0.0,
+            'E': 0.0,
+            'A': 0.0,
+            'N': 0.0
         }
         
         for answer_data in answers_data:
@@ -165,20 +145,12 @@ class ComprehensivePersonalityAnalyzer:
                 
                 if isinstance(weight_data, list) and 0 <= answer_index < len(weight_data):
                     score = weight_data[answer_index]
-                    scores[category]['total'] += score
-                    scores[category]['count'] += 1
+                    scores[category] += score
                             
             except (ValueError, json.JSONDecodeError):
                 continue
         
-        final_scores = {}
-        for trait, data in scores.items():
-            if data['count'] > 0:
-                final_scores[trait] = data['total'] / data['count']
-            else:
-                final_scores[trait] = 0
-        
-        return final_scores
+        return scores
 
     def calculate_enneagram_score(self, user_id: str) -> Dict[str, float]:
         """計算 Enneagram 分數（處理反向計分）"""
@@ -195,16 +167,17 @@ class ComprehensivePersonalityAnalyzer:
         answers_data = cursor.fetchall()
         conn.close()
         
+        # 初始化分數（使用累加總分）
         scores = {
-            '1': {'total': 0, 'count': 0},
-            '2': {'total': 0, 'count': 0},
-            '3': {'total': 0, 'count': 0},
-            '4': {'total': 0, 'count': 0},
-            '5': {'total': 0, 'count': 0},
-            '6': {'total': 0, 'count': 0},
-            '7': {'total': 0, 'count': 0},
-            '8': {'total': 0, 'count': 0},
-            '9': {'total': 0, 'count': 0}
+            '1': 0.0,
+            '2': 0.0,
+            '3': 0.0,
+            '4': 0.0,
+            '5': 0.0,
+            '6': 0.0,
+            '7': 0.0,
+            '8': 0.0,
+            '9': 0.0
         }
         
         for answer_data in answers_data:
@@ -217,20 +190,12 @@ class ComprehensivePersonalityAnalyzer:
                 
                 if isinstance(weight_data, list) and 0 <= answer_index < len(weight_data):
                     score = weight_data[answer_index]
-                    scores[category]['total'] += score
-                    scores[category]['count'] += 1
+                    scores[category] += score
                             
             except (ValueError, json.JSONDecodeError):
                 continue
         
-        final_scores = {}
-        for trait, data in scores.items():
-            if data['count'] > 0:
-                final_scores[trait] = data['total'] / data['count']
-            else:
-                final_scores[trait] = 0
-        
-        return final_scores
+        return scores
 
     def analyze_mbti_comprehensive(self, user_id: str) -> Dict[str, Any]:
         """MBTI 綜合分析"""

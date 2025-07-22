@@ -24,11 +24,12 @@ if not exist "frontend" (
 )
 
 echo 正在啟動後端服務器...
+echo 使用 Poetry 虛擬環境: personality-analysis-system-BLgXGcbj-py3.12
 echo.
 
-:: 啟動後端服務器
+:: 啟動後端服務器 (使用 Poetry 虛擬環境)
 cd backend
-start "後端服務器" cmd /k "python -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000"
+start "後端服務器" cmd /k ""C:\Users\User\AppData\Local\pypoetry\Cache\virtualenvs\personality-analysis-system-BLgXGcbj-py3.12\Scripts\python.exe" -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000"
 
 :: 等待後端啟動
 timeout /t 5 /nobreak >nul

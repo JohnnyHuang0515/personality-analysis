@@ -620,26 +620,6 @@
     "is_reverse": false
   },
   {
-    "text": "我有時忽略他人感受。",
-    "category": "A",
-    "test_type": "BIG5",
-    "options": [
-      "非常不同意",
-      "不同意",
-      "中立",
-      "同意",
-      "非常同意"
-    ],
-    "weight": [
-      5,
-      4,
-      3,
-      2,
-      1
-    ],
-    "is_reverse": true
-  },
-  {
     "text": "我注重細節，喜歡條理分明。",
     "category": "C",
     "test_type": "BIG5",
@@ -740,43 +720,203 @@
     "is_reverse": false
   },
   {
-    "text": "我不喜歡天馬行空的想法，認為那不實際。",
+    "text": "我不喜歡新的想法，更喜歡維持現狀。",
     "category": "O",
     "test_type": "BIG5",
-    "options": [
-      "非常不同意",
-      "不同意",
-      "中立",
-      "同意",
-      "非常同意"
-    ],
-    "weight": [
-      5,
-      4,
-      3,
-      2,
-      1
-    ],
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
     "is_reverse": true
   },
   {
-    "text": "我常被新奇的點子或計畫吸引。",
+    "text": "我對抽象的討論不感興趣。",
     "category": "O",
     "test_type": "BIG5",
-    "options": [
-      "非常不同意",
-      "不同意",
-      "中立",
-      "同意",
-      "非常同意"
-    ],
-    "weight": [
-      1,
-      2,
-      3,
-      4,
-      5
-    ],
-    "is_reverse": false
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我很少花時間去思考藝術、美學或哲學。",
+    "category": "O",
+    "test_type": "BIG5",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我傾向於遵循傳統和常規。",
+    "category": "O",
+    "test_type": "BIG5",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我更喜歡熟悉的事物，而不是嘗試新的體驗。",
+    "category": "O",
+    "test_type": "BIG5",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我做事情常常拖延。",
+    "category": "C",
+    "test_type": "BIG5",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我傾向於隨意而為，而不是有詳細的計畫。",
+    "category": "C",
+    "test_type": "BIG5",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我偶爾會不遵守承諾。",
+    "category": "C",
+    "test_type": "BIG5",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我常常把東西弄得一團糟。",
+    "category": "C",
+    "test_type": "BIG5",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我會因為懶惰而放棄一些任務。",
+    "category": "C",
+    "test_type": "BIG5",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我更喜歡獨自一人，而不是和一大群人在一起。",
+    "category": "E",
+    "test_type": "BIG5",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我很少是團體中的發言者。",
+    "category": "E",
+    "test_type": "BIG5",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我不太喜歡參加社交活動。",
+    "category": "E",
+    "test_type": "BIG5",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我常常感到安靜且內向。",
+    "category": "E",
+    "test_type": "BIG5",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "在人群中我會感到疲憊。",
+    "category": "E",
+    "test_type": "BIG5",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我會堅持己見，即使這可能引起爭執。",
+    "category": "A",
+    "test_type": "BIG5",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我對別人的問題不怎麼感興趣。",
+    "category": "A",
+    "test_type": "BIG5",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我不太容易相信別人。",
+    "category": "A",
+    "test_type": "BIG5",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我會直接表達我的不滿。",
+    "category": "A",
+    "test_type": "BIG5",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我不太傾向於去幫助那些我認為不值得幫助的人。",
+    "category": "A",
+    "test_type": "BIG5",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我很少感到焦慮或憂鬱。",
+    "category": "N",
+    "test_type": "BIG5",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我一般情緒穩定，不容易受到外界影響。",
+    "category": "N",
+    "test_type": "BIG5",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我對生活中的壓力通常能泰然處之。",
+    "category": "N",
+    "test_type": "BIG5",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我對自己的情緒控制力很有信心。",
+    "category": "N",
+    "test_type": "BIG5",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我很少感到不安或煩躁。",
+    "category": "N",
+    "test_type": "BIG5",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
   }
 ]

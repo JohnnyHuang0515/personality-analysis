@@ -7,7 +7,7 @@ import {
   Filler,
   Tooltip,
   Legend,
-} from 'chart.js';
+} from 'chart.js/auto';
 import { Radar } from 'react-chartjs-2';
 
 ChartJS.register(
@@ -101,9 +101,9 @@ const PersonalityRadarChart: React.FC<PersonalityRadarChartProps> = ({ scores, t
 
   const config = getChartConfig();
   
-  // 準備數據 - 確保所有特質維度都顯示
+  // 準備數據 - 確保所有特質維度都顯示，並轉換為比例
   const getNormalizedScores = () => {
-    return config.labels.map(label => {
+    const rawScores = config.labels.map(label => {
       // 從標籤中提取特質代碼
       const traitCode = label.match(/\(([A-Z0-9]+)\)/)?.[1] || 
                        label.match(/類型 (\d+)/)?.[1] || 
@@ -111,38 +111,20 @@ const PersonalityRadarChart: React.FC<PersonalityRadarChartProps> = ({ scores, t
       
       // 查找對應的分數，如果沒有則為 0
       const score = scores[traitCode] || scores[label] || 0;
-      
-      // 根據測驗類型進行標準化處理
-      let normalizedScore = score;
-      
-      switch (testType.toLowerCase()) {
-        case 'MBTI':
-          // MBTI 是相對比較，需要顯示對比
-          // 如果某個維度沒有分數，給一個基礎分數
-          normalizedScore = score > 0 ? score : 2.5; // 基礎分數
-          break;
-          
-        case 'DISC':
-          // DISC 是絕對分數，直接使用
-          normalizedScore = score;
-          break;
-          
-        case 'BIG5':
-          // Big5 通常範圍是 1-5，需要擴展到 0-10
-          normalizedScore = score * 2; // 1-5 擴展到 2-10
-          break;
-          
-        case 'ENNEAGRAM':
-          // Enneagram 是類型偏好，需要標準化
-          normalizedScore = score > 0 ? score : 1; // 最低分數為 1
-          break;
-          
-        default:
-          normalizedScore = score;
-      }
-      
-      return Math.round(normalizedScore * 100) / 100; // 保留兩位小數
+      return score;
     });
+    
+    // 計算最大值用於比例轉換
+    const maxScore = Math.max(...rawScores, 1); // 避免除以0
+    
+    // 將原始分數轉換為0-10的比例
+    const normalizedScores = rawScores.map(score => {
+      // 轉換為0-10的比例
+      const proportion = (score / maxScore) * 10;
+      return Math.round(proportion * 100) / 100; // 保留兩位小數
+    });
+    
+    return normalizedScores;
   };
 
   const data = {
@@ -228,13 +210,13 @@ const PersonalityRadarChart: React.FC<PersonalityRadarChartProps> = ({ scores, t
         <Radar data={data} options={options} />
       </div>
       <div className="mt-4 text-center text-sm text-gray-600">
-        <p>雷達圖顯示您在各個特質維度上的得分分布</p>
-        <p>分數範圍：0-10，越高表示該特質越突出</p>
+        <p>雷達圖顯示您在各個特質維度上的相對強度分布</p>
+        <p>分數範圍：0-10（比例顯示），越高表示該特質相對越突出</p>
         <p className="text-xs text-gray-500 mt-1">
-          {testType.toLowerCase() === 'mbti' && 'MBTI: 顯示所有維度，無答案維度設為基礎分數'}
-          {testType.toLowerCase() === 'disc' && 'DISC: 直接顯示各風格得分'}
-          {testType.toLowerCase() === 'big5' && 'Big5: 1-5分擴展至0-10分顯示'}
-          {testType.toLowerCase() === 'enneagram' && 'Enneagram: 顯示各類型偏好強度'}
+          {testType.toLowerCase() === 'mbti' && 'MBTI: 顯示各維度的相對偏好強度'}
+          {testType.toLowerCase() === 'disc' && 'DISC: 顯示各風格的相對強度'}
+          {testType.toLowerCase() === 'big5' && 'Big5: 顯示各特質的相對強度'}
+          {testType.toLowerCase() === 'enneagram' && 'Enneagram: 顯示各類型的相對偏好強度'}
         </p>
       </div>
     </div>

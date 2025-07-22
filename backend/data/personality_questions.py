@@ -35,10 +35,10 @@ def load_questions_from_json(filename: str) -> List[Question]:
     return questions
 
 # 載入各測驗類型的題目
-mbti_questions = load_questions_from_json('MBTI_questions.json')
-disc_questions = load_questions_from_json('DISC_questions.json')
-big5_questions = load_questions_from_json('BIG5_questions.json')
-enneagram_questions = load_questions_from_json('enneagram_questions.json')
+mbti_questions = load_questions_from_json('MBTI_questions_final.json')
+disc_questions = load_questions_from_json('DISC_questions_final.json')
+big5_questions = load_questions_from_json('BIG5_questions_final.json')
+enneagram_questions = load_questions_from_json('enneagram_questions_final.json')
 
 # 為每個題目分配唯一 ID
 def assign_unique_ids(questions: List[Question], start_id: int) -> List[Question]:
@@ -91,3 +91,25 @@ def get_question_count_by_type() -> dict:
         'BIG5': len(big5_questions),
         'enneagram': len(enneagram_questions)
     }
+
+def print_question_stats(questions: List[Question], test_name: str):
+    """統計並列印指定題庫各維度題數與正反向題比例"""
+    from collections import defaultdict
+    stats = defaultdict(lambda: {'total': 0, '正向': 0, '反向': 0})
+    for q in questions:
+        stats[q.category]['total'] += 1
+        if q.is_reverse:
+            stats[q.category]['反向'] += 1
+        else:
+            stats[q.category]['正向'] += 1
+    print(f"\n【{test_name} 題庫分布統計】")
+    print(f"{'維度':<8}{'總數':<6}{'正向':<6}{'反向':<6}")
+    for cat, d in stats.items():
+        print(f"{cat:<8}{d['total']:<6}{d['正向']:<6}{d['反向']:<6}")
+    print()
+
+if __name__ == "__main__":
+    print_question_stats(mbti_questions, "MBTI")
+    print_question_stats(big5_questions, "BIG5")
+    print_question_stats(disc_questions, "DISC")
+    print_question_stats(enneagram_questions, "Enneagram")

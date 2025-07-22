@@ -70,19 +70,11 @@ class CorrectedPersonalityAnalyzer:
             if 0 <= answer_index < len(weights):
                 score = weights[answer_index]
                 
-                # 累積分數
+                # 累積分數（不計算平均分）
                 if category not in scores:
-                    scores[category] = {'total': 0, 'count': 0}
+                    scores[category] = 0
                 
-                scores[category]['total'] += score
-                scores[category]['count'] += 1
-        
-        # 計算平均分
-        for category in scores:
-            if scores[category]['count'] > 0:
-                scores[category] = scores[category]['total'] / scores[category]['count']
-            else:
-                scores[category] = 0
+                scores[category] += score
         
         return scores
     
@@ -102,16 +94,16 @@ class CorrectedPersonalityAnalyzer:
         answers_data = cursor.fetchall()
         conn.close()
         
-        # 初始化分數
+        # 初始化分數（使用累加總分）
         scores = {
-            'E': {'total': 0, 'count': 0},
-            'I': {'total': 0, 'count': 0},
-            'S': {'total': 0, 'count': 0},
-            'N': {'total': 0, 'count': 0},
-            'T': {'total': 0, 'count': 0},
-            'F': {'total': 0, 'count': 0},
-            'J': {'total': 0, 'count': 0},
-            'P': {'total': 0, 'count': 0}
+            'E': 0.0,
+            'I': 0.0,
+            'S': 0.0,
+            'N': 0.0,
+            'T': 0.0,
+            'F': 0.0,
+            'J': 0.0,
+            'P': 0.0
         }
         
         for answer_data in answers_data:
@@ -129,44 +121,28 @@ class CorrectedPersonalityAnalyzer:
                     if is_reverse:
                         # 反向題目：分數給對立特質
                         if category == 'E':
-                            scores['I']['total'] += score
-                            scores['I']['count'] += 1
+                            scores['I'] += score
                         elif category == 'S':
-                            scores['N']['total'] += score
-                            scores['N']['count'] += 1
+                            scores['N'] += score
                         elif category == 'T':
-                            scores['F']['total'] += score
-                            scores['F']['count'] += 1
+                            scores['F'] += score
                         elif category == 'J':
-                            scores['P']['total'] += score
-                            scores['P']['count'] += 1
+                            scores['P'] += score
                     else:
                         # 正向題目：分數給原特質
                         if category == 'E':
-                            scores['E']['total'] += score
-                            scores['E']['count'] += 1
+                            scores['E'] += score
                         elif category == 'S':
-                            scores['S']['total'] += score
-                            scores['S']['count'] += 1
+                            scores['S'] += score
                         elif category == 'T':
-                            scores['T']['total'] += score
-                            scores['T']['count'] += 1
+                            scores['T'] += score
                         elif category == 'J':
-                            scores['J']['total'] += score
-                            scores['J']['count'] += 1
+                            scores['J'] += score
                             
             except (ValueError, json.JSONDecodeError):
                 continue
         
-        # 計算平均分
-        final_scores = {}
-        for trait, data in scores.items():
-            if data['count'] > 0:
-                final_scores[trait] = data['total'] / data['count']
-            else:
-                final_scores[trait] = 0
-        
-        return final_scores
+        return scores
 
     def analyze_mbti(self, user_id: str) -> Dict[str, Any]:
         """分析 MBTI 測驗結果"""
@@ -238,7 +214,7 @@ class CorrectedPersonalityAnalyzer:
         }
     
     def calculate_disc_score(self, user_id: str) -> Dict[str, float]:
-        """計算 DISC 分數（處理反向計分）"""
+        """計算 DISC 分數"""
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
         
@@ -253,12 +229,12 @@ class CorrectedPersonalityAnalyzer:
         answers_data = cursor.fetchall()
         conn.close()
         
-        # 初始化分數
+        # 初始化分數（使用累加總分）
         scores = {
-            'D': {'total': 0, 'count': 0},
-            'I': {'total': 0, 'count': 0},
-            'S': {'total': 0, 'count': 0},
-            'C': {'total': 0, 'count': 0}
+            'D': 0.0,
+            'I': 0.0,
+            'S': 0.0,
+            'C': 0.0
         }
         
         for answer_data in answers_data:
@@ -275,25 +251,15 @@ class CorrectedPersonalityAnalyzer:
                     # 根據 is_reverse 決定分數歸屬
                     if is_reverse:
                         # 反向題目：分數給對立特質（DISC 沒有明確對立，所以給原特質）
-                        scores[category]['total'] += score
-                        scores[category]['count'] += 1
+                        scores[category] += score
                     else:
                         # 正向題目：分數給原特質
-                        scores[category]['total'] += score
-                        scores[category]['count'] += 1
-                            
+                        scores[category] += score
+                        
             except (ValueError, json.JSONDecodeError):
                 continue
         
-        # 計算平均分
-        final_scores = {}
-        for trait, data in scores.items():
-            if data['count'] > 0:
-                final_scores[trait] = data['total'] / data['count']
-            else:
-                final_scores[trait] = 0
-        
-        return final_scores
+        return scores
 
     def analyze_disc(self, user_id: str) -> Dict[str, Any]:
         """分析 DISC 測驗結果"""
@@ -324,11 +290,11 @@ class CorrectedPersonalityAnalyzer:
         }
     
     def calculate_big5_score(self, user_id: str) -> Dict[str, float]:
-        """計算 Big5 分數（處理反向計分）"""
+        """計算 BIG5 分數"""
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
         
-        # 獲取所有 Big5 答案
+        # 獲取所有 BIG5 答案
         cursor.execute("""
             SELECT ta.answer, tq.category, tq.weight, tq.options, tq.is_reverse
             FROM test_answer ta
@@ -339,13 +305,13 @@ class CorrectedPersonalityAnalyzer:
         answers_data = cursor.fetchall()
         conn.close()
         
-        # 初始化分數
+        # 初始化分數（使用累加總分）
         scores = {
-            'O': {'total': 0, 'count': 0},
-            'C': {'total': 0, 'count': 0},
-            'E': {'total': 0, 'count': 0},
-            'A': {'total': 0, 'count': 0},
-            'N': {'total': 0, 'count': 0}
+            'O': 0.0,  # Openness
+            'C': 0.0,  # Conscientiousness
+            'E': 0.0,  # Extraversion
+            'A': 0.0,  # Agreeableness
+            'N': 0.0   # Neuroticism
         }
         
         for answer_data in answers_data:
@@ -361,26 +327,16 @@ class CorrectedPersonalityAnalyzer:
                     
                     # 根據 is_reverse 決定分數歸屬
                     if is_reverse:
-                        # 反向題目：分數給對立特質（Big5 沒有明確對立，所以給原特質）
-                        scores[category]['total'] += score
-                        scores[category]['count'] += 1
+                        # 反向題目：分數給對立特質（BIG5 沒有明確對立，所以給原特質）
+                        scores[category] += score
                     else:
                         # 正向題目：分數給原特質
-                        scores[category]['total'] += score
-                        scores[category]['count'] += 1
-                            
+                        scores[category] += score
+                        
             except (ValueError, json.JSONDecodeError):
                 continue
         
-        # 計算平均分
-        final_scores = {}
-        for trait, data in scores.items():
-            if data['count'] > 0:
-                final_scores[trait] = data['total'] / data['count']
-            else:
-                final_scores[trait] = 0
-        
-        return final_scores
+        return scores
 
     def analyze_big5(self, user_id: str) -> Dict[str, Any]:
         """分析 Big5 測驗結果"""
@@ -398,11 +354,11 @@ class CorrectedPersonalityAnalyzer:
         }
     
     def calculate_enneagram_score(self, user_id: str) -> Dict[str, float]:
-        """計算 Enneagram 分數（處理反向計分）"""
+        """計算 ENNEAGRAM 分數"""
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
         
-        # 獲取所有 Enneagram 答案
+        # 獲取所有 ENNEAGRAM 答案
         cursor.execute("""
             SELECT ta.answer, tq.category, tq.weight, tq.options, tq.is_reverse
             FROM test_answer ta
@@ -413,17 +369,17 @@ class CorrectedPersonalityAnalyzer:
         answers_data = cursor.fetchall()
         conn.close()
         
-        # 初始化分數
+        # 初始化分數（使用累加總分）
         scores = {
-            '1': {'total': 0, 'count': 0},
-            '2': {'total': 0, 'count': 0},
-            '3': {'total': 0, 'count': 0},
-            '4': {'total': 0, 'count': 0},
-            '5': {'total': 0, 'count': 0},
-            '6': {'total': 0, 'count': 0},
-            '7': {'total': 0, 'count': 0},
-            '8': {'total': 0, 'count': 0},
-            '9': {'total': 0, 'count': 0}
+            '1': 0.0,  # 完美主義者
+            '2': 0.0,  # 助人者
+            '3': 0.0,  # 成就者
+            '4': 0.0,  # 浪漫主義者
+            '5': 0.0,  # 觀察者
+            '6': 0.0,  # 忠誠者
+            '7': 0.0,  # 冒險者
+            '8': 0.0,  # 領導者
+            '9': 0.0   # 調停者
         }
         
         for answer_data in answers_data:
@@ -439,26 +395,16 @@ class CorrectedPersonalityAnalyzer:
                     
                     # 根據 is_reverse 決定分數歸屬
                     if is_reverse:
-                        # 反向題目：分數給對立特質（Enneagram 沒有明確對立，所以給原特質）
-                        scores[category]['total'] += score
-                        scores[category]['count'] += 1
+                        # 反向題目：分數給對立特質（ENNEAGRAM 沒有明確對立，所以給原特質）
+                        scores[category] += score
                     else:
                         # 正向題目：分數給原特質
-                        scores[category]['total'] += score
-                        scores[category]['count'] += 1
-                            
+                        scores[category] += score
+                        
             except (ValueError, json.JSONDecodeError):
                 continue
         
-        # 計算平均分
-        final_scores = {}
-        for trait, data in scores.items():
-            if data['count'] > 0:
-                final_scores[trait] = data['total'] / data['count']
-            else:
-                final_scores[trait] = 0
-        
-        return final_scores
+        return scores
 
     def analyze_enneagram(self, user_id: str) -> Dict[str, Any]:
         """分析 Enneagram 測驗結果"""

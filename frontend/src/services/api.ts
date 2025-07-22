@@ -17,6 +17,13 @@ export const getQuestions = async (testType: string, random: boolean = false) =>
   return response.data;
 };
 
+export const getQuestionsBatch = async (questionIds: number[]) => {
+  const response = await api.post('/api/v1/questions/batch', {
+    ids: questionIds
+  });
+  return response.data;
+};
+
 export const getTestTypes = async () => {
   const response = await api.get('/api/v1/questions/types');
   return response.data;
@@ -227,6 +234,7 @@ export interface Report {
 // API 服務對象
 export const apiService = {
   getQuestions,
+  getQuestionsBatch,
   getTestTypes,
   createSession,
   getLatestSession,

@@ -1,0 +1,3482 @@
+[
+  {
+    "text": "我喜歡參加社交活動，與人互動讓我充滿能量。",
+    "category": "E",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "與他人互動讓我感到充滿活力。",
+    "category": "E",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我喜歡與人分享想法和感受。",
+    "category": "E",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我樂於參與團體活動，充滿熱情。",
+    "category": "E",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "你有多常在聚會中主動認識新朋友？",
+    "category": "E",
+    "test_type": "MBTI",
+    "options": [
+      "從不",
+      "很少",
+      "有時",
+      "經常",
+      "總是"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "你在團體活動中通常會選擇什麼角色？",
+    "category": "E",
+    "test_type": "MBTI",
+    "options": [
+      "領導者",
+      "協調者",
+      "參與者",
+      "觀察者",
+      "旁觀者"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "你在團體討論時，通常會主動發言還是傾向聆聽？",
+    "category": "E",
+    "test_type": "MBTI",
+    "options": [
+      "總是主動發言",
+      "經常主動發言",
+      "偶爾發言",
+      "多數聆聽",
+      "總是聆聽"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "遇到新朋友時，你會主動介紹自己嗎？",
+    "category": "E",
+    "test_type": "MBTI",
+    "options": [
+      "總是",
+      "經常",
+      "有時",
+      "很少",
+      "從不"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我在社交場合容易感到精力充沛。",
+    "category": "E",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "你在陌生環境中會主動與人交談還是保持安靜？",
+    "category": "E",
+    "test_type": "MBTI",
+    "options": [
+      "總是主動交談",
+      "經常主動",
+      "偶爾主動",
+      "多數保持安靜",
+      "總是安靜"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我在團體活動中常常成為焦點。",
+    "category": "E",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "你有多常主動邀請朋友參加活動？",
+    "category": "E",
+    "test_type": "MBTI",
+    "options": [
+      "從不",
+      "很少",
+      "有時",
+      "經常",
+      "總是"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "你在大型聚會中會主動發起話題嗎？",
+    "category": "E",
+    "test_type": "MBTI",
+    "options": [
+      "總是",
+      "經常",
+      "有時",
+      "很少",
+      "從不"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我在新環境中容易結交朋友。",
+    "category": "E",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "你有多常主動參加社交活動？",
+    "category": "E",
+    "test_type": "MBTI",
+    "options": [
+      "從不",
+      "很少",
+      "有時",
+      "經常",
+      "總是"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我喜歡主動參與社交活動。",
+    "category": "E",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我傾向獨自思考和反省，不太喜歡熱鬧場合。",
+    "category": "E",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我喜歡花時間獨處來恢復能量。",
+    "category": "E",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我更喜歡保有私人空間，不輕易透露內心。",
+    "category": "E",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我需要時間獨處來恢復精神。",
+    "category": "E",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我在團體活動中很少主動發言，通常選擇傾聽。",
+    "category": "E",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我不喜歡參加社交活動，常常選擇獨處。",
+    "category": "E",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我在團體中多數時候保持安靜，不主動發言。",
+    "category": "E",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我在社交場合容易感到疲憊，喜歡早點離開。",
+    "category": "E",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我在熱鬧的聚會裡常常覺得很累，寧願早點離開。",
+    "category": "E",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "普通",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "和一群人相處時，我通常比較安靜，不太主動發言。",
+    "category": "E",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "普通",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "當你遇到新環境時，會主動與人互動還是先觀察？",
+    "category": "I",
+    "test_type": "MBTI",
+    "options": [
+      "主動互動",
+      "多數互動",
+      "偶爾互動",
+      "多數觀察",
+      "完全觀察"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我覺得自己在陌生場合容易感到不自在。",
+    "category": "I",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "你有多常在需要表達意見時選擇沉默？",
+    "category": "I",
+    "test_type": "MBTI",
+    "options": [
+      "從不",
+      "很少",
+      "有時",
+      "經常",
+      "總是"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我認為自己善於傾聽他人而不是主動發言。",
+    "category": "I",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我更喜歡一對一的深度交流而非大團體活動。",
+    "category": "I",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "你有多常在聚會中選擇安靜角落？",
+    "category": "I",
+    "test_type": "MBTI",
+    "options": [
+      "從不",
+      "很少",
+      "有時",
+      "經常",
+      "總是"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我在需要公開發言時會感到壓力。",
+    "category": "I",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我更喜歡獨自完成任務而不是與人合作。",
+    "category": "I",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "你在聚會中會主動離開人群找安靜空間嗎？",
+    "category": "I",
+    "test_type": "MBTI",
+    "options": [
+      "從不",
+      "很少",
+      "有時",
+      "經常",
+      "總是"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我在需要長時間社交後會感到疲憊。",
+    "category": "I",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我更喜歡安靜的環境而不是熱鬧的場合。",
+    "category": "I",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "你在團體中會主動退出討論嗎？",
+    "category": "I",
+    "test_type": "MBTI",
+    "options": [
+      "從不",
+      "很少",
+      "有時",
+      "經常",
+      "總是"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我在長時間社交後需要獨處來恢復精力。",
+    "category": "I",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我喜歡獨處，享受一個人的時光。",
+    "category": "I",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我在團體中多數時候選擇傾聽。",
+    "category": "I",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我更喜歡一對一的深度交流。",
+    "category": "I",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我不喜歡獨處。",
+    "category": "I",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我在團體中經常主動發言。",
+    "category": "I",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我不喜歡一對一的交流。",
+    "category": "I",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我很享受和朋友們一起參加熱鬧的聚會。",
+    "category": "I",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "普通",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "遇到新朋友時，我會主動介紹自己。",
+    "category": "I",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "普通",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我在團體活動中經常主動參與討論。",
+    "category": "I",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "普通",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "參加社交活動後，我通常還是很有精神。",
+    "category": "I",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "普通",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我喜歡成為大家注目的焦點。",
+    "category": "I",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "普通",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "在新環境裡，我會主動和大家互動。",
+    "category": "I",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "普通",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我常常主動邀請朋友參加活動。",
+    "category": "I",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "普通",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我喜歡專注眼前的事實和細節。",
+    "category": "S",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我喜歡細心觀察周遭的環境。",
+    "category": "S",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我注意生活中的細節和事實。",
+    "category": "S",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "你在處理資訊時，偏好細節還是大局？",
+    "category": "S",
+    "test_type": "MBTI",
+    "options": [
+      "完全細節",
+      "多數細節",
+      "一半一半",
+      "多數大局",
+      "完全大局"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我喜歡觀察生活中的小細節。",
+    "category": "S",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "你在討論時更重視事實還是理論？",
+    "category": "S",
+    "test_type": "MBTI",
+    "options": [
+      "完全事實",
+      "多數事實",
+      "一半一半",
+      "多數理論",
+      "完全理論"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我喜歡用實際經驗來解決問題。",
+    "category": "S",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "你在學習新知時偏好實際操作還是理論推演？",
+    "category": "S",
+    "test_type": "MBTI",
+    "options": [
+      "完全實作",
+      "多數實作",
+      "一半一半",
+      "多數理論",
+      "完全理論"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我重視細節勝過整體大局。",
+    "category": "S",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "你在學習時更重視實踐還是理論？",
+    "category": "S",
+    "test_type": "MBTI",
+    "options": [
+      "完全實踐",
+      "多數實踐",
+      "一半一半",
+      "多數理論",
+      "完全理論"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我喜歡從細節中發現問題。",
+    "category": "S",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我傾向著眼未來的可能性和大局。",
+    "category": "S",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我更傾向於憑直覺和想像思考未來。",
+    "category": "S",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我喜歡從整體和未來角度看事情。",
+    "category": "S",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我不喜歡細節，偏好大方向和整體規劃。",
+    "category": "S",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我很少注意生活中的小細節，常常忽略。",
+    "category": "S",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我不太依賴實際經驗，較重視理論。",
+    "category": "S",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我不喜歡按部就班，偏好創新和變化。",
+    "category": "S",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我很少注意生活中的細節，常常忽略小地方。",
+    "category": "S",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "普通",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我不太在意實際經驗，更喜歡憑感覺做決定。",
+    "category": "S",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "普通",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我做事時不太重視事實，常常依賴直覺。",
+    "category": "S",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "普通",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "你在規劃未來時，會想像多種可能性嗎？",
+    "category": "N",
+    "test_type": "MBTI",
+    "options": [
+      "從不",
+      "很少",
+      "有時",
+      "經常",
+      "總是"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我經常有創新或不尋常的想法。",
+    "category": "N",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "你經常思考未來的可能性嗎？",
+    "category": "N",
+    "test_type": "MBTI",
+    "options": [
+      "從不",
+      "很少",
+      "有時",
+      "經常",
+      "總是"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我喜歡幻想和創新。",
+    "category": "N",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我喜歡探索新觀點和創意。",
+    "category": "N",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "你經常思考未來的發展方向嗎？",
+    "category": "N",
+    "test_type": "MBTI",
+    "options": [
+      "從不",
+      "很少",
+      "有時",
+      "經常",
+      "總是"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我喜歡挑戰傳統觀念。",
+    "category": "N",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我做決定時很少考慮未來的可能性。",
+    "category": "N",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我不太會聯想或幻想，習慣腳踏實地。",
+    "category": "N",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我很少思考未來的可能性，專注於當下。",
+    "category": "N",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我做決定時只考慮現實，不太想像未來。",
+    "category": "N",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "普通",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我不太喜歡討論抽象的想法。",
+    "category": "N",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "普通",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我很少有創新或不尋常的想法。",
+    "category": "N",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "普通",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我做事時不太依賴靈感。",
+    "category": "N",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "普通",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我不太會從不同角度看問題。",
+    "category": "N",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "普通",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我常依靠邏輯和理性做決定，而非感情。",
+    "category": "T",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我喜歡從邏輯和數據中尋找答案。",
+    "category": "T",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我在面對問題時偏好理性分析。",
+    "category": "T",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "你做決定時更依賴邏輯還是感受？",
+    "category": "T",
+    "test_type": "MBTI",
+    "options": [
+      "完全邏輯",
+      "多數邏輯",
+      "一半一半",
+      "多數感受",
+      "完全感受"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我認為理性分析比情感直覺更重要。",
+    "category": "T",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "你在爭論時更強調邏輯還是情感？",
+    "category": "T",
+    "test_type": "MBTI",
+    "options": [
+      "完全邏輯",
+      "多數邏輯",
+      "一半一半",
+      "多數情感",
+      "完全情感"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我認為公平比和諧更重要。",
+    "category": "T",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "你在討論時更強調邏輯推理還是情感共鳴？",
+    "category": "T",
+    "test_type": "MBTI",
+    "options": [
+      "完全邏輯",
+      "多數邏輯",
+      "一半一半",
+      "多數情感",
+      "完全情感"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我認為原則比人情更重要。",
+    "category": "T",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "你在討論時更強調事實還是情感？",
+    "category": "T",
+    "test_type": "MBTI",
+    "options": [
+      "完全事實",
+      "多數事實",
+      "一半一半",
+      "多數情感",
+      "完全情感"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我認為邏輯推理比感性判斷更可靠。",
+    "category": "T",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我重視情感和他人感受，在做決定時考慮多。",
+    "category": "T",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我會重視他人的情緒和感受。",
+    "category": "T",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我常根據感覺和直覺做決策。",
+    "category": "T",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我做決定時很少考慮邏輯，通常依感覺行事。",
+    "category": "T",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "普通",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我不太重視分析問題，常常隨意判斷。",
+    "category": "T",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "普通",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我做事時不太在意公平，只看心情。",
+    "category": "T",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "普通",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我很少根據事實做決定。",
+    "category": "T",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "普通",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我不太會用理性思考問題。",
+    "category": "T",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "普通",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我做事時很少考慮原則。",
+    "category": "T",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "普通",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我不太重視數據和證據。",
+    "category": "T",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "普通",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "你在與人相處時，會優先考慮對方感受嗎？",
+    "category": "F",
+    "test_type": "MBTI",
+    "options": [
+      "從不",
+      "很少",
+      "有時",
+      "經常",
+      "總是"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我覺得自己很容易同理他人。",
+    "category": "F",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "你在團隊合作時，會優先考慮團隊氣氛嗎？",
+    "category": "F",
+    "test_type": "MBTI",
+    "options": [
+      "從不",
+      "很少",
+      "有時",
+      "經常",
+      "總是"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我重視人際關係的和諧。",
+    "category": "F",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "你在團隊中會主動協調人際關係嗎？",
+    "category": "F",
+    "test_type": "MBTI",
+    "options": [
+      "從不",
+      "很少",
+      "有時",
+      "經常",
+      "總是"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我重視團隊成員的感受。",
+    "category": "F",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "你在團隊中會主動關心他人情緒嗎？",
+    "category": "F",
+    "test_type": "MBTI",
+    "options": [
+      "從不",
+      "很少",
+      "有時",
+      "經常",
+      "總是"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我重視他人的感受和需求。",
+    "category": "F",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我做決定時只考慮邏輯，不太在意他人感受。",
+    "category": "F",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我很少因他人情緒而改變自己的決定。",
+    "category": "F",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我認為理性分析比情感更重要。",
+    "category": "F",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我做決定時很少考慮他人需求。",
+    "category": "F",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我做事時只考慮效率，不太在意人際關係。",
+    "category": "F",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我做決定時只考慮公平，不考慮和諧。",
+    "category": "F",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我做事時只考慮原則，不考慮人情。",
+    "category": "F",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我做決定時只考慮事實，不考慮感受。",
+    "category": "F",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我做事時只考慮邏輯，不考慮情感。",
+    "category": "F",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我做決定時很少考慮他人情緒。",
+    "category": "F",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我做事時只考慮自己，不考慮團隊。",
+    "category": "F",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我做決定時很少考慮團隊氣氛。",
+    "category": "F",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我做事時只考慮目標，不考慮過程。",
+    "category": "F",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我喜歡計劃和組織事情，享受秩序感。",
+    "category": "J",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我喜歡保持計劃性，安排好每日行程。",
+    "category": "J",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我喜歡事先準備，確保不出錯。",
+    "category": "J",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我喜歡事先安排計劃，避免臨時變動。",
+    "category": "J",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "你在計畫未來時，會詳細規劃還是隨遇而安？",
+    "category": "J",
+    "test_type": "MBTI",
+    "options": [
+      "完全規劃",
+      "多數規劃",
+      "部分規劃",
+      "偶爾規劃",
+      "完全隨遇而安"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我喜歡每天有明確的行程安排。",
+    "category": "J",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "你在做決策時，會詳細列出所有步驟嗎？",
+    "category": "J",
+    "test_type": "MBTI",
+    "options": [
+      "總是",
+      "經常",
+      "有時",
+      "很少",
+      "從不"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我討厭臨時改變計畫。",
+    "category": "J",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "你在規劃日常時會詳細列出待辦事項嗎？",
+    "category": "J",
+    "test_type": "MBTI",
+    "options": [
+      "總是",
+      "經常",
+      "有時",
+      "很少",
+      "從不"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我喜歡提前安排所有細節。",
+    "category": "J",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "你遇到臨時變動時會感到不安嗎？",
+    "category": "J",
+    "test_type": "MBTI",
+    "options": [
+      "總是",
+      "經常",
+      "有時",
+      "很少",
+      "從不"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "你在安排日程時會預留彈性時間嗎？",
+    "category": "J",
+    "test_type": "MBTI",
+    "options": [
+      "總是",
+      "經常",
+      "有時",
+      "很少",
+      "從不"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我喜歡把事情按部就班地完成。",
+    "category": "J",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "你遇到計畫外的變動時會感到困擾嗎？",
+    "category": "J",
+    "test_type": "MBTI",
+    "options": [
+      "總是",
+      "經常",
+      "有時",
+      "很少",
+      "從不"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我不喜歡受限制，喜歡保持彈性和自由。",
+    "category": "J",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我偏好隨性而行，不喜歡過於緊湊的安排。",
+    "category": "J",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我偏好即興發揮，不喜歡束縛。",
+    "category": "J",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我覺得隨遇而安更自在。",
+    "category": "J",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我做事時很少規劃，常常臨時決定。",
+    "category": "J",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "普通",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我不太喜歡安排日程，隨遇而安。",
+    "category": "J",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "普通",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我做事時很少列出待辦事項。",
+    "category": "J",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "普通",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我不太在意計畫的細節。",
+    "category": "J",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "普通",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我做決定時很少考慮步驟。",
+    "category": "J",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "普通",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我不太喜歡有明確的行程安排。",
+    "category": "J",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "普通",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "你遇到突發狀況時，會感到焦慮還是興奮？",
+    "category": "P",
+    "test_type": "MBTI",
+    "options": [
+      "非常焦慮",
+      "有點焦慮",
+      "中立",
+      "有點興奮",
+      "非常興奮"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我認為自己能靈活應對各種變化。",
+    "category": "P",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "你在面對突發事件時，能快速調整心態嗎？",
+    "category": "P",
+    "test_type": "MBTI",
+    "options": [
+      "總是",
+      "經常",
+      "有時",
+      "很少",
+      "從不"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我喜歡隨機應變而不是嚴格遵守計畫。",
+    "category": "P",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我能輕鬆適應突發狀況。",
+    "category": "P",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "你在計畫被打亂時會隨機應變嗎？",
+    "category": "P",
+    "test_type": "MBTI",
+    "options": [
+      "總是",
+      "經常",
+      "有時",
+      "很少",
+      "從不"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我喜歡根據當下情況做決定。",
+    "category": "P",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我能夠隨時調整自己的計畫。",
+    "category": "P",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "你在面對突發狀況時會感到興奮嗎？",
+    "category": "P",
+    "test_type": "MBTI",
+    "options": [
+      "總是",
+      "經常",
+      "有時",
+      "很少",
+      "從不"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我喜歡根據情況靈活調整計畫。",
+    "category": "P",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我做事時很少隨機應變，偏好照計畫進行。",
+    "category": "P",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "普通",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我不太喜歡臨時改變計畫。",
+    "category": "P",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "普通",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我做事時很少根據當下情況調整。",
+    "category": "P",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "普通",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我不太會靈活應對突發狀況。",
+    "category": "P",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "普通",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我做決定時很少考慮彈性。",
+    "category": "P",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "普通",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我不太喜歡即興發揮。",
+    "category": "P",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "普通",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我做事時很少調整自己的計畫。",
+    "category": "P",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "普通",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我不太會根據情況改變做法。",
+    "category": "P",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "普通",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我做事時很少接受突發變化。",
+    "category": "P",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "普通",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我不太會隨機應變。",
+    "category": "P",
+    "test_type": "MBTI",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "普通",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  }
+]

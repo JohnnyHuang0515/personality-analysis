@@ -7,7 +7,7 @@ import {
   Title,
   Tooltip,
   Legend,
-} from 'chart.js';
+} from 'chart.js/auto';
 import { Bar } from 'react-chartjs-2';
 
 ChartJS.register(
@@ -92,22 +92,33 @@ const TraitBarChart: React.FC<TraitBarChartProps> = ({ scores, testType }) => {
 
   const config = getChartConfig();
   
-  // 準備數據
+  // 準備數據 - 轉換為比例顯示
+  const rawScores = config.labels.map(label => {
+    // 從標籤中提取特質代碼
+    const traitCode = label.match(/\(([A-Z0-9]+)\)/)?.[1] || 
+                     label.match(/類型 (\d+)/)?.[1] || 
+                     label.split(' ')[0];
+    
+    // 查找對應的分數
+    const score = scores[traitCode] || scores[label] || 0;
+    return score;
+  });
+  
+  // 計算最大值用於比例轉換
+  const maxScore = Math.max(...rawScores, 1); // 避免除以0
+  
+  // 將原始分數轉換為0-10的比例
+  const normalizedScores = rawScores.map(score => {
+    const proportion = (score / maxScore) * 10;
+    return Math.round(proportion * 100) / 100; // 保留兩位小數
+  });
+  
   const data = {
     labels: config.labels,
     datasets: [
       {
         label: '特質得分',
-        data: config.labels.map(label => {
-          // 從標籤中提取特質代碼
-          const traitCode = label.match(/\(([A-Z0-9]+)\)/)?.[1] || 
-                           label.match(/類型 (\d+)/)?.[1] || 
-                           label.split(' ')[0];
-          
-          // 查找對應的分數
-          const score = scores[traitCode] || scores[label] || 0;
-          return Math.round(score * 100) / 100; // 保留兩位小數
-        }),
+        data: normalizedScores,
         backgroundColor: config.colors,
         borderColor: config.colors.map(color => color.replace('0.8', '1')),
         borderWidth: 2,
@@ -181,8 +192,8 @@ const TraitBarChart: React.FC<TraitBarChartProps> = ({ scores, testType }) => {
         <Bar data={data} options={options} />
       </div>
       <div className="mt-4 text-center text-sm text-gray-600">
-        <p>條形圖顯示您在各個特質維度上的具體得分</p>
-        <p>分數範圍：0-10，越高表示該特質越突出</p>
+        <p>條形圖顯示您在各個特質維度上的相對強度</p>
+        <p>分數範圍：0-10（比例顯示），越高表示該特質相對越突出</p>
       </div>
     </div>
   );

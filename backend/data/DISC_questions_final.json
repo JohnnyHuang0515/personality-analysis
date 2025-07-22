@@ -1,0 +1,1762 @@
+[
+  {
+    "text": "我喜歡掌控局面，積極主動完成任務。",
+    "category": "D",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我避免與他人發生衝突，偏好和諧的環境。",
+    "category": "D",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我喜歡與他人合作，重視團隊和諧。",
+    "category": "S",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我不喜歡被打斷，需要安靜的環境。",
+    "category": "S",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我喜歡表現自己，充滿熱情。",
+    "category": "I",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我有時避免成為眾人焦點。",
+    "category": "I",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我喜歡按照規則和程序做事。",
+    "category": "C",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我有時忽略細節，傾向隨性處理。",
+    "category": "C",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我喜歡主導團隊，解決挑戰。",
+    "category": "D",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我避免冒險，喜歡穩定安全。",
+    "category": "D",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我傾向保持耐心，支持他人。",
+    "category": "S",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我不喜歡改變，怕突發狀況。",
+    "category": "S",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我喜歡與人溝通，充滿活力。",
+    "category": "I",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我偶爾感到害羞，不太主動表達。",
+    "category": "I",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我重視正確和精確，按規則行事。",
+    "category": "C",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我有時忽視細節，較隨興。",
+    "category": "C",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我喜歡主導討論和決策。",
+    "category": "D",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我較少表現強硬，避免衝突。",
+    "category": "D",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我喜歡關心他人，助人為樂。",
+    "category": "S",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我不喜歡過多變動，喜歡穩定。",
+    "category": "S",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我喜歡表達自我，充滿熱忱。",
+    "category": "I",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我有時避免成為注意焦點。",
+    "category": "I",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我喜歡有條理地完成工作。",
+    "category": "C",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我有時隨興而為，較不拘泥細節。",
+    "category": "C",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我積極面對挑戰，不怕困難。",
+    "category": "D",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我避免承擔風險，喜歡安全感。",
+    "category": "D",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我樂於支持和幫助他人。",
+    "category": "S",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我不喜歡變動，重視穩定。",
+    "category": "S",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我熱衷於社交活動，喜歡與人互動。",
+    "category": "I",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我有時較為害羞，不易表達自己。",
+    "category": "I",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我喜歡嚴謹地完成任務。",
+    "category": "C",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我有時會忽略細節。",
+    "category": "C",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我喜歡掌控事情的進展。",
+    "category": "D",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我偏好避免爭論與衝突。",
+    "category": "D",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我喜歡維持和諧的人際關係。",
+    "category": "S",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我不喜歡變化，喜歡按部就班。",
+    "category": "S",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我喜歡在眾人面前表達自己。",
+    "category": "I",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我有時會害羞不願表達。",
+    "category": "I",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我重視規則和標準。",
+    "category": "C",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我有時忽略細節，隨意應付。",
+    "category": "C",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我面對壓力時敢於冒險。",
+    "category": "D",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "在工作中，我傾向於快速採取行動。",
+    "category": "D",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我面對壓力時目標導向。",
+    "category": "D",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我認為自己目標導向。",
+    "category": "D",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "別人常說我競爭心強。",
+    "category": "D",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我認為自己競爭心強。",
+    "category": "D",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我在日常生活中經常勇於承擔責任。",
+    "category": "D",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "遇到挑戰時，我會推動團隊前進。",
+    "category": "D",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "遇到挑戰時，我會不怕衝突。",
+    "category": "D",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我對於效率特別在意。",
+    "category": "D",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "在工作中，我傾向於表達熱情。",
+    "category": "I",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "別人常說我善於激勵。",
+    "category": "I",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我面對壓力時開朗。",
+    "category": "I",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我認為自己善於表達。",
+    "category": "I",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我重視社交活動。",
+    "category": "I",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "別人常說我有感染力。",
+    "category": "I",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我重視參與感。",
+    "category": "I",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "當與他人合作時，我會建立人脈。",
+    "category": "I",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "遇到挑戰時，我會樂於溝通。",
+    "category": "I",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我在團隊中通常會展現幽默感。",
+    "category": "I",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "別人常說我穩重。",
+    "category": "S",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我對於友善特別在意。",
+    "category": "S",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我在團隊中通常會維護團體利益。",
+    "category": "S",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我對於安全感特別在意。",
+    "category": "S",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我重視安全感。",
+    "category": "S",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我認為自己有耐心。",
+    "category": "S",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "在工作中，我傾向於主動協助他人。",
+    "category": "S",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我面對壓力時善解人意。",
+    "category": "S",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我對於信任特別在意。",
+    "category": "S",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "當與他人合作時，我會默默付出。",
+    "category": "S",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我認為自己分析能力強。",
+    "category": "C",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "別人常說我自律。",
+    "category": "C",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "遇到挑戰時，我會遵守規則。",
+    "category": "C",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我在團隊中通常會保持紀律。",
+    "category": "C",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "當與他人合作時，我會制定計畫。",
+    "category": "C",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我認為自己追求高標準。",
+    "category": "C",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我在日常生活中經常仔細檢查細節。",
+    "category": "C",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "遇到挑戰時，我會蒐集資料。",
+    "category": "C",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我在日常生活中經常分析問題。",
+    "category": "C",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我對於細節特別在意。",
+    "category": "C",
+    "test_type": "DISC",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我不太喜歡主導或掌控局面，更傾向於讓事情順其自然。",
+    "category": "D",
+    "test_type": "DISC",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我會避免與人競爭，更重視合作。",
+    "category": "D",
+    "test_type": "DISC",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我不太在意是否能快速達成結果，過程的品質也很重要。",
+    "category": "D",
+    "test_type": "DISC",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "在衝突發生時，我傾向於避免直接對抗。",
+    "category": "D",
+    "test_type": "DISC",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我不太喜歡做重大決定，會傾向於諮詢他人意見。",
+    "category": "D",
+    "test_type": "DISC",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我不太喜歡成為眾人關注的焦點。",
+    "category": "I",
+    "test_type": "DISC",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我傾向於保持低調，不怎麼主動社交。",
+    "category": "I",
+    "test_type": "DISC",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我表達情感時會比較內斂。",
+    "category": "I",
+    "test_type": "DISC",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我不太擅長說服或影響他人。",
+    "category": "I",
+    "test_type": "DISC",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我更喜歡獨自思考，而不是透過討論激發想法。",
+    "category": "I",
+    "test_type": "DISC",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我喜歡變化和新的挑戰，不喜歡一成不變。",
+    "category": "S",
+    "test_type": "DISC",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我對突發狀況的適應力很強。",
+    "category": "S",
+    "test_type": "DISC",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我不太會花時間去維繫現有的關係。",
+    "category": "S",
+    "test_type": "DISC",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我傾向於快速行動，而不是慢慢規劃。",
+    "category": "S",
+    "test_type": "DISC",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我不太喜歡重複性的工作。",
+    "category": "S",
+    "test_type": "DISC",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我不太會過度在意細節或精確度。",
+    "category": "C",
+    "test_type": "DISC",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我會接受一些風險，即使可能不符合所有規範。",
+    "category": "C",
+    "test_type": "DISC",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我對事情的看法比較彈性，不執著於原則。",
+    "category": "C",
+    "test_type": "DISC",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我不太會花時間去分析數據或資訊。",
+    "category": "C",
+    "test_type": "DISC",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我不太擔心犯錯，會從經驗中學習。",
+    "category": "C",
+    "test_type": "DISC",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  }
+]

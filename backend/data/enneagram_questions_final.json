@@ -1,0 +1,1982 @@
+[
+  {
+    "text": "我追求完美與卓越，避免犯錯。",
+    "category": "1",
+    "test_type": "enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我經常對自己的行為感到不滿意。",
+    "category": "1",
+    "test_type": "enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我有時會逃避責任，不願面對問題。",
+    "category": "1",
+    "test_type": "enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我堅持自己的標準，不輕易妥協。",
+    "category": "1",
+    "test_type": "enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我害怕做錯決定，導致負面後果。",
+    "category": "1",
+    "test_type": "enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我常常感到焦慮，擔心未來的不確定。",
+    "category": "6",
+    "test_type": "enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我不輕易相信陌生人，需要時間建立信任。",
+    "category": "6",
+    "test_type": "enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我會依賴他人的指引來幫助我做決定。",
+    "category": "6",
+    "test_type": "enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我有時候會逃避面對困難的情況。",
+    "category": "6",
+    "test_type": "enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我常覺得自己必須保持警覺，才能避免危險。",
+    "category": "6",
+    "test_type": "enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我常常感覺與眾不同，追求獨特性。",
+    "category": "4",
+    "test_type": "enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我有時會過度沉浸在自己的情感中。",
+    "category": "4",
+    "test_type": "enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我避免與他人分享內心的真實感受。",
+    "category": "4",
+    "test_type": "enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我有時覺得自己被誤解和孤立。",
+    "category": "4",
+    "test_type": "enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我喜歡以獨特的方式表達自己，不隨波逐流。",
+    "category": "4",
+    "test_type": "enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我喜歡成為團隊中的領導者。",
+    "category": "8",
+    "test_type": "enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我不害怕衝突，會直接表達自己的意見。",
+    "category": "8",
+    "test_type": "enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我害怕失去控制，避免展現脆弱的一面。",
+    "category": "8",
+    "test_type": "enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我有時避免讓步或妥協自己的立場。",
+    "category": "8",
+    "test_type": "enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我很少表現出軟弱或不確定感。",
+    "category": "8",
+    "test_type": "enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我喜歡幫助他人，感受到被需要的價值。",
+    "category": "2",
+    "test_type": "enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我常為別人犧牲自己的時間和需求。",
+    "category": "2",
+    "test_type": "enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我有時會期待別人回報我的付出。",
+    "category": "2",
+    "test_type": "enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我渴望被他人認可與感激。",
+    "category": "2",
+    "test_type": "enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我不喜歡被忽視，會主動表達關心。",
+    "category": "2",
+    "test_type": "enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我喜歡保持平和與和諧，避免衝突。",
+    "category": "9",
+    "test_type": "enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我有時會避免表達自己的意見，害怕爭執。",
+    "category": "9",
+    "test_type": "enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我經常遲疑，不確定該採取什麼行動。",
+    "category": "9",
+    "test_type": "enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我努力維持內心的平靜與安穩。",
+    "category": "9",
+    "test_type": "enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我不喜歡爭吵，會主動尋求妥協與調解。",
+    "category": "9",
+    "test_type": "enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我喜歡追求成功與成就，享受挑戰。",
+    "category": "3",
+    "test_type": "enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我擅長調整自己的形象，以符合他人期望。",
+    "category": "3",
+    "test_type": "enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我有時會過度關注別人對我的評價。",
+    "category": "3",
+    "test_type": "enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我不喜歡被看穿真實的自己，會偽裝情感。",
+    "category": "3",
+    "test_type": "enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我追求效率，討厭浪費時間。",
+    "category": "3",
+    "test_type": "enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我渴望了解世界，追求知識與真理。",
+    "category": "5",
+    "test_type": "enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我喜歡保持獨立，避免依賴他人。",
+    "category": "5",
+    "test_type": "enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我有時會因為害怕被打擾而逃避社交。",
+    "category": "5",
+    "test_type": "enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我喜歡深度思考，不輕易表露情感。",
+    "category": "5",
+    "test_type": "enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我努力收集資訊，以掌握情況。",
+    "category": "5",
+    "test_type": "enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我喜歡享受生活，追求愉悅與快樂。",
+    "category": "7",
+    "test_type": "enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我不喜歡被束縛，追求自由與多樣性。",
+    "category": "7",
+    "test_type": "enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我有時逃避痛苦，過度沉迷於娛樂。",
+    "category": "7",
+    "test_type": "enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": true
+  },
+  {
+    "text": "我喜歡計劃未來，充滿期待。",
+    "category": "7",
+    "test_type": "enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我熱衷於探索新事物，保持好奇心。",
+    "category": "7",
+    "test_type": "enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我對於誠實特別在意。",
+    "category": "1",
+    "test_type": "Enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我重視正義。",
+    "category": "1",
+    "test_type": "Enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我對於自我完善特別在意。",
+    "category": "1",
+    "test_type": "Enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我面對壓力時批判性強。",
+    "category": "1",
+    "test_type": "Enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "別人常說我渴望被需要。",
+    "category": "2",
+    "test_type": "Enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我面對壓力時溫暖。",
+    "category": "2",
+    "test_type": "Enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我在生活中經常表達關懷。",
+    "category": "2",
+    "test_type": "Enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "在團體中，我傾向於表達關懷。",
+    "category": "2",
+    "test_type": "Enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我對於目標特別在意。",
+    "category": "3",
+    "test_type": "Enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我認為自己重視形象。",
+    "category": "3",
+    "test_type": "Enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "在團體中，我傾向於努力表現。",
+    "category": "3",
+    "test_type": "Enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "遇到困難時，我會展現能力。",
+    "category": "3",
+    "test_type": "Enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我在生活中經常反思自我。",
+    "category": "4",
+    "test_type": "Enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "遇到困難時，我會表達情感。",
+    "category": "4",
+    "test_type": "Enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我認為自己浪漫。",
+    "category": "4",
+    "test_type": "Enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我重視創意。",
+    "category": "4",
+    "test_type": "Enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我認為自己內向。",
+    "category": "5",
+    "test_type": "Enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我認為自己理性。",
+    "category": "5",
+    "test_type": "Enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我面對壓力時冷靜。",
+    "category": "5",
+    "test_type": "Enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "別人常說我冷靜。",
+    "category": "5",
+    "test_type": "Enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我認為自己可靠。",
+    "category": "6",
+    "test_type": "Enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我重視承諾。",
+    "category": "6",
+    "test_type": "Enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我在生活中經常遵守規則。",
+    "category": "6",
+    "test_type": "Enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我認為自己謹慎。",
+    "category": "6",
+    "test_type": "Enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我面對壓力時多才多藝。",
+    "category": "7",
+    "test_type": "Enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "別人常說我多才多藝。",
+    "category": "7",
+    "test_type": "Enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我對於體驗特別在意。",
+    "category": "7",
+    "test_type": "Enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "在團體中，我傾向於安排活動。",
+    "category": "7",
+    "test_type": "Enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "別人常說我果斷。",
+    "category": "8",
+    "test_type": "Enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我認為自己直接。",
+    "category": "8",
+    "test_type": "Enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我認為自己自信。",
+    "category": "8",
+    "test_type": "Enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我重視自主。",
+    "category": "8",
+    "test_type": "Enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我重視穩定。",
+    "category": "9",
+    "test_type": "Enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我面對壓力時穩定。",
+    "category": "9",
+    "test_type": "Enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我面對壓力時善解人意。",
+    "category": "9",
+    "test_type": "Enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我面對壓力時包容。",
+    "category": "9",
+    "test_type": "Enneagram",
+    "options": [
+      "非常不同意",
+      "不同意",
+      "中立",
+      "同意",
+      "非常同意"
+    ],
+    "weight": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_reverse": false
+  },
+  {
+    "text": "我不太在意事物是否井然有序或完美無缺。",
+    "category": "1",
+    "test_type": "enneagram",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我對自己和他人的錯誤比較寬容。",
+    "category": "1",
+    "test_type": "enneagram",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我不太會因為事情不符合預期而感到沮喪。",
+    "category": "1",
+    "test_type": "enneagram",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我傾向於順其自然，而不是追求改進或完善。",
+    "category": "1",
+    "test_type": "enneagram",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我很少批判自己或他人，能接受現狀。",
+    "category": "1",
+    "test_type": "enneagram",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我不太會主動去幫助別人，除非他們明確提出要求。",
+    "category": "2",
+    "test_type": "enneagram",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我會優先考慮自己的需求和感受。",
+    "category": "2",
+    "test_type": "enneagram",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我不太在乎別人是否喜歡我或需要我。",
+    "category": "2",
+    "test_type": "enneagram",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我不太擅長表達關懷或情感。",
+    "category": "2",
+    "test_type": "enneagram",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我不會為了迎合他人而改變自己。",
+    "category": "2",
+    "test_type": "enneagram",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我對展現成功或獲得認可不太感興趣。",
+    "category": "3",
+    "test_type": "enneagram",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我不太會追求表現，更重視內在的滿足。",
+    "category": "3",
+    "test_type": "enneagram",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我不會為了效率或達成目標而犧牲其他事物。",
+    "category": "3",
+    "test_type": "enneagram",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我不太在意自己的形象或他人對我的看法。",
+    "category": "3",
+    "test_type": "enneagram",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我會接受失敗，並從中學習，不會因此感到沮喪。",
+    "category": "3",
+    "test_type": "enneagram",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我很少感到自己與眾不同或獨特。",
+    "category": "4",
+    "test_type": "enneagram",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我不太會沉浸在自己的情感或內心世界中。",
+    "category": "4",
+    "test_type": "enneagram",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我對平凡和日常的事物感到很自在。",
+    "category": "4",
+    "test_type": "enneagram",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我不太追求深度或意義，能簡單地享受生活。",
+    "category": "4",
+    "test_type": "enneagram",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我很少感到憂鬱或情緒起伏。",
+    "category": "4",
+    "test_type": "enneagram",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我更喜歡參與和行動，而不是旁觀和分析。",
+    "category": "5",
+    "test_type": "enneagram",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我會很樂意分享自己的知識或資源。",
+    "category": "5",
+    "test_type": "enneagram",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我不太會對外界事物感到抽離或疏遠。",
+    "category": "5",
+    "test_type": "enneagram",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我對社交互動感到很自在，不會覺得消耗能量。",
+    "category": "5",
+    "test_type": "enneagram",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我不太需要獨處的時間來充電。",
+    "category": "5",
+    "test_type": "enneagram",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我很少感到焦慮或擔憂未來。",
+    "category": "6",
+    "test_type": "enneagram",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我對權威或規範不太會產生質疑。",
+    "category": "6",
+    "test_type": "enneagram",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我不太需要安全感或支持。",
+    "category": "6",
+    "test_type": "enneagram",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我很容易相信別人，不會過度懷疑。",
+    "category": "6",
+    "test_type": "enneagram",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我會果斷做出決定，不太會猶豫不決。",
+    "category": "6",
+    "test_type": "enneagram",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我對嘗試新事物或刺激的體驗不太感興趣。",
+    "category": "7",
+    "test_type": "enneagram",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我會專注於當下的任務，不容易分心。",
+    "category": "7",
+    "test_type": "enneagram",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我會面對困難和不適，而不是逃避。",
+    "category": "7",
+    "test_type": "enneagram",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我不太需要許多選項或多樣性來感到滿足。",
+    "category": "7",
+    "test_type": "enneagram",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我對例行公事或重複性的工作感到很自在。",
+    "category": "7",
+    "test_type": "enneagram",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我不太會主動掌控局面或發號施令。",
+    "category": "8",
+    "test_type": "enneagram",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我會避免衝突，傾向於保持和諧。",
+    "category": "8",
+    "test_type": "enneagram",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我不太會直接表達憤怒或不滿。",
+    "category": "8",
+    "test_type": "enneagram",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我會展現脆弱的一面，並接受他人的幫助。",
+    "category": "8",
+    "test_type": "enneagram",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我不太在乎是否被視為強大或有影響力。",
+    "category": "8",
+    "test_type": "enneagram",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我會積極表達自己的意見和需求。",
+    "category": "9",
+    "test_type": "enneagram",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我能夠直接面對衝突，並解決問題。",
+    "category": "9",
+    "test_type": "enneagram",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我不太會為了避免衝突而壓抑自己。",
+    "category": "9",
+    "test_type": "enneagram",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我能夠專注於任務，不會輕易分心。",
+    "category": "9",
+    "test_type": "enneagram",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  },
+  {
+    "text": "我會主動做出選擇，而不是隨波逐流。",
+    "category": "9",
+    "test_type": "enneagram",
+    "options": ["非常不同意", "不同意", "中立", "同意", "非常同意"],
+    "weight": [5, 4, 3, 2, 1],
+    "is_reverse": true
+  }
+]

@@ -25,3 +25,6 @@ class QuestionListResponse(BaseModel):
 class TestTypeResponse(BaseModel):
     test_types: List[str]
     total_questions: Dict[str, int] 
+
+class QuestionBatchRequest(BaseModel):
+    ids: List[int] 

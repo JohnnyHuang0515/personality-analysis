@@ -43,6 +43,22 @@ const TestPage: React.FC = () => {
     return userId;
   };
 
+  // 從 localStorage 獲取保存的題目順序
+  const getSavedQuestionOrder = (testType: string) => {
+    const saved = localStorage.getItem(`question_order_${testType}`);
+    return saved ? JSON.parse(saved) : null;
+  };
+
+  // 保存題目順序到 localStorage
+  const saveQuestionOrder = (testType: string, questionIds: number[]) => {
+    localStorage.setItem(`question_order_${testType}`, JSON.stringify(questionIds));
+  };
+
+  // 清除保存的題目順序
+  const clearSavedQuestionOrder = (testType: string) => {
+    localStorage.removeItem(`question_order_${testType}`);
+  };
+
   const normalizedTestType = getNormalizedTestType(testType || '');
   const userId = getUserId();
   
@@ -51,7 +67,7 @@ const TestPage: React.FC = () => {
   const FIXED_TOTAL_QUESTIONS = 30;
   const progress = (answeredCount / FIXED_TOTAL_QUESTIONS) * 100;
 
-  // 獲取題目
+  // 獲取題目 - 實現新的出題邏輯
   useEffect(() => {
     const fetchQuestions = async () => {
       if (!normalizedTestType) {
@@ -60,24 +76,47 @@ const TestPage: React.FC = () => {
         return;
       }
 
-      // 如果正在重新測驗，不要重新載入固定題目
-      if (isRestarting.current) {
-        return;
-      }
-
       try {
-        // 預設使用固定題目（不隨機）
-        const questionsResponse = await apiService.getQuestions(normalizedTestType, false);
-        const questionsData = questionsResponse.questions || questionsResponse;
+        // 檢查是否有保存的題目順序
+        const savedQuestionIds = getSavedQuestionOrder(normalizedTestType);
         
-        const formattedQuestions = questionsData.map((q: any) => ({
-          id: q.id,
-          question_text: q.text,
-          options: q.options,
-          test_type: q.test_type
-        }));
-        
-        setQuestions(formattedQuestions);
+        if (savedQuestionIds && !isRestarting.current) {
+          // 如果有保存的題目順序且不是重新測驗，使用保存的順序
+          console.log('使用保存的題目順序:', savedQuestionIds);
+          
+          // 使用批量查詢API獲取保存順序的題目
+          const questionsResponse = await apiService.getQuestionsBatch(savedQuestionIds);
+          const questionsData = questionsResponse.questions || questionsResponse;
+          
+          const formattedQuestions = questionsData.map((q: any) => ({
+            id: q.id,
+            question_text: q.text,
+            options: q.options,
+            test_type: q.test_type
+          }));
+          
+          setQuestions(formattedQuestions);
+        } else {
+          // 沒有保存的順序或是重新測驗，獲取新的隨機題目
+          console.log('獲取新的隨機題目');
+          
+          const questionsResponse = await apiService.getQuestions(normalizedTestType, true);
+          const questionsData = questionsResponse.questions || questionsResponse;
+          
+          const formattedQuestions = questionsData.map((q: any) => ({
+            id: q.id,
+            question_text: q.text,
+            options: q.options,
+            test_type: q.test_type
+          }));
+          
+          setQuestions(formattedQuestions);
+          
+          // 保存新的題目順序
+          const questionIds = formattedQuestions.map((q: Question) => q.id);
+          saveQuestionOrder(normalizedTestType, questionIds);
+          console.log('保存新的題目順序:', questionIds);
+        }
 
         // 如果 TestContext 中沒有當前測驗，則開始新測驗
         if (state.currentTest !== normalizedTestType) {
@@ -100,7 +139,7 @@ const TestPage: React.FC = () => {
     };
 
     fetchQuestions();
-  }, [normalizedTestType, userId, state.currentTest, dispatch]);
+  }, [normalizedTestType, userId]); // 移除 state.currentTest 和 dispatch 依賴
 
   // 處理答案選擇
   const handleAnswer = (answer: string) => {
@@ -170,13 +209,17 @@ const TestPage: React.FC = () => {
     }
   };
 
-  // 重新開始測驗（隨機新題目）
+  // 重新開始測驗（清除保存的順序，重新抓取新題目）
   const handleRestartTest = async () => {
     setLoading(true);
     setError(null); // 清除錯誤狀態
     isRestarting.current = true; // 標記正在重新測驗
     
     try {
+      // 清除保存的題目順序
+      clearSavedQuestionOrder(normalizedTestType);
+      console.log('清除保存的題目順序');
+      
       // 先重置 TestContext
       dispatch({ type: 'RESET_TEST' });
       
@@ -196,6 +239,11 @@ const TestPage: React.FC = () => {
       
       // 設置新題目
       setQuestions(formattedQuestions);
+      
+      // 保存新的題目順序
+      const questionIds = formattedQuestions.map((q: Question) => q.id);
+      saveQuestionOrder(normalizedTestType, questionIds);
+      console.log('保存新的題目順序:', questionIds);
       
       // 開始新測驗
       dispatch({
